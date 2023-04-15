@@ -1,41 +1,44 @@
 public class LibraryItem {
-    short id;
-    boolean availability;
-    String borrower;
-    short dueDate;
+    private short id;
+    private boolean availability;
+    private String borrower;
+    private String dueDate;
 
-    //ID
-    void getId(){
-        System.out.println(id);
+    public LibraryItem(short id, boolean availability, String borrower, String dueDate) {
+        this.id = id;
+        this.availability = availability;
+        this.borrower = borrower;
+        this.dueDate = dueDate;
     }
-    void setId(id){
+    //ID
+    public short getId(){
+        return id;
+    }
+    public void setId(short id){
         this.id = id;
     }
 
     //AVAILABILITY
-    void getAvailability(){
-        System.out.println(availability);
+    public boolean getAvailability(){
+        return availability;
     }
-    void setAvailability(availability){
-        if (availability) this.availability = true;
-        else {
-            this.availability = false;
-        }
+    public void setAvailability(boolean availability){
+      this.availability = availability;
     }
 
     //BORROWER
-    void getBorrower(){
-        System.out.println(borrower);
+    public String getBorrower(){
+        return borrower;
     }
-    void setBorrower(borrower){
+    public void setBorrower(String borrower){
         this.borrower = borrower;
     }
 
     //DUEDATE
-    void getDueDate(){
-        System.out.println(dueDate);
+    public String getDueDate(){
+        return dueDate;
     }
-    void setId(dueDate){
+    public void setDueDate(String dueDate){
         this.dueDate = dueDate;
     }
 }
