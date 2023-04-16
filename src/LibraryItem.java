@@ -23,7 +23,7 @@ public class LibraryItem {
         return availability;
     }
     public void setAvailability(boolean availability){
-      this.availability = availability;
+        this.availability = availability;
     }
 
     //BORROWER

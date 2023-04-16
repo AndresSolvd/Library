@@ -1,17 +1,17 @@
 public class Person {
-    private short id;
+    private short idPerson;
     private String name;
     private String phone;
     private String email;
 
-    public Person(short id, String name, String phone, String email){
-        this.id = id;
+    public Person(short idPerson, String name, String phone, String email){
+        this.idPerson = idPerson;
         this.name = name;
         this.phone = phone;
         this.email = email;
     }
-    public short getId(){
-        return id;
+    public short getIdPerson(){
+        return idPerson;
     }
 
     public String getName() {
@@ -26,8 +26,8 @@ public class Person {
         return email;
     }
 
-    public void setId(short id){
-        this.id = id;
+    public void setIdPerson(short idPerson){
+        this.idPerson = idPerson;
     }
 
     public void setName(String name) {

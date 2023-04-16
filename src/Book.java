@@ -34,4 +34,3 @@ public class Book extends LibraryItem {
         return genre;
     }
 }
-
