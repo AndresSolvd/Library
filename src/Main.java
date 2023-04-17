@@ -28,12 +28,12 @@ public class Main {
         System.out.println(cd.getDueDate());
 
         //Create Person
-        Person person = new Person((short)001, "Oliver Atom", "932-934-2984", "oatom@email.com");
+        Person person = new Person((short)004, "Oliver Atom", "932-934-2984", "oatom@email.com");
         System.out.println(person.getName());
 
         //Create Client
 
-        Client client = new Client((short)002, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
+        Client client = new Client((short)005, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
         System.out.println(client.getPersonId());
         System.out.println(client.getProfessorNumber());
         System.out.println(client.getName());
@@ -42,19 +42,19 @@ public class Main {
         System.out.println(client.getLoanedBookList());
 
         //create student
-        Student student = new Student((short)003, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
+        Student student = new Student((short)006, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
         System.out.println(student.getStudentNumber());
         System.out.println(student.getPersonId());
         System.out.println(student.getName());
 
         //Create professor
-        Professor professor = new Professor((short)002, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
+        Professor professor = new Professor((short)007, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
         System.out.println(professor.getProfessorNumber());
         System.out.println(professor.getPersonId());
         System.out.println(professor.getName());
 
         //create employee
-        Employee employee = new Employee((short)003, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
+        Employee employee = new Employee((short)008, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
