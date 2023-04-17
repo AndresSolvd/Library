@@ -58,6 +58,5 @@ public class Main {
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
-
     }
 }
