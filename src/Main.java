@@ -54,7 +54,7 @@ public class Main {
         System.out.println(professor.getName());
 
         //create employee
-        Employee employee = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", (double)100000);
+        Employee employee = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
