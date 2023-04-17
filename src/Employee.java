@@ -2,8 +2,8 @@ public class Employee extends Person {
     private String position;
     private double salary;
 
-    public Employee(short id, String name, String phone, String email, String position, double salary){
-        super(id, name, phone, email);
+    public Employee(short personId, String name, String phone, String email, String position, double salary){
+        super(personId, name, phone, email);
         this.position = position;
         this.salary = salary;
     }

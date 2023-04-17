@@ -1,16 +1,16 @@
 public class CD extends LibraryItem{
-    private int sn;
+    private int serialNumber;
 
-    public CD(short id, boolean availability, String borrower, String dueDate, int sn){
-        super(id, availability, borrower, dueDate);
-        this.sn = sn;
+    public CD(short itemId, boolean availability, String borrower, String dueDate, int serialNumber){
+        super(itemId, availability, borrower, dueDate);
+        this.serialNumber = serialNumber;
     }
 
-    public int getSn(){
-        return sn;
+    public int getSerialNumber(){
+        return serialNumber;
     }
 
-    public void setSn(int sn){
-        this.sn = sn;
+    public void setSerialNumber(int serialNumber){
+        this.serialNumber = serialNumber;
     }
 }

@@ -1,21 +1,21 @@
 public class LibraryItem {
-    private short id;
+    private short itemId;
     private boolean availability;
     private String borrower;
     private String dueDate;
 
-    public LibraryItem(short id, boolean availability, String borrower, String dueDate) {
-        this.id = id;
+    public LibraryItem(short itemId, boolean availability, String borrower, String dueDate) {
+        this.itemId = itemId;
         this.availability = availability;
         this.borrower = borrower;
         this.dueDate = dueDate;
     }
     //ID
-    public short getId(){
-        return id;
+    public short getItemId(){
+        return itemId;
     }
-    public void setId(short id){
-        this.id = id;
+    public void setItemId(short itemId){
+        this.itemId = itemId;
     }
 
     //AVAILABILITY

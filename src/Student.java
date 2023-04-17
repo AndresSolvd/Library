@@ -1,8 +1,8 @@
 public class Student extends Client {
     private int studentNumber;
 
-    public Student(short id, String name, String phone, String email, int studentNumber) {
-        super(id, name, phone, email);
+    public Student(short personId, String name, String phone, String email, int memberNumber, int studentNumber) {
+        super(personId, name, phone, email, memberNumber);
         this.studentNumber = studentNumber;
     }
 

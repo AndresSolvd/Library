@@ -5,8 +5,8 @@ public class Book extends LibraryItem {
     public String publisher;
     public String genre;
 
-    public Book(short id, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
-        super(id, availability, borrower, dueDate);
+    public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
+        super(itemId, availability, borrower, dueDate);
         this.title = title;
         this.author = author;
         this.year = year;
