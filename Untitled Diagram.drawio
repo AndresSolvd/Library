@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-17T13:46:19.485Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="i-V5FO6CcOuJmBItOLeh" version="21.1.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-17T13:47:57.950Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="HcLk_USWILrdGxU5CuWJ" version="21.1.8" type="github">
   <diagram name="Page-1" id="rwvauSxjsksC3MHOpXXF">
     <mxGraphModel dx="3134" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -37,13 +37,13 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-10" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ LoanedBooksLIst&lt;br&gt;+ &lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;MemberNumber&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-9">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-10" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ LoanedBooksLIst&lt;br&gt;+ MemberNumber" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-9">
           <mxGeometry y="26" width="140" height="44" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-9">
           <mxGeometry y="70" width="140" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-12" value="&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+&amp;nbsp;getLoanedBookList()&lt;br&gt;+ loanBook()&lt;br&gt;+ returnBook()&lt;br&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;+ getMemberNumber()&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;+ setMemberNumber()&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-9">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-12" value="&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+&amp;nbsp;getLoanedBookList()&lt;br&gt;+ loanBook()&lt;br&gt;+ returnBook()&lt;br&gt;+ getMemberNumber()&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;+ setMemberNumber()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-9">
           <mxGeometry y="78" width="140" height="102" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-13" value="Employee" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#8B8EFC;strokeColor=#6c8ebf;" vertex="1" parent="1">
@@ -65,13 +65,13 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-18" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ ProfessorNumber&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-17">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-18" value="&lt;b style=&quot;&quot;&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ ProfessorNumber" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-17">
           <mxGeometry y="26" width="160" height="44" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-17">
           <mxGeometry y="70" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-20" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ getProfessorNumber()&lt;br&gt;+ setProfessorNumber()&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-17">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-20" value="&lt;b style=&quot;&quot;&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ getProfessorNumber()&lt;br&gt;+ setProfessorNumber()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-17">
           <mxGeometry y="78" width="160" height="52" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-21" value="Student" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
@@ -113,13 +113,13 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-32" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ &lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;ItemId&lt;/span&gt;&lt;br&gt;+ Availability&lt;br&gt;+ Borrower&lt;br&gt;+ DueDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-31">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-32" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ ItemId&lt;br&gt;+ Availability&lt;br&gt;+ Borrower&lt;br&gt;+ DueDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-31">
           <mxGeometry y="26" width="150" height="84" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-33" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-31">
           <mxGeometry y="110" width="150" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-34" value="&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&amp;nbsp;getItemId()&lt;br&gt;+&amp;nbsp;setItemId()&lt;/span&gt;&lt;br&gt;+ getAvailability()&lt;br&gt;+ setAvailability()&lt;br&gt;+ getBorrower()&lt;br&gt;+ setBorrower()&lt;br&gt;+ getDueDate()&lt;br&gt;+ SetDueDate()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-31">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-34" value="&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+&amp;nbsp;getItemId()&lt;br&gt;+&amp;nbsp;setItemId()&lt;br&gt;+ getAvailability()&lt;br&gt;+ setAvailability()&lt;br&gt;+ getBorrower()&lt;br&gt;+ setBorrower()&lt;br&gt;+ getDueDate()&lt;br&gt;+ SetDueDate()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-31">
           <mxGeometry y="118" width="150" height="142" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-35" value="CD" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFD494;strokeColor=#d79b00;" vertex="1" parent="1">
@@ -127,13 +127,13 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-36" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ &lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;SerialNumber&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-35">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-36" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ SerialNumber" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-35">
           <mxGeometry y="26" width="190" height="34" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-35">
           <mxGeometry y="60" width="190" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-38" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ setSerialNumber()&lt;br&gt;+ getSerialNumber()&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-35">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-38" value="&lt;b style=&quot;&quot;&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ setSerialNumber()&lt;br&gt;+ getSerialNumber()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-35">
           <mxGeometry y="68" width="190" height="62" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jhaIpsoPv-nKPH1S88DZ-34" target="jhaIpsoPv-nKPH1S88DZ-28">
@@ -153,13 +153,13 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-44" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+&amp;nbsp;SerialNumber&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-43">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-44" value="&lt;b style=&quot;&quot;&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+&amp;nbsp;SerialNumber" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-43">
           <mxGeometry y="26" width="175" height="34" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-45" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-43">
           <mxGeometry y="60" width="175" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="jhaIpsoPv-nKPH1S88DZ-46" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;&lt;b&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ setSerialNumber()&lt;br&gt;+ getSerialNumber()&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-43">
+        <mxCell id="jhaIpsoPv-nKPH1S88DZ-46" value="&lt;b style=&quot;&quot;&gt;METHODS:&lt;/b&gt;&lt;br&gt;+ setSerialNumber()&lt;br&gt;+ getSerialNumber()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhaIpsoPv-nKPH1S88DZ-43">
           <mxGeometry y="68" width="175" height="62" as="geometry" />
         </mxCell>
         <mxCell id="jhaIpsoPv-nKPH1S88DZ-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jhaIpsoPv-nKPH1S88DZ-28" target="jhaIpsoPv-nKPH1S88DZ-44">
