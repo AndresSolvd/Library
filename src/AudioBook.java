@@ -6,6 +6,11 @@ public class AudioBook extends Book {
         this.serialNumber = serialNumber;
     }
 
+    @Override
+    public String toString() {
+        return "AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre;
+    }
+
     public int getSerialNumber(){
         return serialNumber;
     }

@@ -1,4 +1,4 @@
-public class LibraryItem {
+public abstract class LibraryItem {
     private short itemId;
     private boolean availability;
     private String borrower;

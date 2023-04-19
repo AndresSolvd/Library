@@ -32,9 +32,20 @@ public class Main {
         client.loanBook(book);
         client.loanBook(cd);
         client.loanBook(audiobook);
+        client.loanBook(book);
+        System.out.println();
         for (LibraryItem item : client.getLoanedBookList()) {
             System.out.println(item);
         }
+        System.out.println();
+        //return book
+        client.returnBook(book);
+        client.returnBook(book);
+        System.out.println();
+        for (LibraryItem item : client.getLoanedBookList()) {
+            System.out.println(item);
+        }
+        System.out.println();
 
 /*
         //create student

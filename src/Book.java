@@ -7,7 +7,7 @@ public class Book extends LibraryItem {
 
     @Override
     public String toString() {
-        return "Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre;
+        return "Book Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre;
     }
     public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
         super(itemId, availability, borrower, dueDate);
