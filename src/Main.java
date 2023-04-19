@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("\n\n\n---BEGIN OF SCRIPT---\n\n");
         //Create library
+        System.out.println("--Create Library--");
         Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth", "Tuesdays to Sundays (09H00 to 17H00)");
         System.out.println(library.getName());
         System.out.println(library.getAddress());
         System.out.println(library.getWeekDaysTimeOpen());
 
         //create book
+        System.out.println("\n\n--Create Items(Book, AudioBook, and CD--");
         Book book = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println(book.getAuthor());
         System.out.println(book.getAvailability());
@@ -23,10 +26,18 @@ public class Main {
         System.out.println(cd.getAvailability());
         System.out.println(cd.getDueDate());
 
-        //Create Client
+        //add all previous items to inventory
+        System.out.println("\n\n--Add items to the inventory and print it--");
+        library.add(book);
+        library.add(audiobook);
+        library.add(cd);
+        library.printInventory();
+
+        //Create Clients
+        System.out.println("\n\n--CLIENTs INFO AND FUNCTIONS TEST--");
         Client client = new Client((short)5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
         System.out.println(client.getPersonId());
-        System.out.println(client.getProfessorNumber());
+        System.out.println(client.getMemberNumber());
         System.out.println(client.getName());
         System.out.println(client.getLoanedBookList());
         client.loanBook(book);
@@ -37,7 +48,7 @@ public class Main {
         for (LibraryItem item : client.getLoanedBookList()) {
             System.out.println(item);
         }
-        System.out.println();
+        System.out.println("\n--Return Book--");
         //return book
         client.returnBook(book);
         client.returnBook(book);
@@ -45,24 +56,35 @@ public class Main {
         for (LibraryItem item : client.getLoanedBookList()) {
             System.out.println(item);
         }
-        System.out.println();
 
         //create student
+        System.out.println("\n\n--Create STUDENT and see info--");
         Student student = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
-        System.out.println(student.getStudentNumber());
+        System.out.println(student.getStudentCredentialNumber());
         System.out.println(student.getPersonId());
         System.out.println(student.getName());
 
         //Create professor
+        System.out.println("\n\n--Create PROFESSOR and see info--");
         Professor professor = new Professor((short)7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
-        System.out.println(professor.getProfessorNumber());
+        System.out.println(professor.getMemberNumber());
         System.out.println(professor.getPersonId());
         System.out.println(professor.getName());
 
         //create employee
+        System.out.println("\n\n--Create EMPLOYEE and see info--");
         Employee employee = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
+
+        // Add persons to the directory and print it
+        System.out.println("\n\n--Add individuals to Directory and Print Directory--");
+        library.add(student);
+        library.add(employee);
+        library.add(professor);
+        library.printDirectory();
+
+        System.out.println("--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim -- 終わり ---");
     }
 }

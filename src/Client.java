@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class Client extends Person {
@@ -35,11 +34,11 @@ public class Client extends Person {
         }
     }
 
-    public int getProfessorNumber() {
+    public int getMemberNumber() {
         return memberNumber;
     }
 
-    public void setProfessorNumber(int professorNumber) {
-        this.memberNumber = professorNumber;
+    public void setMemberNumber(int memberNumber) {
+        this.memberNumber = memberNumber;
     }
 }
