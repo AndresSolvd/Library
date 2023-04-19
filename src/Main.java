@@ -47,7 +47,6 @@ public class Main {
         }
         System.out.println();
 
-/*
         //create student
         Student student = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
         System.out.println(student.getStudentNumber());
@@ -65,6 +64,5 @@ public class Main {
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
-*/
     }
 }
