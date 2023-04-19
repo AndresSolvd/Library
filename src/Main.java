@@ -6,10 +6,6 @@ public class Main {
         System.out.println(library.getAddress());
         System.out.println(library.getWeekDaysTimeOpen());
 
-        //Create a Library Item
-        LibraryItem p1 = new LibraryItem((short)23, true, "na", "na");
-        System.out.println(p1.getAvailability());
-
         //create book
         Book book = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println(book.getAuthor());
@@ -27,20 +23,20 @@ public class Main {
         System.out.println(cd.getAvailability());
         System.out.println(cd.getDueDate());
 
-        //Create Person
-        Person person = new Person((short)4, "Oliver Atom", "932-934-2984", "oatom@email.com");
-        System.out.println(person.getName());
-
         //Create Client
-
         Client client = new Client((short)5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
         System.out.println(client.getPersonId());
         System.out.println(client.getProfessorNumber());
         System.out.println(client.getName());
         System.out.println(client.getLoanedBookList());
         client.loanBook(book);
-        System.out.println(client.getLoanedBookList());
+        client.loanBook(cd);
+        client.loanBook(audiobook);
+        for (LibraryItem item : client.getLoanedBookList()) {
+            System.out.println(item);
+        }
 
+/*
         //create student
         Student student = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
         System.out.println(student.getStudentNumber());
@@ -58,5 +54,6 @@ public class Main {
         System.out.println(employee.getPosition());
         System.out.println(employee.getPersonId());
         System.out.println(employee.getName());
+*/
     }
 }
