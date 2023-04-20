@@ -1,3 +1,12 @@
+import entities.libraryitems.AudioBook;
+import entities.libraryitems.Book;
+import entities.libraryitems.CD;
+import entities.libraryitems.LibraryItem;
+import entities.people.Client;
+import entities.people.Employee;
+import entities.people.Professor;
+import entities.people.Student;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("\n\n\n---BEGIN OF SCRIPT---\n\n");
@@ -9,7 +18,7 @@ public class Main {
         System.out.println(library.getWeekDaysTimeOpen());
 
         //2 create book
-        System.out.println("\n\n--2 Create Items(Book, AudioBook, and CD--");
+        System.out.println("\n\n--2 Create Items(entities.libraryitems.Book, entities.libraryitems.AudioBook, and entities.libraryitems.CD--");
         Book book = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         Book book2 = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println(book.getAuthor());
@@ -21,7 +30,7 @@ public class Main {
         System.out.println(audiobook.getAvailability());
         System.out.println(audiobook.getAuthor());
 
-        //create CD
+        //create entities.libraryitems.CD
         CD cd = new CD((short)3, true, "na", "na", 112345678);
         CD cd2 = new CD((short)3, true, "na", "na", 112345678);
         System.out.println(cd.getSerialNumber());
@@ -54,7 +63,7 @@ public class Main {
         for (LibraryItem item : client.getLoanedBookList()) {
             System.out.println(item);
         }
-        System.out.println("\n--5 Return Book--");
+        System.out.println("\n--5 Return entities.libraryitems.Book--");
         //return book
         client.returnBook(book);
         client.returnBook(book);

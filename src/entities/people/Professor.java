@@ -1,3 +1,5 @@
+package entities.people;
+
 public class Professor extends Client {
     private int professorCredentialNumber;
 
@@ -8,7 +10,7 @@ public class Professor extends Client {
 
     @Override
     public String toString(){
-        return "\nProfessor Name: " + super.getName() + "\nProfessor Credential: " + this.professorCredentialNumber + "\nMember Code: " + super.getMemberNumber() + "\nContact Number: " + super.getPhone() + "\n";
+        return "\nentities.people.Professor Name: " + super.getName() + "\nentities.people.Professor Credential: " + this.professorCredentialNumber + "\nMember Code: " + super.getMemberNumber() + "\nContact Number: " + super.getPhone() + "\n";
     }
 
     public int getProfessorCredentialNumber() {

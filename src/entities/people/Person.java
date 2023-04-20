@@ -1,3 +1,5 @@
+package entities.people;
+
 import java.util.Objects;
 
 public abstract class Person {

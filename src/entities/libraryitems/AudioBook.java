@@ -1,3 +1,5 @@
+package entities.libraryitems;
+
 import java.util.Objects;
 
 public class AudioBook extends Book {
@@ -10,7 +12,7 @@ public class AudioBook extends Book {
 
     @Override
     public String toString() {
-        return "AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre;
+        return "entities.libraryitems.AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre;
     }
 
     @Override

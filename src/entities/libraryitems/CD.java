@@ -1,3 +1,5 @@
+package entities.libraryitems;
+
 public class CD extends LibraryItem{
     private int serialNumber;
 
@@ -8,7 +10,7 @@ public class CD extends LibraryItem{
 
     @Override
     public String toString() {
-        return "CD Serial Number: " + this.serialNumber;
+        return "entities.libraryitems.CD Serial Number: " + this.serialNumber;
     }
 
     public int getSerialNumber(){

@@ -1,3 +1,5 @@
+package entities.libraryitems;
+
 import java.util.Objects;
 
 public class Book extends LibraryItem {
@@ -9,7 +11,7 @@ public class Book extends LibraryItem {
 
     @Override
     public String toString() {
-        return "Book Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre;
+        return "entities.libraryitems.Book Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre;
     }
 
     @Override

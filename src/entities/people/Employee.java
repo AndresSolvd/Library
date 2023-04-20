@@ -1,3 +1,5 @@
+package entities.people;
+
 public class Employee extends Person {
     private String position;
     private double salary;
@@ -10,7 +12,7 @@ public class Employee extends Person {
 
     @Override
     public String toString(){
-        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
+        return "\nentities.people.Employee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
     }
 
     public void setPosition(String position) {

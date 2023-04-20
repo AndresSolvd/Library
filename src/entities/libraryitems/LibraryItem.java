@@ -1,3 +1,5 @@
+package entities.libraryitems;
+
 public abstract class LibraryItem {
     protected short itemId;
     protected boolean availability;

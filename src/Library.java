@@ -1,3 +1,6 @@
+import entities.libraryitems.LibraryItem;
+import entities.people.Person;
+
 import java.util.ArrayList;
 
 public class Library {
@@ -64,7 +67,7 @@ public class Library {
             itemsList.add(newItem);
         }
 
-    //Add Person
+    //Add entities.people.Person
     public void add(Person newperson) {
         for (Person person : directory) {
             if (person.equals(newperson)) {

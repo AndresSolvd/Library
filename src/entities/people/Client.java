@@ -1,3 +1,7 @@
+package entities.people;
+
+import entities.libraryitems.LibraryItem;
+
 import java.util.ArrayList;
 
 public class Client extends Person {
@@ -12,7 +16,7 @@ public class Client extends Person {
 
     @Override
     public String toString () {
-        return "\nClient Name: " + super.getName() + "\nMember Number: " + this.memberNumber + "\n";
+        return "\nentities.people.Client Name: " + super.getName() + "\nMember Number: " + this.memberNumber + "\n";
     }
 
     public ArrayList<LibraryItem> getLoanedBookList() {
