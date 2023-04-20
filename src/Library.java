@@ -39,11 +39,6 @@ public class Library {
         this.weekDaysTimeOpen = weekDaysTimeOpen;
     }
 
-    //Add Item
-    public void add(LibraryItem libraryItem){
-        itemsList.add(libraryItem);
-    }
-
     //Print Inventory
     public void printInventory(){
         for (LibraryItem item : itemsList) {
@@ -51,15 +46,32 @@ public class Library {
         }
     }
 
-    //Add Person
-    public void add(Person person){
-        directory.add(person);
-    }
-
     //Print Directory
     public void printDirectory(){
         for (Person person : directory) {
             System.out.println(person);
         }
+    }
+
+    //Add Item
+    public void add(LibraryItem newItem){
+        for (LibraryItem item : itemsList) {
+            if (item.equals(newItem)) {
+                System.out.println("This person already exists in the directory.");
+                return;
+            }
+        }
+            itemsList.add(newItem);
+        }
+
+    //Add Person
+    public void add(Person newperson) {
+        for (Person person : directory) {
+            if (person.equals(newperson)) {
+                System.out.println("This person already exists in the directory.");
+                return;
+            }
+        }
+        directory.add(newperson);
     }
 }

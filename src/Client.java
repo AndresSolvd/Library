@@ -10,6 +10,11 @@ public class Client extends Person {
         this.memberNumber = memberNumber;
     }
 
+    @Override
+    public String toString () {
+        return "\nClient Name: " + super.getName() + "\nMember Number: " + this.memberNumber + "\n";
+    }
+
     public ArrayList<LibraryItem> getLoanedBookList() {
         return loanedBooksList;
     }
