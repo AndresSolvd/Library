@@ -57,7 +57,7 @@ public class Library {
     public void add(LibraryItem newItem){
         for (LibraryItem item : itemsList) {
             if (item.equals(newItem)) {
-                System.out.println("This person already exists in the directory.");
+                System.out.println("This item already exists on the list");
                 return;
             }
         }
@@ -68,7 +68,7 @@ public class Library {
     public void add(Person newperson) {
         for (Person person : directory) {
             if (person.equals(newperson)) {
-                System.out.println("This person already exists in the directory.");
+                System.out.println("This person already exists on the directory.");
                 return;
             }
         }

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class AudioBook extends Book {
     private int serialNumber;
 
@@ -9,6 +11,19 @@ public class AudioBook extends Book {
     @Override
     public String toString() {
         return "AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AudioBook)) return false;
+        AudioBook audioBook = (AudioBook) o;
+        return getSerialNumber() == audioBook.getSerialNumber();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSerialNumber());
     }
 
     public int getSerialNumber(){

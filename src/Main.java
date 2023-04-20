@@ -11,17 +11,19 @@ public class Main {
         //2 create book
         System.out.println("\n\n--2 Create Items(Book, AudioBook, and CD--");
         Book book = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
+        Book book2 = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println(book.getAuthor());
         System.out.println(book.getAvailability());
 
         //create audiobook
         AudioBook audiobook = new AudioBook((short)2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
-        System.out.println(audiobook.getSerialNumber());
+        AudioBook audiobook2 = new AudioBook((short)2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);System.out.println(audiobook.getSerialNumber());
         System.out.println(audiobook.getAvailability());
         System.out.println(audiobook.getAuthor());
 
         //create CD
         CD cd = new CD((short)3, true, "na", "na", 112345678);
+        CD cd2 = new CD((short)3, true, "na", "na", 112345678);
         System.out.println(cd.getSerialNumber());
         System.out.println(cd.getAvailability());
         System.out.println(cd.getDueDate());
@@ -29,8 +31,11 @@ public class Main {
         //3 add all previous items to inventory
         System.out.println("\n\n--3 Add items to the inventory and print it--");
         library.add(book);
+        library.add(book2);
         library.add(audiobook);
+        library.add(audiobook2);
         library.add(cd);
+        library.add(cd2);
         library.printInventory();
 
         //4 Create Clients
