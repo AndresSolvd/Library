@@ -1,16 +1,21 @@
 public class Student extends Client {
-    private int studentNumber;
+    private int studentCredentialNumber;
 
-    public Student(short personId, String name, String phone, String email, int memberNumber, int studentNumber) {
+    public Student(short personId, String name, String phone, String email, int memberNumber, int studentCredentialNumber) {
         super(personId, name, phone, email, memberNumber);
-        this.studentNumber = studentNumber;
+        this.studentCredentialNumber = studentCredentialNumber;
     }
 
-    public int getStudentNumber() {
-        return studentNumber;
+    @Override
+    public String toString(){
+        return "\nStudent Name: " + super.getName() + "\nStudent Credential: " + this.studentCredentialNumber + "\nMember Number: " + super.getMemberNumber() + "\nContact number: " + super. getPhone() + "\n";
     }
 
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+    public int getStudentCredentialNumber() {
+        return studentCredentialNumber;
+    }
+
+    public void setStudentCredentialNumber(int studentCredentialNumber) {
+        this.studentCredentialNumber = studentCredentialNumber;
     }
 }

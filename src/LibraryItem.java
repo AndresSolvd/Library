@@ -1,8 +1,8 @@
-public class LibraryItem {
-    private short itemId;
-    private boolean availability;
-    private String borrower;
-    private String dueDate;
+public abstract class LibraryItem {
+    protected short itemId;
+    protected boolean availability;
+    protected String borrower;
+    protected String dueDate;
 
     public LibraryItem(short itemId, boolean availability, String borrower, String dueDate) {
         this.itemId = itemId;
@@ -41,4 +41,5 @@ public class LibraryItem {
     public void setDueDate(String dueDate){
         this.dueDate = dueDate;
     }
+
 }

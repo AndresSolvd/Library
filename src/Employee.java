@@ -8,6 +8,11 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
+    @Override
+    public String toString(){
+        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
+    }
+
     public void setPosition(String position) {
         this.position = position;
     }

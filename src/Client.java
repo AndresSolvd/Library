@@ -10,23 +10,40 @@ public class Client extends Person {
         this.memberNumber = memberNumber;
     }
 
+    @Override
+    public String toString () {
+        return "\nClient Name: " + super.getName() + "\nMember Number: " + this.memberNumber + "\n";
+    }
+
     public ArrayList<LibraryItem> getLoanedBookList() {
         return loanedBooksList;
     }
 
-    public void loanBook(LibraryItem LibraryItem) {
-        loanedBooksList.add(LibraryItem);
+    public void loanBook(LibraryItem libraryItem) {
+        if (libraryItem.getAvailability()){
+            loanedBooksList.add(libraryItem);
+            libraryItem.setAvailability(false);
+            System.out.println("Item has been loaned out.");
+        } else {
+            System.out.println("Item is not available for loan.");
+        }
     }
 
-    public void returnBook(LibraryItem LibraryItem) {
-        loanedBooksList.remove(LibraryItem);
+    public void returnBook(LibraryItem libraryItem) {
+        if (libraryItem.getAvailability()){
+            System.out.println("Item in already in the inventory");
+        } else {
+            loanedBooksList.remove(libraryItem);;
+            libraryItem.setAvailability(true);
+            System.out.println("Item has been delivered.");
+        }
     }
 
-    public int getProfessorNumber() {
+    public int getMemberNumber() {
         return memberNumber;
     }
 
-    public void setProfessorNumber(int professorNumber) {
-        this.memberNumber = professorNumber;
+    public void setMemberNumber(int memberNumber) {
+        this.memberNumber = memberNumber;
     }
 }

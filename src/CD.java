@@ -6,6 +6,11 @@ public class CD extends LibraryItem{
         this.serialNumber = serialNumber;
     }
 
+    @Override
+    public String toString() {
+        return "CD Serial Number: " + this.serialNumber;
+    }
+
     public int getSerialNumber(){
         return serialNumber;
     }
