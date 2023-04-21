@@ -1,5 +1,4 @@
 package entities.people;
-
 import java.util.Objects;
 
 public abstract class Person {
@@ -59,5 +58,4 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

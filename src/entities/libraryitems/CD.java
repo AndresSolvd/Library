@@ -1,8 +1,8 @@
 package entities.libraryitems;
-
+import interfaces.Device;
 import java.util.Objects;
 
-public class CD extends LibraryItem{
+public class CD extends LibraryItem implements Device {
     private int serialNumber;
 
     public CD(short itemId, boolean availability, String borrower, String dueDate, int serialNumber){
@@ -28,10 +28,12 @@ public class CD extends LibraryItem{
         return Objects.hash(serialNumber);
     }
 
+    @Override
     public int getSerialNumber(){
         return serialNumber;
     }
 
+    @Override
     public void setSerialNumber(int serialNumber){
         this.serialNumber = serialNumber;
     }

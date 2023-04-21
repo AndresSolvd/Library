@@ -1,12 +1,10 @@
 package entities.people;
-
 import entities.libraryitems.LibraryItem;
-
 import java.util.ArrayList;
 
 public class Client extends Person {
-    private ArrayList<LibraryItem> loanedBooksList;
     private int memberNumber;
+    private static ArrayList<LibraryItem> loanedBooksList;
 
     public Client(short id, String name, String phone, String email, int memberNumber) {
         super(id, name, phone, email);

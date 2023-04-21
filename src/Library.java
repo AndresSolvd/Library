@@ -3,18 +3,17 @@ import entities.people.Person;
 
 import java.util.ArrayList;
 
-public class Library {
-    private String name;
-    private String address;
-    private String weekDaysTimeOpen;
-    private ArrayList<LibraryItem> itemsList;
-    private ArrayList<Person> directory;
+public final class Library {
+    private String name = "Royal Library";
+    private String address = "Stormwind Keep, Stormwind city, Azeroth";
 
-    public Library(String name, String address, String weekDaysTimeOpen){
-        this.name = name;
-        this.address = address;
+    private String weekDaysTimeOpen;
+    private static ArrayList<LibraryItem> inventory;
+    private static ArrayList<Person> directory;
+
+    public Library(String weekDaysTimeOpen){
         this.weekDaysTimeOpen = weekDaysTimeOpen;
-        this.itemsList = new ArrayList<LibraryItem>();
+        this.inventory = new ArrayList<LibraryItem>();
         this.directory = new ArrayList<Person>();
     }
 
@@ -30,21 +29,13 @@ public class Library {
         return weekDaysTimeOpen;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setAddress(String address){
-        this.address = address;
-    }
-
     public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
         this.weekDaysTimeOpen = weekDaysTimeOpen;
     }
 
     //Print Inventory
     public void printInventory(){
-        for (LibraryItem item : itemsList) {
+        for (LibraryItem item : inventory) {
             System.out.println(item);
         }
     }
@@ -58,13 +49,13 @@ public class Library {
 
     //Add Item
     public void add(LibraryItem newItem){
-        for (LibraryItem item : itemsList) {
+        for (LibraryItem item : inventory) {
             if (item.equals(newItem)) {
                 System.out.println("This item already exists on the list");
                 return;
             }
         }
-            itemsList.add(newItem);
+            inventory.add(newItem);
         }
 
     //Add entities.people.Person

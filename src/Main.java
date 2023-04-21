@@ -7,7 +7,7 @@ public class Main {
 
         // 1 Create library
         System.out.println("--- 1 LIBRARY ---\n");
-        Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth", "Tuesdays to Sundays (09H00 to 17H00)");
+        Library library = new Library("Tuesdays to Sundays (09H00 to 17H00)");
         System.out.println("Library Name: " + library.getName());
         System.out.println("Library Address: " + library.getAddress());
         System.out.println("Library Schedule: " + library.getWeekDaysTimeOpen());

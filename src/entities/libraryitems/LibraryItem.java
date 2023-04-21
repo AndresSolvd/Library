@@ -13,23 +13,23 @@ public abstract class LibraryItem {
         this.dueDate = dueDate;
     }
     //ID
-    public short getItemId(){
+    public final short getItemId(){
         return itemId;
     }
-    public void setItemId(short itemId){
+    public final void setItemId(short itemId){
         this.itemId = itemId;
     }
 
     //AVAILABILITY
-    public boolean getAvailability(){
+    public final boolean getAvailability(){
         return availability;
     }
-    public void setAvailability(boolean availability){
+    public final void setAvailability(boolean availability){
         this.availability = availability;
     }
 
     //BORROWER
-    public String getBorrower(){
+    public final String getBorrower(){
         return borrower;
     }
     public void setBorrower(String borrower){
@@ -37,10 +37,10 @@ public abstract class LibraryItem {
     }
 
     //DUEDATE
-    public String getDueDate(){
+    public final String getDueDate(){
         return dueDate;
     }
-    public void setDueDate(String dueDate){
+    public final void setDueDate(String dueDate){
         this.dueDate = dueDate;
     }
 
