@@ -1,5 +1,7 @@
 package entities.libraryitems;
 
+import java.util.Objects;
+
 public class CD extends LibraryItem{
     private int serialNumber;
 
@@ -10,7 +12,20 @@ public class CD extends LibraryItem{
 
     @Override
     public String toString() {
-        return "entities.libraryitems.CD Serial Number: " + this.serialNumber;
+        return "CD Serial Number: " + this.serialNumber + ", Availability: " + super.availability;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CD cd = (CD) o;
+        return serialNumber == cd.serialNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serialNumber);
     }
 
     public int getSerialNumber(){

@@ -12,7 +12,7 @@ public class AudioBook extends Book {
 
     @Override
     public String toString() {
-        return "entities.libraryitems.AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre;
+        return "AudioBook Title: " + super.title + ", Author: " + super.author + ", Genre: " + super.genre + ", Availability: " + super.availability;
     }
 
     @Override

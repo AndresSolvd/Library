@@ -11,7 +11,7 @@ public class Book extends LibraryItem {
 
     @Override
     public String toString() {
-        return "entities.libraryitems.Book Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre;
+        return "Book Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre + ", Availability: " + super.availability;
     }
 
     @Override
