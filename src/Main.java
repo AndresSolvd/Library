@@ -1,44 +1,46 @@
-import entities.libraryitems.AudioBook;
-import entities.libraryitems.Book;
-import entities.libraryitems.CD;
-import entities.libraryitems.LibraryItem;
-import entities.people.Client;
-import entities.people.Employee;
-import entities.people.Professor;
-import entities.people.Student;
+import entities.libraryitems.*;
+import entities.people.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\n\n\n---BEGIN OF SCRIPT---\n\n");
-        //1 Create library
-        System.out.println("--1 Create Library--");
-        Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth", "Tuesdays to Sundays (09H00 to 17H00)");
-        System.out.println(library.getName());
-        System.out.println(library.getAddress());
-        System.out.println(library.getWeekDaysTimeOpen());
+        System.out.println("\n\n\n----- BEGIN OF THE SCRIPT -----\n\n");
 
-        //2 create book
-        System.out.println("\n\n--2 Create Items(entities.libraryitems.Book, entities.libraryitems.AudioBook, and entities.libraryitems.CD--");
+        // 1 Create library
+        System.out.println("--- 1 LIBRARY ---\n");
+        Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth", "Tuesdays to Sundays (09H00 to 17H00)");
+        System.out.println("Library Name: " + library.getName());
+        System.out.println("Library Address: " + library.getAddress());
+        System.out.println("Library Schedule: " + library.getWeekDaysTimeOpen());
+
+        // 2 Create Library Items
+        System.out.println("\n\n--- 2 LIBRARY ITEMS ---\n");
+
+        // 2.1 Create book
+        System.out.println("\n-- 2.1 Book --");
         Book book = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         Book book2 = new Book((short)1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
-        System.out.println(book.getAuthor());
-        System.out.println(book.getAvailability());
+        System.out.println("AudioBook Name: " + book.getTitle());
+        System.out.println("Book Author: " + book.getAuthor());
+        System.out.println("Book Availability: " + book.getAvailability());
 
-        //create audiobook
+        // 2.2 Create audiobook
+        System.out.println("\n-- 2.2 AudioBook --");
         AudioBook audiobook = new AudioBook((short)2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
         AudioBook audiobook2 = new AudioBook((short)2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);System.out.println(audiobook.getSerialNumber());
-        System.out.println(audiobook.getAvailability());
-        System.out.println(audiobook.getAuthor());
+        System.out.println("AudioBook Name: " + audiobook.getTitle());
+        System.out.println("AudioBook Author: " + audiobook.getAuthor());
+        System.out.println("AudioBook Availability: " + audiobook.getAvailability());
 
-        //create entities.libraryitems.CD
+        // 2.3 Create CD
+        System.out.println("\n-- 2.3 CD --");
         CD cd = new CD((short)3, true, "na", "na", 112345678);
         CD cd2 = new CD((short)3, true, "na", "na", 112345678);
-        System.out.println(cd.getSerialNumber());
-        System.out.println(cd.getAvailability());
-        System.out.println(cd.getDueDate());
+        System.out.println("CD Serial Number: " + cd.getSerialNumber());
+        System.out.println("CD availability: " + cd.getAvailability());
+        System.out.println("CD Due Date: " + cd.getDueDate());
 
-        //3 add all previous items to inventory
-        System.out.println("\n\n--3 Add items to the inventory and print it--");
+        // 2.4 Add items to inventory and print it
+        System.out.println("\n-- 2.4 Inventory --");
         library.add(book);
         library.add(book2);
         library.add(audiobook);
@@ -47,55 +49,67 @@ public class Main {
         library.add(cd2);
         library.printInventory();
 
-        //4 Create Clients
-        System.out.println("\n\n--4 CLIENTS INFO AND FUNCTIONS TEST--");
+        // 3 Create Persons
+        System.out.println("\n\n--- 3 PERSON---\n");
+
+        //3.1 Create Client twice
+        System.out.println("\n-- 3.1 Clients --");
         Client client = new Client((short)5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
         Client client2 = new Client((short)5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
-        System.out.println(client.getPersonId());
-        System.out.println(client.getMemberNumber());
-        System.out.println(client.getName());
-        System.out.println(client.getLoanedBookList());
+        System.out.println("Client name: " + client.getName());
+        System.out.println("ID: " + client.getPersonId());
+        System.out.println("Membership Number: " + client.getMemberNumber());
+        System.out.println("Client Loaned Items:\n" + client.getLoanedBookList());
+
+        // Client loaned all items and try to loan an unavailable item
+        System.out.println("\n-- Client attempt to loan a book, audiobook, CD and the same book again --");
         client.loanBook(book);
         client.loanBook(cd);
         client.loanBook(audiobook);
         client.loanBook(book);
-        System.out.println();
-        for (LibraryItem item : client.getLoanedBookList()) {
-            System.out.println(item);
-        }
-        System.out.println("\n--5 Return entities.libraryitems.Book--");
-        //return book
-        client.returnBook(book);
-        client.returnBook(book);
-        System.out.println();
+        // Print loaned items by client
+        System.out.println("\n-- Print Loaned items by client --");
         for (LibraryItem item : client.getLoanedBookList()) {
             System.out.println(item);
         }
 
-        //6 create student
-        System.out.println("\n\n--6 Create STUDENT and see info--");
+        // Client return book
+        System.out.println("\n-- Client return book --");
+        client.returnBook(book);
+        client.returnBook(book);
+        // Print loaned items by client
+        System.out.println("\n-- Print Loaned items by client --");
+        for (LibraryItem item : client.getLoanedBookList()) {
+            System.out.println(item);
+        }
+
+        //3.2 create student
+        System.out.println("\n-- 3.2 Student --");
         Student student = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
-        System.out.println(student.getStudentCredentialNumber());
-        System.out.println(student.getPersonId());
-        System.out.println(student.getName());
+        System.out.println("Student Name: " + student.getName());
+        System.out.println("ID: " + student.getPersonId());
+        System.out.println("Membership Number: " + student.getMemberNumber());
+        System.out.println("Student Credential: " + student.getStudentCredentialNumber());
 
-        //7 Create professor
-        System.out.println("\n\n--7 Create PROFESSOR and see info--");
+        //3.3 Create professor
+        System.out.println("\n-- 3.3 Professor --");
         Professor professor = new Professor((short)7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
-        System.out.println(professor.getMemberNumber());
-        System.out.println(professor.getPersonId());
-        System.out.println(professor.getName());
+        System.out.println("Professor Name: " + professor.getName());
+        System.out.println("ID: " + professor.getPersonId());
+        System.out.println("Membership Number: " + professor.getMemberNumber());
+        System.out.println("Professor Credential: " + professor.getMemberNumber());
 
-        //8 Create employee
-        System.out.println("\n\n--8 Create EMPLOYEE and see info--");
+        //3.4 Create employee twice
+        System.out.println("\n-- 3.4 Employee --");
         Employee employee = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
         Employee employee2 = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
-        System.out.println(employee.getPosition());
-        System.out.println(employee.getPersonId());
-        System.out.println(employee.getName());
+        System.out.println("Employee Name: " + employee.getName());
+        System.out.println("ID: " + employee.getPersonId());
+        System.out.println("Employee position: " + employee.getPosition());
+        System.out.println("Employee salary: " + employee.getSalary());
 
-        // 9 Add persons to the directory and print it
-        System.out.println("\n\n--9 Add individuals to Directory and Print Directory--");
+        // 3.5 Add persons to Directory and print it
+        System.out.println("\n-- 3.5 Directory --");
         library.add(client);
         library.add(client2);
         library.add(student);

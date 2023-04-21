@@ -12,7 +12,7 @@ public class Employee extends Person {
 
     @Override
     public String toString(){
-        return "\nentities.people.Employee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
+        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
     }
 
     public void setPosition(String position) {

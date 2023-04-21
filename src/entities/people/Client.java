@@ -16,7 +16,7 @@ public class Client extends Person {
 
     @Override
     public String toString () {
-        return "\nentities.people.Client Name: " + super.getName() + "\nMember Number: " + this.memberNumber + "\n";
+        return "\nClient Name: " + super.getName() + "\nMembership Number: " + this.memberNumber + "\n";
     }
 
     public ArrayList<LibraryItem> getLoanedBookList() {
