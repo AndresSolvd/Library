@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-21T18:38:22.684Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="M4iNQQJ9FZl1o6Kvlhhg" version="21.2.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-21T19:05:34.799Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="eAdl53t4xmLEDWTLjzDM" version="21.2.1" type="github">
   <diagram name="Page-1" id="rwvauSxjsksC3MHOpXXF">
     <mxGraphModel dx="3387" dy="2004" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -9,7 +9,7 @@
             <mxRectangle x="-1300" y="300" width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="f9pxq-mh2o-4yZaZYgtD-2" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ name&amp;nbsp;&lt;br&gt;+ address&amp;nbsp;&lt;br&gt;+ weekDaysTimeOpen&amp;nbsp;&lt;br&gt;+ inventory (arraylist)&lt;br&gt;+ directory (arraylist)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="f9pxq-mh2o-4yZaZYgtD-1">
+        <mxCell id="f9pxq-mh2o-4yZaZYgtD-2" value="&lt;b&gt;FIELDS:&lt;br&gt;&lt;/b&gt;+ name (&lt;span style=&quot;background-color: rgb(255, 204, 204);&quot;&gt;final variable&lt;/span&gt;)&lt;br&gt;+ address (&lt;span style=&quot;background-color: rgb(255, 204, 204);&quot;&gt;final variable&lt;/span&gt;)&lt;br&gt;+ weekDaysTimeOpen&amp;nbsp;&lt;br&gt;+ inventory (arraylist)&lt;br&gt;+ directory (arraylist)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="f9pxq-mh2o-4yZaZYgtD-1">
           <mxGeometry y="26" width="192" height="104" as="geometry" />
         </mxCell>
         <mxCell id="f9pxq-mh2o-4yZaZYgtD-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="f9pxq-mh2o-4yZaZYgtD-1">
