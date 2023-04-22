@@ -1,17 +1,20 @@
 package entities.people;
+import interfaces.Counter;
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person implements Counter {
     protected short personId;
     protected String name;
     protected String phone;
     protected String email;
+    public static int activityCounter;
 
     public Person(short personId, String name, String phone, String email){
         this.personId = personId;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        activityCounter++;
     }
 
     @Override
@@ -25,6 +28,10 @@ public abstract class Person {
     @Override
     public int hashCode() {
         return Objects.hash(getPersonId(), getName(), getPhone(), getEmail());
+    }
+
+    public static void activity(){
+        System.out.println("Person activity count: " + Person.activityCounter);
     }
 
     public short getPersonId(){

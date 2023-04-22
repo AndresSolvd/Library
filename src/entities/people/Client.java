@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Client extends Person {
     private int memberNumber;
-    private static ArrayList<LibraryItem> loanedBooksList;
+    private ArrayList<LibraryItem> loanedBooksList;
 
     public Client(short id, String name, String phone, String email, int memberNumber) {
         super(id, name, phone, email);
-        this.loanedBooksList = new ArrayList<LibraryItem>();
+        this.loanedBooksList = new ArrayList<>();
         this.memberNumber = memberNumber;
     }
 
@@ -35,7 +35,7 @@ public class Client extends Person {
         if (libraryItem.getAvailability()){
             System.out.println("Item in already in the inventory");
         } else {
-            loanedBooksList.remove(libraryItem);;
+            loanedBooksList.remove(libraryItem);
             libraryItem.setAvailability(true);
             System.out.println("Item has been delivered.");
         }

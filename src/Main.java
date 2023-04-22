@@ -2,8 +2,11 @@ import entities.libraryitems.*;
 import entities.people.*;
 
 public class Main {
+    static{
+        System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
+    }
     public static void main(String[] args) {
-        System.out.println("\n\n\n----- BEGIN OF THE SCRIPT -----\n\n");
+        System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
         System.out.println("--- 1 LIBRARY ---\n");
@@ -83,23 +86,25 @@ public class Main {
             System.out.println(item);
         }
 
-        //3.2 create student
+        //3.2 create same student twice
         System.out.println("\n-- 3.2 Student --");
         Student student = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
+        Student student2 = new Student((short)6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
         System.out.println("Student Name: " + student.getName());
         System.out.println("ID: " + student.getPersonId());
         System.out.println("Membership Number: " + student.getMemberNumber());
         System.out.println("Student Credential: " + student.getStudentCredentialNumber());
 
-        //3.3 Create professor
+        //3.3 Create same professor twice
         System.out.println("\n-- 3.3 Professor --");
         Professor professor = new Professor((short)7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
+        Professor professor2 = new Professor((short)7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
         System.out.println("Professor Name: " + professor.getName());
         System.out.println("ID: " + professor.getPersonId());
         System.out.println("Membership Number: " + professor.getMemberNumber());
         System.out.println("Professor Credential: " + professor.getMemberNumber());
 
-        //3.4 Create employee twice
+        //3.4 Create same employee twice
         System.out.println("\n-- 3.4 Employee --");
         Employee employee = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
         Employee employee2 = new Employee((short)8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", 100000);
@@ -113,11 +118,18 @@ public class Main {
         library.add(client);
         library.add(client2);
         library.add(student);
+        library.add(student2);
         library.add(professor);
+        library.add(professor2);
         library.add(employee);
         library.add(employee2);
         library.printDirectory();
 
-        System.out.println("--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim -- 終わり ---");
+        // 4 Number of attempts to enter persons and items on respectively arrays
+        System.out.println("\n\n--- 4 ATTEMPTS COUNT ---\n");
+        LibraryItem.activity();
+        Person.activity();
+
+        System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim -- 終わり ---");
     }
 }

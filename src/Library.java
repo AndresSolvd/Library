@@ -4,12 +4,11 @@ import entities.people.Person;
 import java.util.ArrayList;
 
 public final class Library {
-    private String name = "Royal Library";
-    private String address = "Stormwind Keep, Stormwind city, Azeroth";
-
+    private final String name = "Royal Library";
+    private final String address = "Stormwind Keep, Stormwind city, Azeroth";
     private String weekDaysTimeOpen;
-    private static ArrayList<LibraryItem> inventory;
-    private static ArrayList<Person> directory;
+    private ArrayList<LibraryItem> inventory;
+    private ArrayList<Person> directory;
 
     public Library(String weekDaysTimeOpen){
         this.weekDaysTimeOpen = weekDaysTimeOpen;
