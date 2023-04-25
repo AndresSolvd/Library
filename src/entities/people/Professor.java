@@ -9,7 +9,7 @@ public class Professor extends Client {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "\nProfessor Name: " + super.getName() + "\nProfessor Credential: " + this.professorCredentialNumber + "\nMembership Number: " + super.getMemberNumber() + "\nContact Number: " + super.getPhone() + "\n";
     }
 

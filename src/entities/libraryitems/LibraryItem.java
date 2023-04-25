@@ -1,7 +1,6 @@
 package entities.libraryitems;
-import interfaces.Counter;
 
-public abstract class LibraryItem implements Counter {
+public abstract class LibraryItem {
     protected short itemId;
     protected boolean availability;
     protected String borrower;
@@ -16,40 +15,44 @@ public abstract class LibraryItem implements Counter {
         activityCounter++;
     }
 
-    // Print amount of Activity
-    public static void activity(){
-        System.out.println("Library activity count: " + LibraryItem.activityCounter);
+    // Print total attempts to create LibraryItems
+    public static void activity() {
+        System.out.println("Total attempts to create Library Items: " + LibraryItem.activityCounter);
     }
 
     //ID
-    public final short getItemId(){
+    public final short getItemId() {
         return itemId;
     }
-    public final void setItemId(short itemId){
+
+    public final void setItemId(short itemId) {
         this.itemId = itemId;
     }
 
     //AVAILABILITY
-    public final boolean getAvailability(){
+    public final boolean getAvailability() {
         return availability;
     }
-    public final void setAvailability(boolean availability){
+
+    public final void setAvailability(boolean availability) {
         this.availability = availability;
     }
 
     //BORROWER
-    public final String getBorrower(){
+    public final String getBorrower() {
         return borrower;
     }
-    public void setBorrower(String borrower){
+
+    public void setBorrower(String borrower) {
         this.borrower = borrower;
     }
 
     //DUEDATE
-    public final String getDueDate(){
+    public final String getDueDate() {
         return dueDate;
     }
-    public final void setDueDate(String dueDate){
+
+    public final void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 

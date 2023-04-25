@@ -1,11 +1,13 @@
 package entities.libraryitems;
-import interfaces.Device;
+
+import interfaces.ISerialNumber;
+
 import java.util.Objects;
 
-public class CD extends LibraryItem implements Device {
+public class CD extends LibraryItem implements ISerialNumber {
     private int serialNumber;
 
-    public CD(short itemId, boolean availability, String borrower, String dueDate, int serialNumber){
+    public CD(short itemId, boolean availability, String borrower, String dueDate, int serialNumber) {
         super(itemId, availability, borrower, dueDate);
         this.serialNumber = serialNumber;
     }
@@ -29,12 +31,12 @@ public class CD extends LibraryItem implements Device {
     }
 
     @Override
-    public int getSerialNumber(){
+    public int getSerialNumber() {
         return serialNumber;
     }
 
     @Override
-    public void setSerialNumber(int serialNumber){
+    public void setSerialNumber(int serialNumber) {
         this.serialNumber = serialNumber;
     }
 }

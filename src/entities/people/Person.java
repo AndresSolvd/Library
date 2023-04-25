@@ -1,15 +1,15 @@
 package entities.people;
-import interfaces.Counter;
+
 import java.util.Objects;
 
-public abstract class Person implements Counter {
+public abstract class Person {
     protected short personId;
     protected String name;
     protected String phone;
     protected String email;
     public static int activityCounter;
 
-    public Person(short personId, String name, String phone, String email){
+    public Person(short personId, String name, String phone, String email) {
         this.personId = personId;
         this.name = name;
         this.phone = phone;
@@ -30,11 +30,12 @@ public abstract class Person implements Counter {
         return Objects.hash(getPersonId(), getName(), getPhone(), getEmail());
     }
 
-    public static void activity(){
-        System.out.println("Person activity count: " + Person.activityCounter);
+    // Print total attempts to create Persons
+    public static void activity() {
+        System.out.println("Total attempts to create Persons: " + Person.activityCounter);
     }
 
-    public short getPersonId(){
+    public short getPersonId() {
         return personId;
     }
 
@@ -50,7 +51,7 @@ public abstract class Person implements Counter {
         return email;
     }
 
-    public void setPersonId(short personId){
+    public void setPersonId(short personId) {
         this.personId = personId;
     }
 

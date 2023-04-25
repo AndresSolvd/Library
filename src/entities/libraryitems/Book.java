@@ -1,4 +1,5 @@
 package entities.libraryitems;
+
 import java.util.Objects;
 
 public class Book extends LibraryItem {

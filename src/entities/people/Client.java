@@ -1,5 +1,7 @@
 package entities.people;
+
 import entities.libraryitems.LibraryItem;
+
 import java.util.ArrayList;
 
 public class Client extends Person {
@@ -13,7 +15,7 @@ public class Client extends Person {
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return "\nClient Name: " + super.getName() + "\nMembership Number: " + this.memberNumber + "\n";
     }
 
@@ -22,7 +24,7 @@ public class Client extends Person {
     }
 
     public void loanBook(LibraryItem libraryItem) {
-        if (libraryItem.getAvailability()){
+        if (libraryItem.getAvailability()) {
             loanedBooksList.add(libraryItem);
             libraryItem.setAvailability(false);
             System.out.println("Item has been loaned out.");
@@ -32,7 +34,7 @@ public class Client extends Person {
     }
 
     public void returnBook(LibraryItem libraryItem) {
-        if (libraryItem.getAvailability()){
+        if (libraryItem.getAvailability()) {
             System.out.println("Item in already in the inventory");
         } else {
             loanedBooksList.remove(libraryItem);

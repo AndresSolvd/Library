@@ -1,6 +1,7 @@
 package interfaces;
 
-public interface Device {
+public interface ISerialNumber {
     int getSerialNumber();
+
     void setSerialNumber(int serialNumber);
 }

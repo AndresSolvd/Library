@@ -4,27 +4,27 @@ import entities.people.Person;
 import java.util.ArrayList;
 
 public final class Library {
-    private final String name = "Royal Library";
-    private final String address = "Stormwind Keep, Stormwind city, Azeroth";
+    private final String LIBRARY_NAME = "Royal Library";
+    private final String ADDRESS = "Stormwind Keep, Stormwind city, Azeroth";
     private String weekDaysTimeOpen;
     private ArrayList<LibraryItem> inventory;
     private ArrayList<Person> directory;
 
-    public Library(String weekDaysTimeOpen){
+    public Library(String weekDaysTimeOpen) {
         this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new ArrayList<LibraryItem>();
         this.directory = new ArrayList<Person>();
     }
 
-    public String getName(){
-        return name;
+    public String getLIBRARY_NAME() {
+        return LIBRARY_NAME;
     }
 
-    public String getAddress(){
-        return address;
+    public String getADDRESS() {
+        return ADDRESS;
     }
 
-    public String getWeekDaysTimeOpen(){
+    public String getWeekDaysTimeOpen() {
         return weekDaysTimeOpen;
     }
 
@@ -33,29 +33,29 @@ public final class Library {
     }
 
     //Print Inventory
-    public void printInventory(){
+    public void printInventory() {
         for (LibraryItem item : inventory) {
             System.out.println(item);
         }
     }
 
     //Print Directory
-    public void printDirectory(){
+    public void printDirectory() {
         for (Person person : directory) {
             System.out.println(person);
         }
     }
 
     //Add Item
-    public void add(LibraryItem newItem){
+    public void add(LibraryItem newItem) {
         for (LibraryItem item : inventory) {
             if (item.equals(newItem)) {
                 System.out.println("This item already exists on the list");
                 return;
             }
         }
-            inventory.add(newItem);
-        }
+        inventory.add(newItem);
+    }
 
     //Add entities.people.Person
     public void add(Person newperson) {
