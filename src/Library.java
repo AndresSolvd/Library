@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public final class Library {
     private final String LIBRARY_NAME = "Royal Library";
-    private final String ADDRESS = "Stormwind Keep, Stormwind city, Azeroth";
+    private String address = "Stormwind Keep, Stormwind city, Azeroth";
     private String weekDaysTimeOpen;
     private ArrayList<LibraryItem> inventory;
     private ArrayList<Person> directory;
@@ -16,12 +16,16 @@ public final class Library {
         this.directory = new ArrayList<Person>();
     }
 
-    public String getLIBRARY_NAME() {
+    public String getlibraryName() {
         return LIBRARY_NAME;
     }
 
-    public String getADDRESS() {
-        return ADDRESS;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getWeekDaysTimeOpen() {
