@@ -1,8 +1,11 @@
 package entities.libraryitems;
 
+import interfaces.IAudio;
+import interfaces.ISerialNumber;
+
 import java.util.Objects;
 
-public class AudioBook extends Book {
+public class AudioBook extends Book implements ISerialNumber, IAudio {
     private int serialNumber;
 
     public AudioBook(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre, int serialNumber) {
@@ -28,11 +31,13 @@ public class AudioBook extends Book {
         return Objects.hash(getSerialNumber());
     }
 
-    public int getSerialNumber(){
+    @Override
+    public int getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(int serialNumber){
+    @Override
+    public void setSerialNumber(int serialNumber) {
         this.serialNumber = serialNumber;
     }
 }

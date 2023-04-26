@@ -1,13 +1,24 @@
 package entities.libraryitems;
 
+import interfaces.IRead;
+
 import java.util.Objects;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements IRead {
     public String title;
     public String author;
     public int year;
     public String publisher;
     public String genre;
+
+    public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
+        super(itemId, availability, borrower, dueDate);
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.publisher = publisher;
+        this.genre = genre;
+    }
 
     @Override
     public String toString() {
@@ -25,15 +36,6 @@ public class Book extends LibraryItem {
     @Override
     public int hashCode() {
         return Objects.hash(getTitle(), getAuthor(), getYear(), getPublisher(), getGenre());
-    }
-
-    public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
-        super(itemId, availability, borrower, dueDate);
-        this.title = title;
-        this.author = author;
-        this.year = year;
-        this.publisher = publisher;
-        this.genre = genre;
     }
 
     public String getTitle() {

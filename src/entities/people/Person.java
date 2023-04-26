@@ -7,12 +7,14 @@ public abstract class Person {
     protected String name;
     protected String phone;
     protected String email;
+    public static int activityCounter;
 
-    public Person(short personId, String name, String phone, String email){
+    public Person(short personId, String name, String phone, String email) {
         this.personId = personId;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        activityCounter++;
     }
 
     @Override
@@ -28,7 +30,12 @@ public abstract class Person {
         return Objects.hash(getPersonId(), getName(), getPhone(), getEmail());
     }
 
-    public short getPersonId(){
+    // Print total attempts to create Persons
+    public static void activity() {
+        System.out.println("Total attempts to create Persons: " + Person.activityCounter);
+    }
+
+    public short getPersonId() {
         return personId;
     }
 
@@ -44,7 +51,7 @@ public abstract class Person {
         return email;
     }
 
-    public void setPersonId(short personId){
+    public void setPersonId(short personId) {
         this.personId = personId;
     }
 
@@ -59,5 +66,4 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

@@ -1,41 +1,42 @@
 import entities.libraryitems.LibraryItem;
 import entities.people.Person;
+import interfaces.ILibrary;
 
 import java.util.ArrayList;
 
-public class Library {
-    private String name;
+public final class Library implements ILibrary {
+    private String libraryName;
     private String address;
     private String weekDaysTimeOpen;
-    private ArrayList<LibraryItem> itemsList;
-    private ArrayList<Person> directory;
+    private final ArrayList<LibraryItem> inventory;
+    private final ArrayList<Person> directory;
 
-    public Library(String name, String address, String weekDaysTimeOpen){
-        this.name = name;
+    public Library(String libraryName, String address, String weekDaysTimeOpen) {
+        this.libraryName = libraryName;
         this.address = address;
         this.weekDaysTimeOpen = weekDaysTimeOpen;
-        this.itemsList = new ArrayList<LibraryItem>();
+        this.inventory = new ArrayList<LibraryItem>();
         this.directory = new ArrayList<Person>();
     }
 
-    public String getName(){
-        return name;
+    public String getLibraryName() {
+        return libraryName;
     }
 
-    public String getAddress(){
+    public void setLibraryName(String libraryName) {
+        this.libraryName = libraryName;
+    }
+
+    public String getAddress() {
         return address;
     }
 
-    public String getWeekDaysTimeOpen(){
-        return weekDaysTimeOpen;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setAddress(String address){
+    public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getWeekDaysTimeOpen() {
+        return weekDaysTimeOpen;
     }
 
     public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
@@ -43,29 +44,29 @@ public class Library {
     }
 
     //Print Inventory
-    public void printInventory(){
-        for (LibraryItem item : itemsList) {
+    public void printInventory() {
+        for (LibraryItem item : inventory) {
             System.out.println(item);
         }
     }
 
     //Print Directory
-    public void printDirectory(){
+    public void printDirectory() {
         for (Person person : directory) {
             System.out.println(person);
         }
     }
 
     //Add Item
-    public void add(LibraryItem newItem){
-        for (LibraryItem item : itemsList) {
+    public void add(LibraryItem newItem) {
+        for (LibraryItem item : inventory) {
             if (item.equals(newItem)) {
                 System.out.println("This item already exists on the list");
                 return;
             }
         }
-            itemsList.add(newItem);
-        }
+        inventory.add(newItem);
+    }
 
     //Add entities.people.Person
     public void add(Person newperson) {

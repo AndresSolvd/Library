@@ -5,42 +5,54 @@ public abstract class LibraryItem {
     protected boolean availability;
     protected String borrower;
     protected String dueDate;
+    public static int activityCounter;
 
     public LibraryItem(short itemId, boolean availability, String borrower, String dueDate) {
         this.itemId = itemId;
         this.availability = availability;
         this.borrower = borrower;
         this.dueDate = dueDate;
+        activityCounter++;
     }
+
+    // Print total attempts to create LibraryItems
+    public static void activity() {
+        System.out.println("Total attempts to create Library Items: " + LibraryItem.activityCounter);
+    }
+
     //ID
-    public short getItemId(){
+    public final short getItemId() {
         return itemId;
     }
-    public void setItemId(short itemId){
+
+    public final void setItemId(short itemId) {
         this.itemId = itemId;
     }
 
     //AVAILABILITY
-    public boolean getAvailability(){
+    public final boolean getAvailability() {
         return availability;
     }
-    public void setAvailability(boolean availability){
+
+    public final void setAvailability(boolean availability) {
         this.availability = availability;
     }
 
     //BORROWER
-    public String getBorrower(){
+    public final String getBorrower() {
         return borrower;
     }
-    public void setBorrower(String borrower){
+
+    public void setBorrower(String borrower) {
         this.borrower = borrower;
     }
 
     //DUEDATE
-    public String getDueDate(){
+    public final String getDueDate() {
         return dueDate;
     }
-    public void setDueDate(String dueDate){
+
+    public final void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 

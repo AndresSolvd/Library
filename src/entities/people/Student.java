@@ -9,8 +9,8 @@ public class Student extends Client {
     }
 
     @Override
-    public String toString(){
-        return "\nStudent Name: " + super.getName() + "\nStudent Credential: " + this.studentCredentialNumber + "\nMembership Number: " + super.getMemberNumber() + "\nContact number: " + super. getPhone() + "\n";
+    public String toString() {
+        return "\nStudent Name: " + super.getName() + "\nStudent Credential: " + this.studentCredentialNumber + "\nMembership Number: " + super.getMemberNumber() + "\nContact number: " + super.getPhone() + "\n";
     }
 
     public int getStudentCredentialNumber() {

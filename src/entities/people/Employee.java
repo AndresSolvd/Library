@@ -1,17 +1,19 @@
 package entities.people;
 
-public class Employee extends Person {
+import interfaces.IWork;
+
+public class Employee extends Person implements IWork {
     private String position;
     private double salary;
 
-    public Employee(short personId, String name, String phone, String email, String position, double salary){
+    public Employee(short personId, String name, String phone, String email, String position, double salary) {
         super(personId, name, phone, email);
         this.position = position;
         this.salary = salary;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
     }
 
