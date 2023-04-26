@@ -1,6 +1,8 @@
 package entities.people;
 
-public class Employee extends Person {
+import interfaces.IWork;
+
+public class Employee extends Person implements IWork {
     private String position;
     private double salary;
 

@@ -1,8 +1,10 @@
 package entities.libraryitems;
 
+import interfaces.IRead;
+
 import java.util.Objects;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements IRead {
     public String title;
     public String author;
     public int year;

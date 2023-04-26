@@ -1,23 +1,30 @@
 import entities.libraryitems.LibraryItem;
 import entities.people.Person;
+import interfaces.ILibrary;
 
 import java.util.ArrayList;
 
-public final class Library {
-    private final String LIBRARY_NAME = "Royal Library";
-    private String address = "Stormwind Keep, Stormwind city, Azeroth";
+public final class Library implements ILibrary {
+    private String libraryName;
+    private String address;
     private String weekDaysTimeOpen;
-    private ArrayList<LibraryItem> inventory;
-    private ArrayList<Person> directory;
+    private final ArrayList<LibraryItem> inventory;
+    private final ArrayList<Person> directory;
 
-    public Library(String weekDaysTimeOpen) {
+    public Library(String libraryName, String address, String weekDaysTimeOpen) {
+        this.libraryName = libraryName;
+        this.address = address;
         this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new ArrayList<LibraryItem>();
         this.directory = new ArrayList<Person>();
     }
 
-    public String getlibraryName() {
-        return LIBRARY_NAME;
+    public String getLibraryName() {
+        return libraryName;
+    }
+
+    public void setLibraryName(String libraryName) {
+        this.libraryName = libraryName;
     }
 
     public String getAddress() {

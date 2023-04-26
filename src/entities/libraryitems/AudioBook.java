@@ -1,10 +1,11 @@
 package entities.libraryitems;
 
+import interfaces.IAudio;
 import interfaces.ISerialNumber;
 
 import java.util.Objects;
 
-public class AudioBook extends Book implements ISerialNumber {
+public class AudioBook extends Book implements ISerialNumber, IAudio {
     private int serialNumber;
 
     public AudioBook(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre, int serialNumber) {
