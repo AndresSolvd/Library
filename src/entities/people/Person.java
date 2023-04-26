@@ -1,5 +1,7 @@
 package entities.people;
 
+import exceptions.IdRangeException;
+
 import java.util.Objects;
 
 public abstract class Person {
@@ -10,7 +12,16 @@ public abstract class Person {
     public static int activityCounter;
 
     public Person(short personId, String name, String phone, String email) {
-        this.personId = personId;
+        // Check valid id number
+        try {
+            if (personId < 0 | personId > 32767) {
+                throw new IdRangeException("personId invalid value (values accepted: integers between 0 and 32,767)");
+            } else {
+                this.personId = personId;
+            }
+        } catch (IdRangeException e) {
+            System.out.println(e.getMessage());
+        }
         this.name = name;
         this.phone = phone;
         this.email = email;

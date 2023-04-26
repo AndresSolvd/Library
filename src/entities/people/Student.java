@@ -1,11 +1,21 @@
 package entities.people;
 
+import exceptions.YearRangeException;
+
 public class Student extends Client {
     private int studentCredentialNumber;
 
     public Student(short personId, String name, String phone, String email, int memberNumber, int studentCredentialNumber) {
         super(personId, name, phone, email, memberNumber);
-        this.studentCredentialNumber = studentCredentialNumber;
+        try {
+            if (studentCredentialNumber <= 0 | studentCredentialNumber > 2147483647) {
+                throw new YearRangeException("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+            } else {
+                this.studentCredentialNumber = studentCredentialNumber;
+            }
+        } catch (YearRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

@@ -16,7 +16,16 @@ public class Book extends LibraryItem implements IRead {
         super(itemId, availability, borrower, dueDate);
         this.title = title;
         this.author = author;
-        this.year = year;
+        // Check valid year
+        try {
+            if (year <= 0 | year > 2023) {
+                throw new YearRangeException("year invalid value(values accepted: integers between 1 and 2023)");
+            } else {
+                this.year = year;
+            }
+        } catch (YearRangeException e){
+            System.out.println(e.getMessage());
+        }
         this.publisher = publisher;
         this.genre = genre;
     }

@@ -30,7 +30,7 @@ public class Main {
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
         Book book = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
-        Book book2 = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
+        Book book2 = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
@@ -162,6 +162,16 @@ public class Main {
         System.out.println("\n\n--- 5 ATTEMPTS COUNT ---\n");
         LibraryItem.activity();
         Person.activity();
+
+        // 6 test exception handler
+        System.out.println("\n\n--- 6 EXCEPTIONS ---\n");
+        Book book4 = new Book((short) -1, true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
+        Book book5 = new Book((short) 40000, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
+        Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
+        Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432", "fvargas@email.com", -35, -32);
+        Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);
+        Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", -40);
+
 
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
     }
