@@ -1,5 +1,7 @@
 package entities.libraryitems;
 
+import exceptions.BooleanException;
+
 public abstract class LibraryItem {
     protected short itemId;
     protected boolean availability;

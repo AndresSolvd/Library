@@ -1,5 +1,6 @@
 package entities.libraryitems;
 
+import exceptions.YearRangeException;
 import interfaces.IAudio;
 import interfaces.ISerialNumber;
 

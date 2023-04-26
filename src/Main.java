@@ -1,5 +1,6 @@
 import entities.libraryitems.*;
 import entities.people.*;
+import exceptions.YearRangeException;
 
 public class Main {
     static {
@@ -29,7 +30,7 @@ public class Main {
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
         Book book = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
-        Book book2 = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
+        Book book2 = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
