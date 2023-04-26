@@ -1,12 +1,14 @@
 import entities.libraryitems.*;
 import entities.people.*;
-import exceptions.YearRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
     static {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
     }
 
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
