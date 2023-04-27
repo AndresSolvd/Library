@@ -10,10 +10,9 @@ public class Main {
     static {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
     }
-
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static String AskUserToSeeInventory() {
+    public static String askUserToSeeInventory() {
         //validate answer
         String answer;
         try {
@@ -27,7 +26,7 @@ public class Main {
             }
         } catch (IdRangeException e) {
             System.out.println("Invalid option: type \"yes\" or \"no\"");
-            return AskUserToSeeInventory();
+            return askUserToSeeInventory();
         }
     }
 
@@ -203,7 +202,7 @@ public class Main {
         client3.setMemberNumber(-35234);
         employee3.setSalary(-234.23);
 
-        if (AskUserToSeeInventory().equals("yes")) {
+        if (askUserToSeeInventory().equals("yes")) {
             library.printInventory();
         } else {
             System.out.println("This is the end, my only friend, the end");
