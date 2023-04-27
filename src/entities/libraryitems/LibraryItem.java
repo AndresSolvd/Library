@@ -11,16 +11,7 @@ public abstract class LibraryItem {
     public static int activityCounter;
 
     public LibraryItem(short itemId, boolean availability, String borrower, String dueDate) {
-        // Check valid id number
-        try {
-            if (itemId < 0 | itemId > 32767) {
-                throw new IdRangeException("itemId invalid value (values accepted: integers between 0 and 32,767)");
-            } else {
-                this.itemId = itemId;
-            }
-        } catch (IdRangeException e) {
-            System.out.println(e.getMessage());
-        }
+        this.itemId = itemId;
         this.availability = availability;
         this.borrower = borrower;
         this.dueDate = dueDate;

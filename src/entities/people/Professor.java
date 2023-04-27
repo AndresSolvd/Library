@@ -8,16 +8,7 @@ public class Professor extends Client {
 
     public Professor(short id, String name, String phone, String email, int memberNumber, int professorCredentialNumber) {
         super(id, name, phone, email, memberNumber);
-        //validate professorCredentialNumber
-        try {
-            if (professorCredentialNumber <= 0 | professorCredentialNumber > 2147483647) {
-                throw new MemberAndCredentialRangeException("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
-            } else {
-                this.professorCredentialNumber = professorCredentialNumber;
-            }
-        } catch (MemberAndCredentialRangeException e) {
-            System.out.println(e.getMessage());
-        }
+        this.professorCredentialNumber = professorCredentialNumber;
     }
 
     @Override
