@@ -2,6 +2,7 @@ import entities.libraryitems.*;
 import entities.people.*;
 import exceptions.BooleanException;
 import exceptions.IdRangeException;
+import exceptions.YearRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,6 +12,7 @@ public class Main {
     static {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
     }
+
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void askItemAvailability(LibraryItem item) throws BooleanException {
@@ -217,15 +219,29 @@ public class Main {
         client3.setMemberNumber(-35234);
         employee3.setSalary(-234.23);
 
+        // set book year 2045
+        try {
+            book.setYear(2000);
+        } catch (YearRangeException e){
+            System.out.println(e.getMessage());
+        }
+        // set book year -1000
+        try {
+            book.setYear(-1000);
+        } catch (YearRangeException e){
+            System.out.println(e.getMessage());
+        }
+
+        // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
         try {
             askItemAvailability(book);
         } catch (BooleanException e) {
             System.out.println("Invalid option: type \"yes\" or \"no\"");
         }
-
-
         System.out.println("current book Availability: " + book.getAvailability());
+
+        // Prompt user option to query current Inventory
         if (askUserToSeeInventory().equals("yes")) {
             library.printInventory();
         } else {

@@ -1,10 +1,7 @@
 package entities.people;
 
 import exceptions.SalaryRangeException;
-import exceptions.YearRangeException;
 import interfaces.IWork;
-
-import java.util.ArrayList;
 
 public class Employee extends Person implements IWork {
     private String position;

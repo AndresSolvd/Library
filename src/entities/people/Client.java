@@ -2,7 +2,6 @@ package entities.people;
 
 import entities.libraryitems.LibraryItem;
 import exceptions.MemberAndCredentialRangeException;
-import exceptions.YearRangeException;
 
 import java.util.ArrayList;
 

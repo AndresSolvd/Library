@@ -1,6 +1,5 @@
 package entities.libraryitems;
 
-import exceptions.BooleanException;
 import exceptions.IdRangeException;
 
 public abstract class LibraryItem {

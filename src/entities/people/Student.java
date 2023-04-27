@@ -1,7 +1,6 @@
 package entities.people;
 
 import exceptions.MemberAndCredentialRangeException;
-import exceptions.YearRangeException;
 
 public class Student extends Client {
     private int studentCredentialNumber;
