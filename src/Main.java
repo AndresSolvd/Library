@@ -1,5 +1,6 @@
 import entities.libraryitems.*;
 import entities.people.*;
+import exceptions.BooleanException;
 import exceptions.IdRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +12,20 @@ public class Main {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
     }
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
+    public static void askItemAvailability(LibraryItem item) throws BooleanException {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Is Book available? (yes/no):");
+        String answer = scan.next();
+        if (answer.equals("yes")) {
+            item.setAvailability(true);
+        } else if (answer.equals("no")) {
+            item.setAvailability(false);
+        } else {
+            askItemAvailability(item);
+            throw new BooleanException("Invalid value (valid values: \'yes\" or \"no\")");
+        }
+    }
 
     public static String askUserToSeeInventory() {
         //validate answer
@@ -202,6 +217,15 @@ public class Main {
         client3.setMemberNumber(-35234);
         employee3.setSalary(-234.23);
 
+        System.out.println("current book Availability: " + book.getAvailability());
+        try {
+            askItemAvailability(book);
+        } catch (BooleanException e) {
+            System.out.println("Invalid option: type \"yes\" or \"no\"");
+        }
+
+
+        System.out.println("current book Availability: " + book.getAvailability());
         if (askUserToSeeInventory().equals("yes")) {
             library.printInventory();
         } else {
