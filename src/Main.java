@@ -181,7 +181,6 @@ public class Main {
         client3.setMemberNumber(-35234);
         employee3.setSalary(-234.23);
 
-
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
     }
 }
