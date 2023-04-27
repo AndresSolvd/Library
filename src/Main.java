@@ -174,6 +174,13 @@ public class Main {
         Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);
         Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", -40);
 
+        client3.setPersonId((short)-4);
+        book4.setItemId((short)-98);
+        professor3.setProfessorCredentialNumber(-3242);
+        student3.setStudentCredentialNumber(-32432);
+        client3.setMemberNumber(-35234);
+        employee3.setSalary(-234.23);
+
 
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
     }

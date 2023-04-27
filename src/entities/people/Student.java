@@ -1,5 +1,6 @@
 package entities.people;
 
+import exceptions.MemberAndCredentialRangeException;
 import exceptions.YearRangeException;
 
 public class Student extends Client {
@@ -7,13 +8,14 @@ public class Student extends Client {
 
     public Student(short personId, String name, String phone, String email, int memberNumber, int studentCredentialNumber) {
         super(personId, name, phone, email, memberNumber);
+        //validate studentCredentialNumber
         try {
             if (studentCredentialNumber <= 0 | studentCredentialNumber > 2147483647) {
-                throw new YearRangeException("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
             } else {
                 this.studentCredentialNumber = studentCredentialNumber;
             }
-        } catch (YearRangeException e) {
+        } catch (MemberAndCredentialRangeException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -28,6 +30,15 @@ public class Student extends Client {
     }
 
     public void setStudentCredentialNumber(int studentCredentialNumber) {
-        this.studentCredentialNumber = studentCredentialNumber;
+        //validate studentCredentialNumber
+        try {
+            if (studentCredentialNumber <= 0 | studentCredentialNumber > 2147483647) {
+                throw new MemberAndCredentialRangeException("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+            } else {
+                this.studentCredentialNumber = studentCredentialNumber;
+            }
+        } catch (MemberAndCredentialRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

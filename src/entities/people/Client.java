@@ -1,6 +1,7 @@
 package entities.people;
 
 import entities.libraryitems.LibraryItem;
+import exceptions.MemberAndCredentialRangeException;
 import exceptions.YearRangeException;
 
 import java.util.ArrayList;
@@ -14,11 +15,11 @@ public class Client extends Person {
         //validate memberNumber
         try {
             if (memberNumber <= 0 | memberNumber > 2147483647) {
-                throw new YearRangeException("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
             } else {
                 this.memberNumber = memberNumber;
             }
-        } catch (YearRangeException e) {
+        } catch (MemberAndCredentialRangeException e) {
             System.out.println(e.getMessage());
         }
         this.loanedBooksList = new ArrayList<>();
@@ -58,6 +59,15 @@ public class Client extends Person {
     }
 
     public void setMemberNumber(int memberNumber) {
-        this.memberNumber = memberNumber;
+        //validate memberNumber
+        try {
+            if (memberNumber <= 0 | memberNumber > 2147483647) {
+                throw new MemberAndCredentialRangeException("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
+            } else {
+                this.memberNumber = memberNumber;
+            }
+        } catch (MemberAndCredentialRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
