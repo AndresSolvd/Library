@@ -7,11 +7,11 @@ public interface ILibrary {
 
     void setAddress(String address);
 
+    String getAddress();
+
     void setWeekDaysTimeOpen(String weekDaysTimeOpen);
 
     String getWeekDaysTimeOpen();
-
-    String getAddress();
 
     void printInventory();
 

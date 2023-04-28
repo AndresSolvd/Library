@@ -1,5 +1,7 @@
 package entities.libraryitems;
 
+import exceptions.IdRangeException;
+
 public abstract class LibraryItem {
     protected short itemId;
     protected boolean availability;
@@ -26,7 +28,16 @@ public abstract class LibraryItem {
     }
 
     public final void setItemId(short itemId) {
-        this.itemId = itemId;
+        // Check valid id number
+        try {
+            if (itemId < 0 | itemId > 32767) {
+                throw new IdRangeException("itemId invalid value (values accepted: integers between 0 and 32,767)");
+            } else {
+                this.itemId = itemId;
+            }
+        } catch (IdRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     //AVAILABILITY

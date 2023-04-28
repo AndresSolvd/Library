@@ -1,9 +1,50 @@
 import entities.libraryitems.*;
 import entities.people.*;
+import exceptions.BooleanException;
+import exceptions.IdRangeException;
+import exceptions.YearRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Scanner;
 
 public class Main {
     static {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
+    }
+
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
+    public static void askItemAvailability(LibraryItem item) throws BooleanException {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Is Book available? (yes/no):");
+        String answer = scan.next();
+        if (answer.equals("yes")) {
+            item.setAvailability(true);
+        } else if (answer.equals("no")) {
+            item.setAvailability(false);
+        } else {
+            askItemAvailability(item);
+            throw new BooleanException("Invalid value (valid values: \'yes\" or \"no\")");
+        }
+    }
+
+    public static String askUserToSeeInventory() {
+        //validate answer
+        String answer;
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Would you like to see the current Inventory?");
+            answer = scan.next();
+            if (answer.equals("yes") || answer.equals("no")) {
+                return answer;
+            } else {
+                throw new IdRangeException("Invalid option");
+            }
+        } catch (IdRangeException e) {
+            System.out.println("Invalid option: type \"yes\" or \"no\"");
+            return askUserToSeeInventory();
+        }
     }
 
     public static void main(String[] args) {
@@ -156,11 +197,57 @@ public class Main {
         System.out.println("\n" + client.getName() + book.read() + book.title);
         System.out.println("\n" + employee.getName() + cd3.read() + cd3.getName());
 
-
         // 5 Number of attempts to enter persons and items on respectively arrays
         System.out.println("\n\n--- 5 ATTEMPTS COUNT ---\n");
         LibraryItem.activity();
         Person.activity();
+
+        // 6 test exception handler
+        System.out.println("\n\n--- 6 EXCEPTIONS ---\n");
+        Book book4 = new Book((short) -1, true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
+        Book book5 = new Book((short) 40000, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
+        Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
+        Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432", "fvargas@email.com", -35, -32);
+        Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);
+        Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", "PrinceOfTheLibrary", -40);
+
+        client3.setPersonId((short) -4);
+        book4.setItemId((short) -98);
+        professor3.setProfessorCredentialNumber(-3242);
+        student3.setStudentCredentialNumber(-32432);
+        client3.setMemberNumber(-35234);
+        employee3.setSalary(-234.23);
+
+        // set book year 2045
+        try {
+            book.setYear(2000);
+        } catch (YearRangeException e) {
+            System.out.println(e.getMessage());
+        }
+        // set book year -1000
+        try {
+            book.setYear(-1000);
+        } catch (YearRangeException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Prompt user to update availability of book
+        System.out.println("current book Availability: " + book.getAvailability());
+
+        try {
+            askItemAvailability(book);
+        } catch (BooleanException e) {
+            System.out.println("Invalid option: type \"yes\" or \"no\"");
+        }
+
+        System.out.println("current book Availability: " + book.getAvailability());
+
+        // Prompt user option to query current Inventory
+        if (askUserToSeeInventory().equals("yes")) {
+            library.printInventory();
+        } else {
+            System.out.println("This is the end, my only friend, the end");
+        }
 
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
     }

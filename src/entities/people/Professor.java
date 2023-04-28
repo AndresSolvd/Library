@@ -1,5 +1,7 @@
 package entities.people;
 
+import exceptions.MemberAndCredentialRangeException;
+
 public class Professor extends Client {
     private int professorCredentialNumber;
 
@@ -18,6 +20,15 @@ public class Professor extends Client {
     }
 
     public void setProfessorCredentialNumber(int professorCredentialNumber) {
-        this.professorCredentialNumber = professorCredentialNumber;
+        //validate professorCredentialNumber
+        try {
+            if (professorCredentialNumber <= 0 | professorCredentialNumber > 2147483647) {
+                throw new MemberAndCredentialRangeException("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+            } else {
+                this.professorCredentialNumber = professorCredentialNumber;
+            }
+        } catch (MemberAndCredentialRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
