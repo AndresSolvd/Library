@@ -5,7 +5,6 @@ import interfaces.ISerialNumber;
 
 import java.util.Objects;
 
-
 public class AudioBook extends Book implements ISerialNumber, IAudio {
     private int serialNumber;
 

@@ -1,6 +1,5 @@
 package entities.libraryitems;
 
-import exceptions.BooleanException;
 import exceptions.YearRangeException;
 import interfaces.IRead;
 
@@ -51,9 +50,10 @@ public class Book extends LibraryItem implements IRead {
     public int getYear() {
         return year;
     }
+
     public void setYear(int year) throws YearRangeException {
-        if (year <=0 | year > 2023) {
-         throw new YearRangeException("Invalid input (value accepted: between 1 and 2023)");
+        if (year <= 0 | year > 2023) {
+            throw new YearRangeException("Invalid input (value accepted: between 1 and 2023)");
         } else {
             this.year = year;
         }

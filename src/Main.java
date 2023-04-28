@@ -197,7 +197,6 @@ public class Main {
         System.out.println("\n" + client.getName() + book.read() + book.title);
         System.out.println("\n" + employee.getName() + cd3.read() + cd3.getName());
 
-
         // 5 Number of attempts to enter persons and items on respectively arrays
         System.out.println("\n\n--- 5 ATTEMPTS COUNT ---\n");
         LibraryItem.activity();
@@ -222,23 +221,25 @@ public class Main {
         // set book year 2045
         try {
             book.setYear(2000);
-        } catch (YearRangeException e){
+        } catch (YearRangeException e) {
             System.out.println(e.getMessage());
         }
         // set book year -1000
         try {
             book.setYear(-1000);
-        } catch (YearRangeException e){
+        } catch (YearRangeException e) {
             System.out.println(e.getMessage());
         }
 
         // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
+
         try {
             askItemAvailability(book);
         } catch (BooleanException e) {
             System.out.println("Invalid option: type \"yes\" or \"no\"");
         }
+
         System.out.println("current book Availability: " + book.getAvailability());
 
         // Prompt user option to query current Inventory

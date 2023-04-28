@@ -1,6 +1,7 @@
 package entities.people;
 
 import exceptions.IdRangeException;
+
 import java.util.Objects;
 
 public abstract class Person {

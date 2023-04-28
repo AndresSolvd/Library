@@ -13,7 +13,6 @@ public interface ILibrary {
 
     String getWeekDaysTimeOpen();
 
-
     void printInventory();
 
     void printDirectory();
