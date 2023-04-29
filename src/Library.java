@@ -8,15 +8,15 @@ public final class Library implements ILibrary {
     private String libraryName;
     private String address;
     private String weekDaysTimeOpen;
-    private final ArrayList<LibraryItem> inventory;
-    private final ArrayList<Person> directory;
+    private final MyLinkedList<LibraryItem> inventory;
+    private final MyLinkedList<Person> directory;
 
     public Library(String libraryName, String address, String weekDaysTimeOpen) {
         this.libraryName = libraryName;
         this.address = address;
         this.weekDaysTimeOpen = weekDaysTimeOpen;
-        this.inventory = new ArrayList<LibraryItem>();
-        this.directory = new ArrayList<Person>();
+        this.inventory = new MyLinkedList<LibraryItem>();
+        this.directory = new MyLinkedList<Person>();
     }
 
     public String getLibraryName() {
@@ -45,37 +45,29 @@ public final class Library implements ILibrary {
 
     //Print Inventory
     public void printInventory() {
-        for (LibraryItem item : inventory) {
-            System.out.println(item);
-        }
+        inventory.showAll();
     }
 
     //Print Directory
     public void printDirectory() {
-        for (Person person : directory) {
-            System.out.println(person);
-        }
+        directory.showAll();
     }
 
-    //Add Item
+    //Add Item to Inventory
     public void add(LibraryItem newItem) {
-        for (LibraryItem item : inventory) {
-            if (item.equals(newItem)) {
-                System.out.println("This item already exists on the list");
-                return;
-            }
+        if (!inventory.search(newItem)) {
+            inventory.add(newItem);
+        } else {
+            System.out.println("This item already exists on the list");
         }
-        inventory.add(newItem);
     }
 
-    //Add entities.people.Person
+    //Add Person to directory
     public void add(Person newperson) {
-        for (Person person : directory) {
-            if (person.equals(newperson)) {
-                System.out.println("This person already exists on the directory.");
-                return;
-            }
+        if (!directory.search(newperson)) {
+            directory.add(newperson);
+        } else {
+            System.out.println("This person already exists on the directory.");
         }
-        directory.add(newperson);
     }
 }
