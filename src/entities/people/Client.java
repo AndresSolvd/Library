@@ -1,13 +1,17 @@
 package entities.people;
 
+import entities.Library;
 import entities.libraryitems.LibraryItem;
 import exceptions.MemberAndCredentialRangeException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Client extends Person {
     private int memberNumber;
     private final ArrayList<LibraryItem> loanedBooksList;
+    public Map<String, Short> map = new HashMap<>();
 
     public Client(short id, String name, String phone, String email, int memberNumber) {
         super(id, name, phone, email);
@@ -28,6 +32,8 @@ public class Client extends Person {
         if (libraryItem.getAvailability()) {
             loanedBooksList.add(libraryItem);
             libraryItem.setAvailability(false);
+            libraryItem.setBorrower(name + " id: " + personId);
+            Library.BorrowersAndLoanedItems.addPair(libraryItem.getItemId(), getName());
             System.out.println("Item has been loaned out.");
         } else {
             System.out.println("Item is not available for loan.");
@@ -36,10 +42,12 @@ public class Client extends Person {
 
     public void returnBook(LibraryItem libraryItem) {
         if (libraryItem.getAvailability()) {
-            System.out.println("Item in already in the inventory");
+            System.out.println("Item is already in the inventory");
         } else {
             loanedBooksList.remove(libraryItem);
             libraryItem.setAvailability(true);
+            libraryItem.setBorrower("na");
+            Library.BorrowersAndLoanedItems.removePair(libraryItem.getItemId());
             System.out.println("Item has been delivered.");
         }
     }

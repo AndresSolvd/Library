@@ -1,3 +1,4 @@
+import entities.Library;
 import entities.libraryitems.*;
 import entities.people.*;
 import exceptions.BooleanException;
@@ -188,14 +189,14 @@ public class Main {
 
         //Use IAudio interface
         System.out.println("\n-- 4.2 IAudio, listening actions --");
-        System.out.println("\n" + client.getName() + audiobook.listen() + audiobook.title);
-        System.out.println("\n" + student.getName() + cd.listen() + cd.getName());
-        System.out.println("\n" + professor.getName() + cd.listen() + cd3.getName());
+        System.out.println(client.getName() + audiobook.listen() + audiobook.title);
+        System.out.println(student.getName() + cd.listen() + cd.getName());
+        System.out.println(professor.getName() + cd.listen() + cd3.getName());
 
         //Use IRead interface
         System.out.println("\n-- 4.2 IRead, reading actions --");
-        System.out.println("\n" + client.getName() + book.read() + book.title);
-        System.out.println("\n" + employee.getName() + cd3.read() + cd3.getName());
+        System.out.println(client.getName() + book.read() + book.title);
+        System.out.println(employee.getName() + cd3.read() + cd3.getName());
 
         // 5 Number of attempts to enter persons and items on respectively arrays
         System.out.println("\n\n--- 5 ATTEMPTS COUNT ---\n");
@@ -220,7 +221,7 @@ public class Main {
 
         // set book year 2045
         try {
-            book.setYear(2000);
+            book.setYear(2045);
         } catch (YearRangeException e) {
             System.out.println(e.getMessage());
         }
@@ -250,5 +251,15 @@ public class Main {
         }
 
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
+
+        professor.returnBook(book);
+        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+
+        professor.loanBook(book);
+        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+
+
+
+
     }
 }
