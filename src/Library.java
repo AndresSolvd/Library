@@ -2,21 +2,21 @@ import entities.libraryitems.LibraryItem;
 import entities.people.Person;
 import interfaces.ILibrary;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public final class Library implements ILibrary {
     private String libraryName;
     private String address;
     private String weekDaysTimeOpen;
     private final MyLinkedList<LibraryItem> inventory;
-    private final MyLinkedList<Person> directory;
+    private final HashSet<Person> directory;
 
     public Library(String libraryName, String address, String weekDaysTimeOpen) {
         this.libraryName = libraryName;
         this.address = address;
         this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new MyLinkedList<LibraryItem>();
-        this.directory = new MyLinkedList<Person>();
+        this.directory = new HashSet<Person>();
     }
 
     public String getLibraryName() {
@@ -50,7 +50,9 @@ public final class Library implements ILibrary {
 
     //Print Directory
     public void printDirectory() {
-        directory.showAll();
+        for (Person person : directory) {
+            System.out.println(person);
+        }
     }
 
     //Add Item to Inventory
@@ -64,7 +66,7 @@ public final class Library implements ILibrary {
 
     //Add Person to directory
     public void add(Person newperson) {
-        if (!directory.search(newperson)) {
+        if (!directory.contains(newperson)) {
             directory.add(newperson);
         } else {
             System.out.println("This person already exists on the directory.");
