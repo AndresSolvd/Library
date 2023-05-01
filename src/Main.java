@@ -203,7 +203,14 @@ public class Main {
         LibraryItem.activity();
         Person.activity();
 
-        // 6 test exception handler
+        // 6 Interfaces test
+        professor.returnBook(book);
+        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+
+        professor.loanBook(book);
+        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+
+        // 7 test exception handler
         System.out.println("\n\n--- 6 EXCEPTIONS ---\n");
         Book book4 = new Book((short) -1, true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
         Book book5 = new Book((short) 40000, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
@@ -251,15 +258,5 @@ public class Main {
         }
 
         System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
-
-        professor.returnBook(book);
-        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
-
-        professor.loanBook(book);
-        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
-
-
-
-
     }
 }
