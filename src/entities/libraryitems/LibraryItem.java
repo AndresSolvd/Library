@@ -1,8 +1,11 @@
 package entities.libraryitems;
 
 import exceptions.IdRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public abstract class LibraryItem {
+    private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
     protected short itemId;
     protected boolean availability;
     protected String borrower;
@@ -31,12 +34,12 @@ public abstract class LibraryItem {
         // Check valid id number
         try {
             if (itemId < 0 | itemId > 32767) {
-                throw new IdRangeException("itemId invalid value (values accepted: integers between 0 and 32,767)");
+                throw new IdRangeException();
             } else {
                 this.itemId = itemId;
             }
         } catch (IdRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info("itemId invalid value (values accepted: integers between 0 and 32,767)");
         }
     }
 

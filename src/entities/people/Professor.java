@@ -1,8 +1,11 @@
 package entities.people;
 
 import exceptions.MemberAndCredentialRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Professor extends Client {
+    private static final Logger LOGGER = LogManager.getLogger(Professor.class);
     private int professorCredentialNumber;
 
     public Professor(short id, String name, String phone, String email, int memberNumber, int professorCredentialNumber) {
@@ -23,12 +26,12 @@ public class Professor extends Client {
         //validate professorCredentialNumber
         try {
             if (professorCredentialNumber <= 0 | professorCredentialNumber > 2147483647) {
-                throw new MemberAndCredentialRangeException("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException();
             } else {
                 this.professorCredentialNumber = professorCredentialNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
         }
     }
 }

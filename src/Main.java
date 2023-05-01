@@ -1,3 +1,4 @@
+import entities.BorrowersAndLoanedItems;
 import entities.Library;
 import entities.libraryitems.*;
 import entities.people.*;
@@ -17,18 +18,45 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void askItemAvailability(LibraryItem item) throws BooleanException {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Is Book available? (yes/no):");
-        String answer = scan.next();
-        if (answer.equals("yes")) {
-            item.setAvailability(true);
-        } else if (answer.equals("no")) {
-            item.setAvailability(false);
-        } else {
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Is Book available? (yes/no):");
+            String answer = scan.next();
+            if (answer.equals("yes")) {
+                item.setAvailability(true);
+            } else if (answer.equals("no")) {
+                item.setAvailability(false);
+            } else {
+                throw new BooleanException();
+            }
+        } catch (BooleanException e) {
+            LOGGER.info("hola");
             askItemAvailability(item);
-            throw new BooleanException("Invalid value (valid values: \'yes\" or \"no\")");
         }
     }
+
+
+
+
+  /*       try{
+            Scanner scan = new Scanner(System.in);
+            boolean validInput = false;
+            System.out.println("Is Book available? (yes/no):");
+            String answer = scan.next();
+
+            while (!validInput) {
+                if (answer.equals("yes")) {
+                    item.setAvailability(true);
+                    validInput = true;
+                } else if (answer.equals("no")) {
+                    item.setAvailability(false);
+                    validInput = true;
+                } else {
+                    throw new BooleanException();
+                }
+            }
+        }
+    } */
 
     public static String askUserToSeeInventory() {
         //validate answer
@@ -40,15 +68,15 @@ public class Main {
             if (answer.equals("yes") || answer.equals("no")) {
                 return answer;
             } else {
-                throw new IdRangeException("Invalid option");
+                throw new IdRangeException();
             }
         } catch (IdRangeException e) {
-            System.out.println("Invalid option: type \"yes\" or \"no\"");
+            LOGGER.info("Invalid option: type \"yes\" or \"no\"");
             return askUserToSeeInventory();
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BooleanException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -178,6 +206,7 @@ public class Main {
         library.add(employee2);
         library.printDirectory();
 
+        // 4 INTERFACES
         System.out.println("\n\n--- 4 INTERFACES ---\n");
 
         //Use Iwork interface
@@ -204,14 +233,15 @@ public class Main {
         Person.activity();
 
         // 6 Interfaces test
+        System.out.println("\n\n--- 6 INTERFACE TEST ---\n");
         professor.returnBook(book);
-        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+        BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
 
         professor.loanBook(book);
-        Library.BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+        BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
 
         // 7 test exception handler
-        System.out.println("\n\n--- 6 EXCEPTIONS ---\n");
+        System.out.println("\n\n--- 7 EXCEPTIONS ---\n");
         Book book4 = new Book((short) -1, true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
         Book book5 = new Book((short) 40000, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
         Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
@@ -241,13 +271,7 @@ public class Main {
 
         // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
-
-        try {
-            askItemAvailability(book);
-        } catch (BooleanException e) {
-            System.out.println("Invalid option: type \"yes\" or \"no\"");
-        }
-
+        askItemAvailability(book);
         System.out.println("current book Availability: " + book.getAvailability());
 
         // Prompt user option to query current Inventory

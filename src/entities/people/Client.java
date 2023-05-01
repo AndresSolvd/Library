@@ -1,14 +1,17 @@
 package entities.people;
 
-import entities.Library;
+import entities.BorrowersAndLoanedItems;
 import entities.libraryitems.LibraryItem;
 import exceptions.MemberAndCredentialRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Client extends Person {
+    private static final Logger LOGGER = LogManager.getLogger(Person.class);
     private int memberNumber;
     private final ArrayList<LibraryItem> loanedBooksList;
     public Map<String, Short> map = new HashMap<>();
@@ -33,7 +36,7 @@ public class Client extends Person {
             loanedBooksList.add(libraryItem);
             libraryItem.setAvailability(false);
             libraryItem.setBorrower(name + " id: " + personId);
-            Library.BorrowersAndLoanedItems.addPair(libraryItem.getItemId(), getName());
+            BorrowersAndLoanedItems.addPair(getName(), libraryItem.getItemId());
             System.out.println("Item has been loaned out.");
         } else {
             System.out.println("Item is not available for loan.");
@@ -47,7 +50,7 @@ public class Client extends Person {
             loanedBooksList.remove(libraryItem);
             libraryItem.setAvailability(true);
             libraryItem.setBorrower("na");
-            Library.BorrowersAndLoanedItems.removePair(libraryItem.getItemId());
+            BorrowersAndLoanedItems.removePair(getName());
             System.out.println("Item has been delivered.");
         }
     }
@@ -60,12 +63,12 @@ public class Client extends Person {
         //validate memberNumber
         try {
             if (memberNumber <= 0 | memberNumber > 2147483647) {
-                throw new MemberAndCredentialRangeException("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException();
             } else {
                 this.memberNumber = memberNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
         }
     }
 }

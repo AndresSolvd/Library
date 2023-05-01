@@ -1,10 +1,14 @@
 package entities.people;
 
+import entities.libraryitems.LibraryItem;
 import exceptions.IdRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
 public abstract class Person {
+    private static final Logger LOGGER = LogManager.getLogger(Person.class);
     protected short personId;
     protected String name;
     protected String phone;
@@ -57,12 +61,12 @@ public abstract class Person {
         // Check valid id number
         try {
             if (personId < 0 | personId > 32767) {
-                throw new IdRangeException("personId invalid value (values accepted: integers between 0 and 32,767)");
+                throw new IdRangeException();
             } else {
                 this.personId = personId;
             }
         } catch (IdRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info("personId invalid value (values accepted: integers between 0 and 32,767)");
         }
     }
 
