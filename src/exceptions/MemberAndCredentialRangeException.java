@@ -1,6 +1,7 @@
 package exceptions;
 
 public class MemberAndCredentialRangeException extends Exception {
-    public MemberAndCredentialRangeException() {
+    public MemberAndCredentialRangeException(String message) {
+        super(message);
     }
 }

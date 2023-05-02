@@ -61,12 +61,13 @@ public abstract class Person {
         // Check valid id number
         try {
             if (personId < 0 | personId > 32767) {
-                throw new IdRangeException();
+                throw new IdRangeException("personId invalid value (values accepted: integers between 0 and 32,767)");
             } else {
                 this.personId = personId;
             }
         } catch (IdRangeException e) {
             LOGGER.info("personId invalid value (values accepted: integers between 0 and 32,767)");
+            System.out.println(e.getMessage());
         }
     }
 

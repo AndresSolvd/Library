@@ -27,36 +27,14 @@ public class Main {
             } else if (answer.equals("no")) {
                 item.setAvailability(false);
             } else {
-                throw new BooleanException();
+                throw new BooleanException("Invalid option: type \"yes\" or \"no\"");
             }
         } catch (BooleanException e) {
-            LOGGER.info("hola");
+            LOGGER.info("Invalid option: type \"yes\" or \"no\"");
+            System.out.println(e.getMessage());
             askItemAvailability(item);
         }
     }
-
-
-
-
-  /*       try{
-            Scanner scan = new Scanner(System.in);
-            boolean validInput = false;
-            System.out.println("Is Book available? (yes/no):");
-            String answer = scan.next();
-
-            while (!validInput) {
-                if (answer.equals("yes")) {
-                    item.setAvailability(true);
-                    validInput = true;
-                } else if (answer.equals("no")) {
-                    item.setAvailability(false);
-                    validInput = true;
-                } else {
-                    throw new BooleanException();
-                }
-            }
-        }
-    } */
 
     public static String askUserToSeeInventory() {
         //validate answer
@@ -68,15 +46,16 @@ public class Main {
             if (answer.equals("yes") || answer.equals("no")) {
                 return answer;
             } else {
-                throw new IdRangeException();
+                throw new IdRangeException("Invalid option: type \"yes\" or \"no\"");
             }
         } catch (IdRangeException e) {
             LOGGER.info("Invalid option: type \"yes\" or \"no\"");
+            System.out.println(e.getMessage());
             return askUserToSeeInventory();
         }
     }
 
-    public static void main(String[] args) throws BooleanException {
+    public static void main(String[] args) throws BooleanException, YearRangeException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -257,17 +236,10 @@ public class Main {
         employee3.setSalary(-234.23);
 
         // set book year 2045
-        try {
-            book.setYear(2045);
-        } catch (YearRangeException e) {
-            System.out.println(e.getMessage());
-        }
+        book.setYear(2045);
+
         // set book year -1000
-        try {
-            book.setYear(-1000);
-        } catch (YearRangeException e) {
-            System.out.println(e.getMessage());
-        }
+        book.setYear(-1000);
 
         // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
