@@ -1,4 +1,3 @@
-import entities.BorrowersAndLoanedItems;
 import entities.Library;
 import entities.libraryitems.*;
 import entities.people.*;
@@ -75,16 +74,16 @@ public class Main {
 
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
-        Book book = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
-        Book book2 = new Book((short) 1, true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
+        Book book = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
+        Book book2 = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
 
         // 2.2 Create audiobook
         System.out.println("\n-- 2.2 AudioBook --");
-        AudioBook audiobook = new AudioBook((short) 2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
-        AudioBook audiobook2 = new AudioBook((short) 2, true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
+        AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
+        AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
         System.out.println(audiobook.getSerialNumber());
         System.out.println("AudioBook Name: " + audiobook.getTitle());
         System.out.println("AudioBook Author: " + audiobook.getAuthor());
@@ -124,10 +123,10 @@ public class Main {
 
         // Client loaned all items and try to loan an unavailable item
         System.out.println("\n-- Client attempt to loan a book, audiobook, CD and the same book again --");
-        client.loanBook(book);
-        client.loanBook(cd);
-        client.loanBook(audiobook);
-        client.loanBook(book);
+        client.loanBook(client, book);
+        client.loanBook(client, cd);
+        client.loanBook(client, audiobook);
+        client.loanBook(client, book);
         // Print loaned items by client
         System.out.println("\n-- Print Loaned items by client --");
         for (LibraryItem item : client.getLoanedBookList()) {
@@ -136,8 +135,8 @@ public class Main {
 
         // Client return book
         System.out.println("\n-- Client return book --");
-        client.returnBook(book);
-        client.returnBook(book);
+        client.returnBook(client, book);
+        client.returnBook(client, book);
         // Print loaned items by client
         System.out.println("\n-- Print Loaned items by client --");
         for (LibraryItem item : client.getLoanedBookList()) {
@@ -211,16 +210,16 @@ public class Main {
 
         // 6 Interfaces test
         System.out.println("\n\n--- 6 INTERFACE TEST ---\n");
-        professor.returnBook(book);
-        BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+        professor.returnBook(professor, book);
+        Library.printBorrowedItems();
 
-        professor.loanBook(book);
-        BorrowersAndLoanedItems.borrowersAndLoanedItemsList();
+        professor.loanBook(professor, book);
+        Library.printBorrowedItems();
 
         // 7 test exception handler
         System.out.println("\n\n--- 7 EXCEPTIONS ---\n");
-        Book book4 = new Book((short) -1, true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
-        Book book5 = new Book((short) 40000, true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
+        Book book4 = new Book((short) -1, "1984", true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
+        Book book5 = new Book((short) 40000, "1984", true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
         Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
         Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432", "fvargas@email.com", -35, -32);
         Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);

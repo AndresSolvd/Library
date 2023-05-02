@@ -15,8 +15,8 @@ public class Book extends LibraryItem implements IRead {
     public String publisher;
     public String genre;
 
-    public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
-        super(itemId, availability, borrower, dueDate);
+    public Book(short itemId, String name, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
+        super(itemId, name, availability, borrower, dueDate);
         this.title = title;
         this.author = author;
         this.year = year;

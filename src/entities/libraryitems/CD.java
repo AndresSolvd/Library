@@ -12,8 +12,7 @@ public class CD extends LibraryItem implements ISerialNumber, IAudio, IRead {
     private String name;
 
     public CD(short itemId, String name, String type, boolean availability, String borrower, String dueDate, int serialNumber) {
-        super(itemId, availability, borrower, dueDate);
-        this.name = name;
+        super(itemId, name, availability, borrower, dueDate);
         this.type = type;
         this.serialNumber = serialNumber;
     }
@@ -52,13 +51,5 @@ public class CD extends LibraryItem implements ISerialNumber, IAudio, IRead {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

@@ -6,14 +6,16 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class LibraryItem {
     private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
+    protected String name;
     protected short itemId;
     protected boolean availability;
     protected String borrower;
     protected String dueDate;
     public static int activityCounter;
 
-    public LibraryItem(short itemId, boolean availability, String borrower, String dueDate) {
+    public LibraryItem(short itemId, String name, boolean availability, String borrower, String dueDate) {
         this.itemId = itemId;
+        this.name = name;
         this.availability = availability;
         this.borrower = borrower;
         this.dueDate = dueDate;
@@ -41,6 +43,13 @@ public abstract class LibraryItem {
         } catch (IdRangeException e) {
             LOGGER.info(e.getMessage());
         }
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     //AVAILABILITY
