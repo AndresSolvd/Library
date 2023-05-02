@@ -30,8 +30,7 @@ public class Main {
                 throw new BooleanException("Invalid option: type \"yes\" or \"no\"");
             }
         } catch (BooleanException e) {
-            LOGGER.info("Invalid option: type \"yes\" or \"no\"");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
             askItemAvailability(item);
         }
     }
@@ -49,8 +48,7 @@ public class Main {
                 throw new IdRangeException("Invalid option: type \"yes\" or \"no\"");
             }
         } catch (IdRangeException e) {
-            LOGGER.info("Invalid option: type \"yes\" or \"no\"");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
             return askUserToSeeInventory();
         }
     }

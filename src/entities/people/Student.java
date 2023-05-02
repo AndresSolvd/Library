@@ -31,8 +31,7 @@ public class Student extends Client {
                 this.studentCredentialNumber = studentCredentialNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            LOGGER.info("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 }

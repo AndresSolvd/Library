@@ -31,8 +31,7 @@ public class Professor extends Client {
                 this.professorCredentialNumber = professorCredentialNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            LOGGER.info("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 }

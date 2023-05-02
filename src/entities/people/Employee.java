@@ -34,8 +34,7 @@ public class Employee extends Person implements IWork {
                 this.salary = salary;
             }
         } catch (SalaryRangeException e) {
-            LOGGER.info("salary invalid value(values accepted: integers between 1 and 1.8 * 10^308)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 

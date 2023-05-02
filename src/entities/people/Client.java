@@ -68,8 +68,7 @@ public class Client extends Person {
                 this.memberNumber = memberNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            LOGGER.info("memberNumber invalid value(values accepted: integers between 1 and 2147483647)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 }

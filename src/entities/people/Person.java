@@ -66,8 +66,7 @@ public abstract class Person {
                 this.personId = personId;
             }
         } catch (IdRangeException e) {
-            LOGGER.info("personId invalid value (values accepted: integers between 0 and 32,767)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 

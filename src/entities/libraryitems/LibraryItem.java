@@ -39,8 +39,7 @@ public abstract class LibraryItem {
                 this.itemId = itemId;
             }
         } catch (IdRangeException e) {
-            LOGGER.info("itemId invalid value (values accepted: integers between 0 and 32,767)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 

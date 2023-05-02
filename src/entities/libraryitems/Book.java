@@ -62,8 +62,7 @@ public class Book extends LibraryItem implements IRead {
                 this.year = year;
             }
         } catch (YearRangeException e) {
-            LOGGER.info("Invalid input (value accepted: between 1 and 2023)");
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 
