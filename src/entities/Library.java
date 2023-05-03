@@ -83,34 +83,22 @@ public final class Library implements ILibrary {
         if (map.isEmpty()) {
             System.out.println("There are not loaned Items");
         } else {
-            System.out.println("\nList of borrowers and loan items");
+            System.out.println("\n*********** List of borrowers **********");
             for (Map.Entry<Person, List<LibraryItem>> entry : map.entrySet()) {
+                System.out.println("-----------------------------------------------");
                 // get the key and value of the current entry
                 Person person = entry.getKey();
                 List<LibraryItem> libraryItems = entry.getValue();
                 // print the key-value pair
-                System.out.println("Person: " + person.getPersonId() + " " + person.getName()+ ", Library Items: ");
+                System.out.println("BORROWER: " + person.getPersonId() + " " + person.getName() + "\n LIBRARY ITEMS: ");
                 for (LibraryItem item : libraryItems) {
-                    System.out.println("                  " + item.getItemId() + " " + item.getName());
+                    System.out.println("  " + "itemId: " + item.getItemId() + "   -   Name: " + item.getName());
                 }
-                System.out.println("\n End of List\n");
             }
+            System.out.println("-----------------------------------------------");
+            System.out.println("*********** End of borrowers list ***********\n");
         }
     }
-
-    /*
-
-            for (Map.Entry<Person, List<LibraryItem>> entry : map.entrySet()) {
-                System.out.println("List of Borrowed Items\n" + " Borrower : Item" + entry.getKey().getPersonId() + " " + entry.getKey().getName()
-                        + " : " + entry.getValue().getItemId() + " " + entry.getKey().getName());
-            }
-        }
-
-            public List<LibraryItem> getBorrowedItems(Person person) {
-        // Get the list of borrowed items for the given person, or return an empty list if none exists
-        return borrowedItems.getOrDefault(person, new ArrayList<>());
-    }
-         */
 
     // Add item and person to borrowed items
     public static void addPair(Person person, LibraryItem item) {
