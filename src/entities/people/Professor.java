@@ -1,8 +1,11 @@
 package entities.people;
 
 import exceptions.MemberAndCredentialRangeException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Professor extends Client {
+    private static final Logger LOGGER = LogManager.getLogger(Professor.class);
     private int professorCredentialNumber;
 
     public Professor(short id, String name, String phone, String email, int memberNumber, int professorCredentialNumber) {
@@ -28,7 +31,7 @@ public class Professor extends Client {
                 this.professorCredentialNumber = professorCredentialNumber;
             }
         } catch (MemberAndCredentialRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 }

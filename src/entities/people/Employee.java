@@ -2,8 +2,11 @@ package entities.people;
 
 import exceptions.SalaryRangeException;
 import interfaces.IWork;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Employee extends Person implements IWork {
+    private static final Logger LOGGER = LogManager.getLogger(Person.class);
     private String position;
     private double salary;
 
@@ -31,7 +34,7 @@ public class Employee extends Person implements IWork {
                 this.salary = salary;
             }
         } catch (SalaryRangeException e) {
-            System.out.println(e.getMessage());
+            LOGGER.info(e.getMessage());
         }
     }
 

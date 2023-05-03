@@ -2,18 +2,21 @@ package entities.libraryitems;
 
 import exceptions.YearRangeException;
 import interfaces.IRead;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
 public class Book extends LibraryItem implements IRead {
+    private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
     public String title;
     public String author;
     public int year;
     public String publisher;
     public String genre;
 
-    public Book(short itemId, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
-        super(itemId, availability, borrower, dueDate);
+    public Book(short itemId, String name, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
+        super(itemId, name, availability, borrower, dueDate);
         this.title = title;
         this.author = author;
         this.year = year;
@@ -52,10 +55,14 @@ public class Book extends LibraryItem implements IRead {
     }
 
     public void setYear(int year) throws YearRangeException {
-        if (year <= 0 | year > 2023) {
-            throw new YearRangeException("Invalid input (value accepted: between 1 and 2023)");
-        } else {
-            this.year = year;
+        try {
+            if (year <= 0 | year > 2023) {
+                throw new YearRangeException("Invalid input (value accepted: between 1 and 2023)");
+            } else {
+                this.year = year;
+            }
+        } catch (YearRangeException e) {
+            LOGGER.info(e.getMessage());
         }
     }
 
