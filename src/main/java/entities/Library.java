@@ -1,6 +1,6 @@
 package entities;
 
-import resources.MyLinkedList;
+import util.MyLinkedList;
 import entities.libraryitems.LibraryItem;
 import entities.people.Person;
 import interfaces.ILibrary;

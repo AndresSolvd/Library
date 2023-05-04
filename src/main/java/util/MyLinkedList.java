@@ -1,4 +1,4 @@
-package resources;
+package util;
 
 public class MyLinkedList<T> {
 
