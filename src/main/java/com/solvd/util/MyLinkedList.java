@@ -1,4 +1,4 @@
-package util;
+package com.solvd.util;
 
 public class MyLinkedList<T> {
 

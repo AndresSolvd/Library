@@ -1,8 +1,8 @@
-package entities.libraryitems;
+package com.solvd.entities.libraryitems;
 
-import interfaces.IAudio;
-import interfaces.IRead;
-import interfaces.ISerialNumber;
+import com.solvd.interfaces.IAudio;
+import com.solvd.interfaces.IRead;
+import com.solvd.interfaces.ISerialNumber;
 
 import java.util.Objects;
 

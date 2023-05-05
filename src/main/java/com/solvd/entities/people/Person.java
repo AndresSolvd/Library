@@ -1,7 +1,6 @@
-package entities.people;
+package com.solvd.entities.people;
 
-import entities.libraryitems.LibraryItem;
-import exceptions.IdRangeException;
+import com.solvd.exceptions.IdRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

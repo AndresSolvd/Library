@@ -1,9 +1,9 @@
-package entities;
+package com.solvd.entities;
 
-import util.MyLinkedList;
-import entities.libraryitems.LibraryItem;
-import entities.people.Person;
-import interfaces.ILibrary;
+import com.solvd.entities.libraryitems.LibraryItem;
+import com.solvd.util.MyLinkedList;
+import com.solvd.entities.people.Person;
+import com.solvd.interfaces.ILibrary;
 
 import java.util.*;
 

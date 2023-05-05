@@ -1,4 +1,4 @@
-package interfaces;
+package com.solvd.interfaces;
 
 public interface ILibrary {
     void setLibraryName(String libraryName);

@@ -1,7 +1,7 @@
-package entities.people;
+package com.solvd.entities.people;
 
-import exceptions.SalaryRangeException;
-import interfaces.IWork;
+import com.solvd.exceptions.SalaryRangeException;
+import com.solvd.interfaces.IWork;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

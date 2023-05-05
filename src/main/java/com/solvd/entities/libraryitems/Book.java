@@ -1,7 +1,7 @@
-package entities.libraryitems;
+package com.solvd.entities.libraryitems;
 
-import exceptions.YearRangeException;
-import interfaces.IRead;
+import com.solvd.exceptions.YearRangeException;
+import com.solvd.interfaces.IRead;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

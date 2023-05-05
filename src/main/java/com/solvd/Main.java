@@ -1,9 +1,14 @@
-import entities.Library;
-import entities.libraryitems.*;
-import entities.people.*;
-import exceptions.BooleanException;
-import exceptions.IdRangeException;
-import exceptions.YearRangeException;
+package com.solvd;
+
+import com.solvd.entities.Library;
+import com.solvd.entities.libraryitems.AudioBook;
+import com.solvd.entities.libraryitems.Book;
+import com.solvd.entities.libraryitems.CD;
+import com.solvd.entities.libraryitems.LibraryItem;
+import com.solvd.entities.people.*;
+import com.solvd.exceptions.BooleanException;
+import com.solvd.exceptions.IdRangeException;
+import com.solvd.exceptions.YearRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

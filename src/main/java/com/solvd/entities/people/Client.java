@@ -1,8 +1,8 @@
-package entities.people;
+package com.solvd.entities.people;
 
-import entities.Library;
-import entities.libraryitems.LibraryItem;
-import exceptions.MemberAndCredentialRangeException;
+import com.solvd.entities.Library;
+import com.solvd.entities.libraryitems.LibraryItem;
+import com.solvd.exceptions.MemberAndCredentialRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

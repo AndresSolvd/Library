@@ -1,6 +1,6 @@
-package entities.people;
+package com.solvd.entities.people;
 
-import exceptions.MemberAndCredentialRangeException;
+import com.solvd.exceptions.MemberAndCredentialRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

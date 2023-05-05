@@ -1,6 +1,6 @@
-package entities.libraryitems;
+package com.solvd.entities.libraryitems;
 
-import exceptions.IdRangeException;
+import com.solvd.exceptions.IdRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
