@@ -12,6 +12,7 @@ import com.solvd.exceptions.YearRangeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -57,7 +58,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws BooleanException, YearRangeException {
+    public static void main(String[] args) throws BooleanException, YearRangeException, IOException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -243,6 +244,11 @@ public class Main {
         // set book year -1000
         book.setYear(-1000);
 
+        // Test UniqueWordCounter
+        System.out.println("\n\n--- 8 Unique Word Count ---\n");
+        UniqueWordCounter.uniqueWordCounter();
+
+        System.out.println("\n\n--- 9 Ask User for availability and inventory ---\n");
         // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
         askItemAvailability(book);
