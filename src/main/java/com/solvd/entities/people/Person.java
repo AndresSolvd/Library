@@ -8,11 +8,11 @@ import java.util.Objects;
 
 public abstract class Person {
     private static final Logger LOGGER = LogManager.getLogger(Person.class);
+    public static int activityCounter;
     protected short personId;
     protected String name;
     protected String phone;
     protected String email;
-    public static int activityCounter;
 
     public Person(short personId, String name, String phone, String email) {
         this.personId = personId;
@@ -20,6 +20,11 @@ public abstract class Person {
         this.phone = phone;
         this.email = email;
         activityCounter++;
+    }
+
+    // Print total attempts to create Persons
+    public static void activity() {
+        System.out.println("Total attempts to create Persons: " + Person.activityCounter);
     }
 
     @Override
@@ -35,25 +40,8 @@ public abstract class Person {
         return Objects.hash(getPersonId(), getName(), getPhone(), getEmail());
     }
 
-    // Print total attempts to create Persons
-    public static void activity() {
-        System.out.println("Total attempts to create Persons: " + Person.activityCounter);
-    }
-
     public short getPersonId() {
         return personId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setPersonId(short personId) {
@@ -69,12 +57,24 @@ public abstract class Person {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {

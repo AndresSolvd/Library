@@ -16,11 +16,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
     static {
         System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
     }
-
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void askItemAvailability(LibraryItem item) throws BooleanException {
         try {
@@ -45,7 +45,7 @@ public class Main {
         String answer;
         try {
             Scanner scan = new Scanner(System.in);
-            System.out.println("Would you like to see the current Inventory?");
+            System.out.println("\nWould you like to see the current Inventory?");
             answer = scan.next();
             if (answer.equals("yes") || answer.equals("no")) {
                 return answer;

@@ -1,20 +1,20 @@
 package com.solvd.entities;
 
 import com.solvd.entities.libraryitems.LibraryItem;
-import com.solvd.util.MyLinkedList;
 import com.solvd.entities.people.Person;
 import com.solvd.interfaces.ILibrary;
+import com.solvd.util.MyLinkedList;
 
 import java.util.*;
 
 public final class Library implements ILibrary {
 
+    static Map<Person, List<LibraryItem>> map = new HashMap<>();
+    private final MyLinkedList<LibraryItem> inventory;
+    private final HashSet<Person> directory;
     private String libraryName;
     private String address;
     private String weekDaysTimeOpen;
-    private final MyLinkedList<LibraryItem> inventory;
-    private final HashSet<Person> directory;
-    static Map<Person, List<LibraryItem>> map = new HashMap<>();
 
     public Library(String libraryName, String address, String weekDaysTimeOpen) {
         this.libraryName = libraryName;
@@ -22,60 +22,6 @@ public final class Library implements ILibrary {
         this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new MyLinkedList<LibraryItem>();
         this.directory = new HashSet<Person>();
-    }
-
-    public String getLibraryName() {
-        return libraryName;
-    }
-
-    public void setLibraryName(String libraryName) {
-        this.libraryName = libraryName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getWeekDaysTimeOpen() {
-        return weekDaysTimeOpen;
-    }
-
-    public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
-        this.weekDaysTimeOpen = weekDaysTimeOpen;
-    }
-
-    //Print Inventory
-    public void printInventory() {
-        inventory.showAll();
-    }
-
-    //Print Directory
-    public void printDirectory() {
-        for (Person person : directory) {
-            System.out.println(person);
-        }
-    }
-
-    //Add Item to Inventory
-    public void add(LibraryItem newItem) {
-        if (!inventory.search(newItem)) {
-            inventory.add(newItem);
-        } else {
-            System.out.println("This item already exists on the list");
-        }
-    }
-
-    //Add Person to directory
-    public void add(Person newperson) {
-        if (!directory.contains(newperson)) {
-            directory.add(newperson);
-        } else {
-            System.out.println("This person already exists on the directory.");
-        }
     }
 
     //Print all borrowed items
@@ -113,6 +59,64 @@ public final class Library implements ILibrary {
         if (borrowed != null) {
             borrowed.remove(libraryItem); // remove from list
             map.put(person, borrowed); // Update map
+        }
+    }
+
+    public String getLibraryName() {
+        return libraryName;
+    }
+
+    public void setLibraryName(String libraryName) {
+        this.libraryName = libraryName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getWeekDaysTimeOpen() {
+        return weekDaysTimeOpen;
+    }
+
+    public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
+        this.weekDaysTimeOpen = weekDaysTimeOpen;
+    }
+
+    //Print Inventory
+    public void printInventory() {
+        System.out.println("\n    --- INVENTORY ---\n");
+        inventory.showAll();
+        System.out.println("\n--- END OF INVENTORY ---\n");
+    }
+
+    //Print Directory
+    public void printDirectory() {
+        System.out.println("\n    --- DIRECTORY ---\n");
+        for (Person person : directory) {
+            System.out.println(person);
+        }
+        System.out.println("\n--- END OF DIRECTORY ---\n");
+    }
+
+    //Add Item to Inventory
+    public void add(LibraryItem newItem) {
+        if (!inventory.search(newItem)) {
+            inventory.add(newItem);
+        } else {
+            System.out.println("This item already exists on the list");
+        }
+    }
+
+    //Add Person to directory
+    public void add(Person newperson) {
+        if (!directory.contains(newperson)) {
+            directory.add(newperson);
+        } else {
+            System.out.println("This person already exists on the directory.");
         }
     }
 }

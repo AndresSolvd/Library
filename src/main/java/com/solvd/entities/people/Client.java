@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class Client extends Person {
     private static final Logger LOGGER = LogManager.getLogger(Person.class);
-    private int memberNumber;
     private final ArrayList<LibraryItem> loanedBooksList;
+    private int memberNumber;
 
     public Client(short id, String name, String phone, String email, int memberNumber) {
         super(id, name, phone, email);
@@ -48,7 +48,7 @@ public class Client extends Person {
             loanedBooksList.remove(libraryItem);
             libraryItem.setAvailability(true);
             libraryItem.setBorrower("na");
-            Library.removePair(person,libraryItem);
+            Library.removePair(person, libraryItem);
             System.out.println("Item has been delivered.");
         }
     }

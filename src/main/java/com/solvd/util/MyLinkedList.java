@@ -2,17 +2,6 @@ package com.solvd.util;
 
 public class MyLinkedList<T> {
 
-    // Internal node class
-    private class Node {
-        T data;
-        Node next;
-
-        public Node(T data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
     private Node head; // Head of the linked list
 
     // Adds new element at the end
@@ -79,5 +68,16 @@ public class MyLinkedList<T> {
             current = current.next;
         }
         return false;
+    }
+
+    // Internal node class
+    private class Node {
+        T data;
+        Node next;
+
+        public Node(T data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

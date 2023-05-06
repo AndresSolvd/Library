@@ -15,7 +15,7 @@ public class UniqueWordCounter {
                                 "UTF-8").split("\\s+"))
                 .distinct().count();
         // Result of unique words from count() is printed in the console and in a new file called output.
-        FileUtils.writeStringToFile(new File("scr/main/resources/output.txt"), "Number of unique words: "
+        FileUtils.writeStringToFile(new File("src/main/resources/output.txt"), "Number of unique words: "
                 + uniqueWordCount, "UTF-8");
         System.out.println("Number of unique words: " + uniqueWordCount);
     }

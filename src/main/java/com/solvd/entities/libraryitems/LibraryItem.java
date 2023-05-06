@@ -6,12 +6,12 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class LibraryItem {
     private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
+    public static int activityCounter;
     protected String name;
     protected short itemId;
     protected boolean availability;
     protected String borrower;
     protected String dueDate;
-    public static int activityCounter;
 
     public LibraryItem(short itemId, String name, boolean availability, String borrower, String dueDate) {
         this.itemId = itemId;
@@ -44,6 +44,7 @@ public abstract class LibraryItem {
             LOGGER.info(e.getMessage());
         }
     }
+
     public String getName() {
         return name;
     }

@@ -1,17 +1,17 @@
 package com.solvd.interfaces;
 
 public interface ILibrary {
-    void setLibraryName(String libraryName);
-
     String getLibraryName();
 
-    void setAddress(String address);
+    void setLibraryName(String libraryName);
 
     String getAddress();
 
-    void setWeekDaysTimeOpen(String weekDaysTimeOpen);
+    void setAddress(String address);
 
     String getWeekDaysTimeOpen();
+
+    void setWeekDaysTimeOpen(String weekDaysTimeOpen);
 
     void printInventory();
 

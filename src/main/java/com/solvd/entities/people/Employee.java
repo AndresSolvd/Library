@@ -21,8 +21,16 @@ public class Employee extends Person implements IWork {
         return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
     }
 
+    public String getPosition() {
+        return position;
+    }
+
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public double getSalary() {
+        return salary;
     }
 
     public void setSalary(double salary) {
@@ -36,13 +44,5 @@ public class Employee extends Person implements IWork {
         } catch (SalaryRangeException e) {
             LOGGER.info(e.getMessage());
         }
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public double getSalary() {
-        return salary;
     }
 }
