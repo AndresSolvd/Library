@@ -12,8 +12,8 @@ public class UniqueWordCounter {
         // Convert array to Stream<String>. Use distinct() to rule out repeated word, the use count() to count.
         long uniqueWordCount = Arrays.stream(
                         FileUtils.readFileToString(new File("src/main/resources/textForTest.txt"),
-                                "UTF-8").replaceAll("\\W", " ").split("\\s+"))
-                .distinct().count();
+                                "UTF-8").replaceAll("\\W", " ").toLowerCase()
+                                .split("\\s+")).distinct().count();
         // Print count() output on file output
         FileUtils.writeStringToFile(new File("src/main/resources/output.txt"), "Number of unique words: "
                 + uniqueWordCount, "UTF-8");
