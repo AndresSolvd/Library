@@ -11,7 +11,7 @@ public class UniqueWordCounter {
         // Read file, remove any non alphabet character, split by whitespace characters and store in array.
         // Convert array to Stream<String>. Use distinct() to rule out repeated word, the use count() to count.
         long uniqueWordCount = Arrays.stream(
-                        FileUtils.readFileToString(new File("src/main/resources/RandomText"),
+                        FileUtils.readFileToString(new File("src/main/resources/textForTest"),
                                 "UTF-8").replaceAll("\\W", " ").split("\\s+"))
                 .distinct().count();
         // Print count() output on file output
