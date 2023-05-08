@@ -247,6 +247,7 @@ public class Main {
         // Test UniqueWordCounter
         System.out.println("\n\n--- 8 Unique Word Count ---\n");
         UniqueWordCounter.uniqueWordCounter();
+        System.out.println("Look for the output.txt file in resources");
 
         System.out.println("\n\n--- 9 Ask User for availability and inventory ---\n");
         // Prompt user to update availability of book
