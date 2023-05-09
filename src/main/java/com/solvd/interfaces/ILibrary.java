@@ -9,9 +9,7 @@ public interface ILibrary {
 
     void setAddress(String address);
 
-    String getWeekDaysTimeOpen();
-
-    void setWeekDaysTimeOpen(String weekDaysTimeOpen);
+    void schedule();
 
     void printInventory();
 

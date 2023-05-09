@@ -2,6 +2,7 @@ package com.solvd.entities;
 
 import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.Person;
+import com.solvd.enums.Schedule;
 import com.solvd.interfaces.ILibrary;
 import com.solvd.util.MyLinkedList;
 
@@ -14,12 +15,10 @@ public final class Library implements ILibrary {
     private final HashSet<Person> directory;
     private String libraryName;
     private String address;
-    private String weekDaysTimeOpen;
 
-    public Library(String libraryName, String address, String weekDaysTimeOpen) {
+    public Library(String libraryName, String address) {
         this.libraryName = libraryName;
         this.address = address;
-        this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new MyLinkedList<LibraryItem>();
         this.directory = new HashSet<Person>();
     }
@@ -78,12 +77,10 @@ public final class Library implements ILibrary {
         this.address = address;
     }
 
-    public String getWeekDaysTimeOpen() {
-        return weekDaysTimeOpen;
-    }
-
-    public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
-        this.weekDaysTimeOpen = weekDaysTimeOpen;
+    public void schedule() {
+        for (Schedule day : Schedule.values()) {
+            System.out.println(day);
+        }
     }
 
     //Print Inventory

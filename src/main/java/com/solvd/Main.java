@@ -27,6 +27,7 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             System.out.println("Is Book available? (yes/no):");
             String answer = scan.next();
+
             if (answer.equals("yes")) {
                 item.setAvailability(true);
             } else if (answer.equals("no")) {
@@ -63,10 +64,9 @@ public class Main {
 
         // 1 Create library
         System.out.println("--- 1 LIBRARY ---\n");
-        Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth", "Tuesdays to Sundays (09H00 to 17H00)");
+        Library library = new Library("Royal Library", "Stormwind Keep, Stormwind city, Azeroth");
         System.out.println("Library Name: " + library.getLibraryName());
         System.out.println("Library Address: " + library.getAddress());
-        System.out.println("Library Schedule: " + library.getWeekDaysTimeOpen());
         //Change library name and print new
         System.out.println("\nChange Library name and address");
         library.setLibraryName("Harry Library");
@@ -245,11 +245,18 @@ public class Main {
         book.setYear(-1000);
 
         // Test UniqueWordCounter
-        System.out.println("\n\n--- 8 Unique Word Count ---\n");
+        System.out.println("\n\n--- 8 UNIQUE WORD COUNT ---\n");
         UniqueWordCounter.uniqueWordCounter();
         System.out.println("Look for the output.txt file in resources");
 
-        System.out.println("\n\n--- 9 Ask User for availability and inventory ---\n");
+        // Test Enum
+        System.out.println("\n\n--- 9 TEST ENUM ---\n");
+        // Test Schedule
+        System.out.println("\n-- 9.1 Test Schedule enum --");
+        // Call a method from library to print the Fixed schedule in the enum class
+        library.schedule();
+
+        System.out.println("\n\n--- 10 ASK USER AVAILABILITY OR INVENTORY ---\n");
         // Prompt user to update availability of book
         System.out.println("current book Availability: " + book.getAvailability());
         askItemAvailability(book);
