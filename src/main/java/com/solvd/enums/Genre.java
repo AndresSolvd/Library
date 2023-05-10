@@ -1,19 +1,27 @@
 package com.solvd.enums;
 
 public enum Genre {
-    FANTASY("Fantasy"), ROMANCE("Romance"), MYSTERY("Mystery"), HISTORICAL_FICTION("Historical Fiction");
+    FICTION("Fiction"),
+    NON_FICTION("Non-fiction"),
+    DYSTOPIAN_FICTION("Dystopian fiction"),
+    MYSTERY("Mystery"),
+    ROMANCE("Romance"),
+    HORROR("Horror"),
+    SCIENCE_FICTION("Science Fiction"),
+    FANTASY("Fantasy"),
+    BIOGRAPHY("Biography"),
+    AUTOBIOGRAPHY("Autobiography"),
+    SOUTHERN_GOTHIC("Southern Gothic");
 
-    private final String name;
 
-    private Genre(String name) {
-        this.name = name;
+    private final String genreName;
+
+    Genre(String genreName) {
+        this.genreName = genreName;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String toString() {
-        return name;
+    public String getGenreName() {
+        return genreName;
     }
 }
+

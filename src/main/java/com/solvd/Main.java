@@ -6,6 +6,9 @@ import com.solvd.entities.libraryitems.Book;
 import com.solvd.entities.libraryitems.CD;
 import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.*;
+import com.solvd.enums.Genre;
+import com.solvd.enums.Language;
+import com.solvd.enums.LibrarySection;
 import com.solvd.exceptions.BooleanException;
 import com.solvd.exceptions.IdRangeException;
 import com.solvd.exceptions.YearRangeException;
@@ -80,16 +83,16 @@ public class Main {
 
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
-        Book book = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
-        Book book2 = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", "Dystopian fiction");
+        Book book = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Book book2 = new Book((short) 1, "1984", true, "na", "na", "1984", "George Orwell", 1949, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
 
         // 2.2 Create audiobook
         System.out.println("\n-- 2.2 AudioBook --");
-        AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
-        AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", "Southern Gothic, Bildungsroman", 123456789);
+        AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH ,123456789);
+        AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         System.out.println(audiobook.getSerialNumber());
         System.out.println("AudioBook Name: " + audiobook.getTitle());
         System.out.println("AudioBook Author: " + audiobook.getAuthor());
@@ -224,8 +227,8 @@ public class Main {
 
         // 7 test exception handler
         System.out.println("\n\n--- 7 EXCEPTIONS ---\n");
-        Book book4 = new Book((short) -1, "1984", true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", "Dystopian fiction");
-        Book book5 = new Book((short) 40000, "1984", true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", "Dystopian fiction");
+        Book book4 = new Book((short) -1, "1984", true, "na", "na", "1984", "George Orwell", -4000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Book book5 = new Book((short) 40000, "1984", true, "na", "na", "1984", "George Orwell", 6000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
         Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
         Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432", "fvargas@email.com", -35, -32);
         Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);
@@ -252,9 +255,18 @@ public class Main {
         // Test Enum
         System.out.println("\n\n--- 9 TEST ENUM ---\n");
         // Test Schedule
-        System.out.println("\n-- 9.1 Test Schedule enum --");
-        // Call a method from library to print the Fixed schedule in the enum class
+        System.out.println("\n-- 9.1 Test Schedule enum --"); //Call a method from library to print the Fixed schedule in the enum class
         library.schedule();
+        // Test LibrarySection
+        System.out.println("\n-- 9.2 Test LibrarySection enum --"); //Call a method from library to print the Fixed sections in the enum class
+        library.sections();
+        // Test LibraryEvents
+        System.out.println("\n-- 9.3 Test LibraryEvents enum --");
+        library.events();
+        //System.out.println("\n-- 9.2 Test LibrarySection enum --");
+        //System.out.println("\n-- 9.2 Test LibrarySection enum --");
+
+
 
         System.out.println("\n\n--- 10 ASK USER AVAILABILITY OR INVENTORY ---\n");
         // Prompt user to update availability of book
