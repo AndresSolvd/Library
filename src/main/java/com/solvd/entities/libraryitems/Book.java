@@ -77,4 +77,8 @@ public class Book extends LibraryItem implements IRead {
     public Genre getGenre() {
         return genre;
     }
+
+    public Language getLanguage() {
+        return language;
+    }
 }

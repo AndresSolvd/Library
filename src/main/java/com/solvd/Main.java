@@ -255,17 +255,18 @@ public class Main {
         // Test Enum
         System.out.println("\n\n--- 9 TEST ENUM ---\n");
         // Test Schedule
-        System.out.println("\n-- 9.1 Test Schedule enum --"); //Call a method from library to print the Fixed schedule in the enum class
-        library.schedule();
+        System.out.println("\n-- 9.1 Test Schedule enum --");
+        library.schedule(); //Call a method from library to print all the Fixed schedule in the enum class
         // Test LibrarySection
-        System.out.println("\n-- 9.2 Test LibrarySection enum --"); //Call a method from library to print the Fixed sections in the enum class
-        library.sections();
+        System.out.println("\n-- 9.2 Test LibrarySection enum --");
+        library.sections(); //Call a method from library to print all the Fixed sections in the enum class
         // Test LibraryEvents
         System.out.println("\n-- 9.3 Test LibraryEvents enum --");
         library.events();
-        //System.out.println("\n-- 9.2 Test LibrarySection enum --");
-        //System.out.println("\n-- 9.2 Test LibrarySection enum --");
-
+        System.out.println("\n-- 9.4 Test Language enum --");
+        System.out.println(book.getLanguage()); //Call Method from Book to print the object's language limited to ones in the enum class
+        System.out.println("\n-- 9.2 Test Genre enum --");
+        System.out.println(book.getGenre()); //Call Method from Book to print the object's genre limited to ones in the enum class
 
 
         System.out.println("\n\n--- 10 ASK USER AVAILABILITY OR INVENTORY ---\n");
