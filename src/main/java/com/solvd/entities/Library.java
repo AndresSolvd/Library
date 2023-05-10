@@ -2,6 +2,8 @@ package com.solvd.entities;
 
 import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.Person;
+import com.solvd.enums.LibraryEvents;
+import com.solvd.enums.LibrarySection;
 import com.solvd.enums.Schedule;
 import com.solvd.interfaces.ILibrary;
 import com.solvd.util.MyLinkedList;
@@ -80,6 +82,18 @@ public final class Library implements ILibrary {
     public void schedule() {
         for (Schedule day : Schedule.values()) {
             System.out.println(day);
+        }
+    }
+
+    public void sections() {
+        for (LibrarySection section : LibrarySection.values()) {
+            System.out.println(section);
+        }
+    }
+
+    public void events() {
+        for (LibraryEvents events : LibraryEvents.values()) {
+            System.out.println(events);
         }
     }
 
