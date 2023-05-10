@@ -330,6 +330,12 @@ public class Main {
 
         //IntPredicate
         IntPredicate isOld = year -> year / 2000  < 1;
+        int year = (int)book.year;
+        if (isOld.test(year)) {
+            System.out.println("this an old book");
+        } else {
+            System.out.println("this is a book of this century");
+        }
 
 
 
