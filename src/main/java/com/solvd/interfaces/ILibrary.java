@@ -1,5 +1,11 @@
 package com.solvd.interfaces;
 
+import com.solvd.entities.libraryitems.LibraryItem;
+import com.solvd.entities.people.Person;
+import com.solvd.util.MyLinkedList;
+
+import java.util.HashSet;
+
 public interface ILibrary {
     String getLibraryName();
 
@@ -11,7 +17,7 @@ public interface ILibrary {
 
     void schedule();
 
-    void printInventory();
+    MyLinkedList<LibraryItem> printInventory();
 
-    void printDirectory();
+    HashSet<Person> printDirectory();
 }

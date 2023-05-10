@@ -12,7 +12,7 @@ import java.util.*;
 
 public final class Library implements ILibrary {
 
-    static Map<Person, List<LibraryItem>> map = new HashMap<>();
+    static Map<Person, List<LibraryItem>> borrowers = new HashMap<>();
     private final MyLinkedList<LibraryItem> inventory;
     private final HashSet<Person> directory;
     private String libraryName;
@@ -27,11 +27,11 @@ public final class Library implements ILibrary {
 
     //Print all borrowed items
     public static void printBorrowedItems() {
-        if (map.isEmpty()) {
+        if (borrowers.isEmpty()) {
             System.out.println("There are not loaned Items");
         } else {
             System.out.println("\n*********** List of borrowers **********");
-            for (Map.Entry<Person, List<LibraryItem>> entry : map.entrySet()) {
+            for (Map.Entry<Person, List<LibraryItem>> entry : borrowers.entrySet()) {
                 System.out.println("-----------------------------------------------");
                 // get the key and value of the current entry
                 Person person = entry.getKey();
@@ -49,17 +49,17 @@ public final class Library implements ILibrary {
 
     // Add item and person to borrowed items
     public static void addPair(Person person, LibraryItem item) {
-        List<LibraryItem> borrowed = map.getOrDefault(person, new ArrayList<>()); // Create or Get list of borrow items
+        List<LibraryItem> borrowed = borrowers.getOrDefault(person, new ArrayList<>()); // Create or Get list of borrow items
         borrowed.add(item); // Add item to the list
-        map.put(person, borrowed); // Update map
+        borrowers.put(person, borrowed); // Update map
     }
 
     // Remove item and person from borrowedItems
     public static void removePair(Person person, LibraryItem libraryItem) {
-        List<LibraryItem> borrowed = map.get(person); // Get list
+        List<LibraryItem> borrowed = borrowers.get(person); // Get list
         if (borrowed != null) {
             borrowed.remove(libraryItem); // remove from list
-            map.put(person, borrowed); // Update map
+            borrowers.put(person, borrowed); // Update map
         }
     }
 
@@ -98,19 +98,21 @@ public final class Library implements ILibrary {
     }
 
     //Print Inventory
-    public void printInventory() {
+    public MyLinkedList<LibraryItem> printInventory() {
         System.out.println("\n    --- INVENTORY ---\n");
         inventory.showAll();
         System.out.println("\n--- END OF INVENTORY ---\n");
+        return inventory;
     }
 
     //Print Directory
-    public void printDirectory() {
+    public HashSet<Person> printDirectory() {
         System.out.println("\n    --- DIRECTORY ---\n");
         for (Person person : directory) {
             System.out.println(person);
         }
         System.out.println("\n--- END OF DIRECTORY ---\n");
+        return directory;
     }
 
     //Add Item to Inventory
