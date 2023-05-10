@@ -329,24 +329,16 @@ public class Main {
         System.out.println("New book: " + newBook.getTitle());
 
         //IntPredicate
-        IntPredicate isOld = year -> year / 2000  < 1;
+        System.out.println("\n-- 10.4 IntPredicate --");
+        IntPredicate isOld = year -> year / 100  < 19;
         int year = (int)book.year;
         if (isOld.test(year)) {
-            System.out.println("this an old book");
+            System.out.println(book.title + " --> This is an old book from before the 20th century.");
         } else {
-            System.out.println("this is a book of this century");
+            System.out.println(book.title + " --> This book was written over a period spanning the 20th and 21st centuries.");
         }
 
-
-
-
-
-
-
-
-
-
-
+        // ASK USER FOR
         System.out.println("\n\n--- 11 ASK USER AVAILABILITY OR INVENTORY ---\n");
         // Prompt user to update availability of book
         askItemAvailability(book);
