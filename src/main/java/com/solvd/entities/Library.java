@@ -85,13 +85,13 @@ public final class Library implements ILibrary {
         }
     }
 
-    public void sections() {
+    public void printSections() {
         for (LibrarySection section : LibrarySection.values()) {
             System.out.println(section);
         }
     }
 
-    public void events() {
+    public void PrintEvents() {
         for (LibraryEvents events : LibraryEvents.values()) {
             System.out.println(events);
         }
@@ -119,7 +119,7 @@ public final class Library implements ILibrary {
     }
 
     //Return Directory
-    public HashSet<Person> returnDirectory() {
+    public HashSet<Person> getDirectory() {
         return directory;
     }
 
