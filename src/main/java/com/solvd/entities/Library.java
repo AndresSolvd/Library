@@ -98,20 +98,28 @@ public final class Library implements ILibrary {
     }
 
     //Print Inventory
-    public MyLinkedList<LibraryItem> printInventory() {
+    public void printInventory() {
         System.out.println("\n    --- INVENTORY ---\n");
         inventory.showAll();
         System.out.println("\n--- END OF INVENTORY ---\n");
+    }
+
+    //Return Inventory
+    public MyLinkedList<LibraryItem>  returnInventory(){
         return inventory;
     }
 
     //Print Directory
-    public HashSet<Person> printDirectory() {
+    public void printDirectory() {
         System.out.println("\n    --- DIRECTORY ---\n");
         for (Person person : directory) {
             System.out.println(person);
         }
         System.out.println("\n--- END OF DIRECTORY ---\n");
+    }
+
+    //Return Directory
+    public HashSet<Person> returnDirectory() {
         return directory;
     }
 
