@@ -5,6 +5,7 @@ public enum ItemType {
     EBOOK("eBook"),
     PRINTEDBOOK("PrintedBook"),
     AUDIOBOOK("AudioBook");
+
     private final String itemType;
 
     ItemType(String itemType) {

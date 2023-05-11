@@ -2,6 +2,7 @@ package com.solvd.enums;
 
 
 public enum LibrarySection {
+
     FICTION("Fiction"),
     NON_FICTION("Non-fiction"),
     CHILDREN("Children"),

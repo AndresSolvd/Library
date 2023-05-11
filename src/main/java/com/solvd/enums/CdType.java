@@ -1,9 +1,11 @@
 package com.solvd.enums;
 
 public enum CdType {
+
     MUSIC("music"),
     SOFTWARE("software"),
     OTHER("other");
+
     private final String itemType;
 
     CdType(String cdType) {

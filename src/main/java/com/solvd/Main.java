@@ -197,9 +197,9 @@ public class Main {
         //3.4 Create same employee twice
         System.out.println("\n-- 3.4 Employee --");
         Employee employee = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", JobPositions.MANAGER, 100000);
+                "vegeta@email.com", JobPosition.MANAGER, 100000);
         Employee employee2 = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", JobPositions.MANAGER, 100000);
+                "vegeta@email.com", JobPosition.MANAGER, 100000);
         System.out.println("Employee Name: " + employee.getName());
         System.out.println("ID: " + employee.getPersonId());
         System.out.println("Employee position: " + employee.getJobPosition());
@@ -266,7 +266,7 @@ public class Main {
         Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298",
                 "bsimpson@email.com", -1, -4534);
         Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", JobPositions.MANAGER, -40);
+                "vegeta@email.com", JobPosition.MANAGER, -40);
 
         client3.setPersonId((short) -4);
         book4.setItemId((short) -98);
@@ -293,10 +293,10 @@ public class Main {
         library.printSchedule(); //Call a method from library to print all the Fixed schedule in the enum class
         // Test LibrarySection
         System.out.println("\n-- 9.2 Test LibrarySection enum --");
-        library.sections(); //Call a method from library to print all the Fixed sections in the enum class
+        library.printSections(); //Call a method from library to print all the Fixed sections in the enum class
         // Test LibraryEvents
         System.out.println("\n-- 9.3 Test LibraryEvents enum --");
-        library.events();
+        library.PrintEvents();
         System.out.println("\n-- 9.4 Test Language enum --");
         System.out.println(book.getLanguage()); //Call Method from Book to print the object's language limited to
         // ones in the enum class
