@@ -19,7 +19,8 @@ public class Employee extends Person implements IWork {
 
     @Override
     public String toString() {
-        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.jobPosition + "\nSalary: " + this.salary + "\n";
+        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.jobPosition + "\nSalary: " +
+                this.salary + "\n";
     }
 
     public JobPositions getJobPosition() {
@@ -38,7 +39,8 @@ public class Employee extends Person implements IWork {
         // Validate salary
         try {
             if (salary <= 0 | salary > 2147483647) {
-                throw new SalaryRangeException("salary invalid value(values accepted: integers between 1 and 1.8 * 10^308)");
+                throw new SalaryRangeException("salary invalid value(values accepted: integers between " +
+                        "1 and 1.8 * 10^308)");
             } else {
                 this.salary = salary;
             }

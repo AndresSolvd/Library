@@ -8,14 +8,16 @@ public class Professor extends Client {
     private static final Logger LOGGER = LogManager.getLogger(Professor.class);
     private int professorCredentialNumber;
 
-    public Professor(short id, String name, String phone, String email, int memberNumber, int professorCredentialNumber) {
+    public Professor(short id, String name, String phone, String email, int memberNumber,
+                     int professorCredentialNumber) {
         super(id, name, phone, email, memberNumber);
         this.professorCredentialNumber = professorCredentialNumber;
     }
 
     @Override
     public String toString() {
-        return "\nProfessor Name: " + super.getName() + "\nProfessor Credential: " + this.professorCredentialNumber + "\nMembership Number: " + super.getMemberNumber() + "\nContact Number: " + super.getPhone() + "\n";
+        return "\nProfessor Name: " + super.getName() + "\nProfessor Credential: " + this.professorCredentialNumber +
+                "\nMembership Number: " + super.getMemberNumber() + "\nContact Number: " + super.getPhone() + "\n";
     }
 
     public int getProfessorCredentialNumber() {
@@ -26,7 +28,8 @@ public class Professor extends Client {
         //validate professorCredentialNumber
         try {
             if (professorCredentialNumber <= 0 | professorCredentialNumber > 2147483647) {
-                throw new MemberAndCredentialRangeException("professorCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException("professorCredentialNumber invalid " +
+                        "value(values accepted: integers between 1 and 2147483647)");
             } else {
                 this.professorCredentialNumber = professorCredentialNumber;
             }

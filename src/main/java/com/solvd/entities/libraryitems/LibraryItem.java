@@ -6,12 +6,12 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class LibraryItem {
     private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
+    public static int activityCounter;
     protected short itemId;
     protected String name;
     protected boolean availability;
     protected String borrower;
     protected String dueDate;
-    public static int activityCounter;
 
     public LibraryItem(short itemId, String name, boolean availability, String borrower, String dueDate) {
         this.itemId = itemId;
@@ -23,7 +23,7 @@ public abstract class LibraryItem {
     }
 
     // Print total attempts to create LibraryItems
-    public static void activity() {
+    public static void printActivity() {
         System.out.println("Total attempts to create Library Items: " + LibraryItem.activityCounter);
     }
 
@@ -79,5 +79,4 @@ public abstract class LibraryItem {
     public final void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
-
 }

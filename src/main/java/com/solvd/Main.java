@@ -240,7 +240,7 @@ public class Main {
 
         // 5 Number of attempts to enter persons and items on respectively arrays
         System.out.println("\n\n--- 5 ATTEMPTS COUNT ---\n");
-        LibraryItem.activity();
+        LibraryItem.printActivity();
         Person.activity();
 
         // 6 Interfaces test
@@ -374,7 +374,7 @@ public class Main {
                     .filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString()))
                     .collect(Collectors.toList()).forEach(printTitle);
         };
-        IgetBooksByGenre.iGetBooksByGenre(Genre.SOUTHERN_GOTHIC);
+        IgetBooksByGenre.getBooksByGenre(Genre.SOUTHERN_GOTHIC);
 
         // ASK USER FOR
         System.out.println("\n\n--- 12 ASK USER AVAILABILITY OR INVENTORY ---\n");

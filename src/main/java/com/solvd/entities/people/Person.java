@@ -32,7 +32,8 @@ public abstract class Person {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return getPersonId() == person.getPersonId() && Objects.equals(getName(), person.getName()) && Objects.equals(getPhone(), person.getPhone()) && Objects.equals(getEmail(), person.getEmail());
+        return getPersonId() == person.getPersonId() && Objects.equals(getName(), person.getName())
+                && Objects.equals(getPhone(), person.getPhone()) && Objects.equals(getEmail(), person.getEmail());
     }
 
     @Override

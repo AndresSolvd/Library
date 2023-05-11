@@ -12,13 +12,13 @@ import java.util.Objects;
 
 public class Book extends LibraryItem implements IRead {
     private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
+    private final Language language;
     public ItemType itemType;
     public String title;
     public String author;
     public int year;
     public String publisher;
     public Genre genre;
-    private final Language language;
 
     public Book(short itemId, String name, boolean availability, String borrower, String dueDate, ItemType itemType, String title, String author, int year, String publisher, Genre genre, Language language) {
         super(itemId, name, availability, borrower, dueDate);
