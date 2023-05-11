@@ -18,6 +18,7 @@ public enum LibrarySection {
         return sectionName;
     }
 
+    @Override
     public String toString() {
         return sectionName;
     }

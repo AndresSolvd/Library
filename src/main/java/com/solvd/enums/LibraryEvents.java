@@ -20,6 +20,8 @@ public enum LibraryEvents {
     public String getEventName() {
         return eventName;
     }
+
+    @Override
     public String toString() {
         return eventName;
     }

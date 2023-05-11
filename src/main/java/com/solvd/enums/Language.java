@@ -22,5 +22,10 @@ public enum Language {
     public String getLanguageName() {
         return languageName;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
 

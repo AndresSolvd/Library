@@ -1,5 +1,6 @@
 package com.solvd.entities.libraryitems;
 
+import com.solvd.enums.CdType;
 import com.solvd.interfaces.IAudio;
 import com.solvd.interfaces.IRead;
 import com.solvd.interfaces.ISerialNumber;
@@ -8,18 +9,17 @@ import java.util.Objects;
 
 public class CD extends LibraryItem implements ISerialNumber, IAudio, IRead {
     private int serialNumber;
-    private String type;
-    private String name;
+    private CdType cdtype;
 
-    public CD(short itemId, String name, String type, boolean availability, String borrower, String dueDate, int serialNumber) {
+    public CD(short itemId, String name, CdType cdtype, boolean availability, String borrower, String dueDate, int serialNumber) {
         super(itemId, name, availability, borrower, dueDate);
-        this.type = type;
+        this.cdtype = cdtype;
         this.serialNumber = serialNumber;
     }
 
     @Override
     public String toString() {
-        return "CD Serial Number: " + this.serialNumber + ", CD Name: " + name + ", Type: " + type + ", Availability: " + super.availability;
+        return "CD Serial Number: " + this.serialNumber + ", CD Name: " + name + ", Type: " + cdtype + ", Availability: " + super.availability;
     }
 
     @Override
@@ -45,11 +45,11 @@ public class CD extends LibraryItem implements ISerialNumber, IAudio, IRead {
         this.serialNumber = serialNumber;
     }
 
-    public String getType() {
-        return type;
+    public CdType getCdtype() {
+        return cdtype;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCdtype(CdType cdtype) {
+        this.cdtype = cdtype;
     }
 }

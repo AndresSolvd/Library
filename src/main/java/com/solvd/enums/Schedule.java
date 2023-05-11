@@ -19,6 +19,7 @@ public enum Schedule {
         return dayName;
     }
 
+    @Override
     public String toString() {
         return dayName;
     }

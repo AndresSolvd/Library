@@ -6,8 +6,7 @@ import com.solvd.entities.libraryitems.Book;
 import com.solvd.entities.libraryitems.CD;
 import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.*;
-import com.solvd.enums.Genre;
-import com.solvd.enums.Language;
+import com.solvd.enums.*;
 import com.solvd.exceptions.BooleanException;
 import com.solvd.exceptions.IdRangeException;
 import com.solvd.exceptions.YearRangeException;
@@ -88,12 +87,13 @@ public class Main {
 
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
-        Book book = new Book((short) 1, "1984", true, "na", "na", "1984",
+        Book book = new Book((short) 1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984",
                 "George Orwell", 1949, "Secker & Warburg",
                 Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
-        Book book2 = new Book((short) 1, "1984", true, "na", "na", "1984",
+        Book book2 = new Book((short) 1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984",
                 "George Orwell", 1949, "Secker & Warburg",
                 Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        System.out.println("Item Name: " + book.getName());
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
@@ -101,12 +101,13 @@ public class Main {
         // 2.2 Create audiobook
         System.out.println("\n-- 2.2 AudioBook --");
         AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
-                "na", "To Kill a Mockingbird", "Harper Lee", 1960,
+                "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960,
                 "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
-                "na", "To Kill a Mockingbird", "Harper Lee", 1960,
+                "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960,
                 "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         System.out.println(audiobook.getSerialNumber());
+        System.out.println("Item Name: " + audiobook.getName());
         System.out.println("AudioBook Name: " + audiobook.getTitle());
         System.out.println("AudioBook Author: " + audiobook.getAuthor());
         System.out.println("AudioBook Availability: " + audiobook.getAvailability());
@@ -114,11 +115,12 @@ public class Main {
         // 2.3 Create CD
         System.out.println("\n-- 2.3 CD --");
         CD cd = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)",
-                "Music", true, "na", "na", 112345678);
+                CdType.MUSIC, true, "na", "na", 112345678);
         CD cd2 = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)",
-                "Music", true, "na", "na", 112345678);
-        CD cd3 = new CD((short) 4, "Twenty Thousand Leagues Under the Sea \"Jules Verne\"",
-                "eBook", true, "na", "na", 112302878);
+                CdType.MUSIC, true, "na", "na", 112345678);
+        CD cd3 = new CD((short) 4, "Age of the Empires",
+                CdType.SOFTWARE, true, "na", "na", 112302878);
+        System.out.println("Item Name: " + cd.getName());
         System.out.println("CD Serial Number: " + cd.getSerialNumber());
         System.out.println("CD availability: " + cd.getAvailability());
         System.out.println("CD Due Date: " + cd.getDueDate());
@@ -195,12 +197,12 @@ public class Main {
         //3.4 Create same employee twice
         System.out.println("\n-- 3.4 Employee --");
         Employee employee = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", "PrinceOfTheLibrary", 100000);
+                "vegeta@email.com", JobPositions.MANAGER, 100000);
         Employee employee2 = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", "PrinceOfTheLibrary", 100000);
+                "vegeta@email.com", JobPositions.MANAGER, 100000);
         System.out.println("Employee Name: " + employee.getName());
         System.out.println("ID: " + employee.getPersonId());
-        System.out.println("Employee position: " + employee.getPosition());
+        System.out.println("Employee position: " + employee.getJobPosition());
         System.out.println("Employee salary: " + employee.getSalary());
 
         // 3.5 Add persons to Directory and print it
@@ -251,10 +253,10 @@ public class Main {
 
         // 7 test exception handler
         System.out.println("\n\n--- 7 EXCEPTIONS ---\n");
-        Book book4 = new Book((short) -1, "1984", true, "na", "na", "1984",
+        Book book4 = new Book((short) -1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984",
                 "George Orwell", -4000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION,
                 Language.ENGLISH);
-        Book book5 = new Book((short) 40000, "1984", true, "na", "na", "1984",
+        Book book5 = new Book((short) 40000, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984",
                 "George Orwell", 6000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION,
                 Language.ENGLISH);
         Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132",
@@ -264,7 +266,7 @@ public class Main {
         Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298",
                 "bsimpson@email.com", -1, -4534);
         Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813",
-                "vegeta@email.com", "PrinceOfTheLibrary", -40);
+                "vegeta@email.com", JobPositions.MANAGER, -40);
 
         client3.setPersonId((short) -4);
         book4.setItemId((short) -98);
@@ -324,7 +326,7 @@ public class Main {
         // Supplier - Adds a new book and prints a message with the title
         System.out.println("\n-- 10.4 Supplier --");
         Supplier<Book> bookSupplier = () -> new Book((short) 1, "Animal Farm", true, "na",
-                "na", "Animal Farm", "The joker", 2023, "NoOneReally",
+                "na", ItemType.PRINTEDBOOK, "Animal Farm", "The joker", 2023, "NoOneReally",
                 Genre.FICTION, Language.ENGLISH);
         Book newBook = bookSupplier.get();
         System.out.println("New book: " + newBook.getTitle());
@@ -366,7 +368,7 @@ public class Main {
         // IGetBooksByGenre - List all the Books from a genre
         System.out.println("\n-- 11.3 IGetBooksByGenre --");
         IGetBooksByGenre IgetBooksByGenre = (Genre genre) -> {
-            System.out.println(genre+ ":");
+            System.out.println(genre + ":");
             library.returnInventory().toList().stream()
                     .filter(item -> item instanceof Book).map(item -> (Book) item)
                     .filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString()))

@@ -1,5 +1,6 @@
 package com.solvd.entities.people;
 
+import com.solvd.enums.JobPositions;
 import com.solvd.exceptions.SalaryRangeException;
 import com.solvd.interfaces.IWork;
 import org.apache.logging.log4j.LogManager;
@@ -7,26 +8,26 @@ import org.apache.logging.log4j.Logger;
 
 public class Employee extends Person implements IWork {
     private static final Logger LOGGER = LogManager.getLogger(Person.class);
-    private String position;
+    private JobPositions jobPosition;
     private double salary;
 
-    public Employee(short personId, String name, String phone, String email, String position, double salary) {
+    public Employee(short personId, String name, String phone, String email, JobPositions jobPosition, double salary) {
         super(personId, name, phone, email);
-        this.position = position;
+        this.jobPosition = jobPosition;
         this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.position + "\nSalary: " + this.salary + "\n";
+        return "\nEmployee Name: " + super.getName() + "\nPosition: " + this.jobPosition + "\nSalary: " + this.salary + "\n";
     }
 
-    public String getPosition() {
-        return position;
+    public JobPositions getJobPosition() {
+        return jobPosition;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setJobPosition(JobPositions jobPosition) {
+        this.jobPosition = jobPosition;
     }
 
     public double getSalary() {
