@@ -8,19 +8,20 @@ import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.*;
 import com.solvd.enums.Genre;
 import com.solvd.enums.Language;
-import com.solvd.enums.LibrarySection;
 import com.solvd.exceptions.BooleanException;
 import com.solvd.exceptions.IdRangeException;
 import com.solvd.exceptions.YearRangeException;
+import com.solvd.interfaces.IGetBooksByGenre;
+import com.solvd.interfaces.INewestBookFinder;
+import com.solvd.interfaces.IOldestBookFinder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
@@ -101,7 +102,7 @@ public class Main {
         System.out.println("\n-- 2.2 AudioBook --");
         AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
                 "na", "To Kill a Mockingbird", "Harper Lee", 1960,
-                "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH ,123456789);
+                "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
                 "na", "To Kill a Mockingbird", "Harper Lee", 1960,
                 "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
@@ -330,16 +331,51 @@ public class Main {
 
         //IntPredicate
         System.out.println("\n-- 10.4 IntPredicate --");
-        IntPredicate isOld = year -> year / 100  < 19;
-        int year = (int)book.year;
+        IntPredicate isOld = year -> year / 100 < 19;
+        int year = book.year;
         if (isOld.test(year)) {
             System.out.println(book.title + " --> This is an old book from before the 20th century.");
         } else {
-            System.out.println(book.title + " --> This book was written over a period spanning the 20th and 21st centuries.");
+            System.out.println(book.title + " --> This book was written over a period spanning the 20th and 21st " +
+                    "centuries.");
         }
 
+        // Lambda generics
+        System.out.println("\n\n--- 11 LAMBDA GENERICS ---\n");
+
+        // IOldestBookFinder - Find the oldest book
+        System.out.println("\n-- 11.1 IOldestBookFinder --");
+        IOldestBookFinder iOldestBookFinder = () -> {
+            System.out.println(library.returnInventory().toList().stream().
+                    filter(item -> item instanceof Book).map(item -> (Book) item)
+                    .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
+                    .max(Comparator.naturalOrder()).orElse("No book Found"));
+        };
+        iOldestBookFinder.iOldestBookFinder();
+
+        // IOldestBookFinder - Find the newest book
+        System.out.println("\n-- 11.2 INewestBookFinder --");
+        INewestBookFinder iNewestBookFinder = () -> {
+            System.out.println(library.returnInventory().toList().stream().
+                    filter(item -> item instanceof Book).map(item -> (Book) item)
+                    .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
+                    .min(Comparator.naturalOrder()).orElse("No book Found"));
+        };
+        iNewestBookFinder.iNewestBookFinder();
+
+        // IGetBooksByGenre - List all the Books from a genre
+        System.out.println("\n-- 11.3 IGetBooksByGenre --");
+        IGetBooksByGenre IgetBooksByGenre = (Genre genre) -> {
+            System.out.println(genre+ ":");
+            library.returnInventory().toList().stream()
+                    .filter(item -> item instanceof Book).map(item -> (Book) item)
+                    .filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString()))
+                    .collect(Collectors.toList()).forEach(printTitle);
+        };
+        IgetBooksByGenre.iGetBooksByGenre(Genre.SOUTHERN_GOTHIC);
+
         // ASK USER FOR
-        System.out.println("\n\n--- 11 ASK USER AVAILABILITY OR INVENTORY ---\n");
+        System.out.println("\n\n--- 12 ASK USER AVAILABILITY OR INVENTORY ---\n");
         // Prompt user to update availability of book
         askItemAvailability(book);
         System.out.println("current book Availability: " + book.getAvailability());
