@@ -13,6 +13,7 @@ import com.solvd.exceptions.YearRangeException;
 import com.solvd.interfaces.IGetBooksByGenre;
 import com.solvd.interfaces.INewestBookFinder;
 import com.solvd.interfaces.IOldestBookFinder;
+import com.solvd.util.UniqueWordCounter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

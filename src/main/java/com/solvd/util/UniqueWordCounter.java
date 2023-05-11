@@ -1,4 +1,4 @@
-package com.solvd;
+package com.solvd.util;
 
 import org.apache.commons.io.FileUtils;
 
