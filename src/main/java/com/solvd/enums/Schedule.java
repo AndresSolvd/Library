@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum Schedule {
+
     MONDAY("Monday: Closed"),
     TUESDAY("Tuesday: 10H00 to 17H00"),
     WEDNESDAY("Wednesday: 10H00 to 17H00"),

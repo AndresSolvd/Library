@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum ItemType {
+
     EBOOK("eBook"),
     PRINTEDBOOK("PrintedBook"),
     AUDIOBOOK("AudioBook");

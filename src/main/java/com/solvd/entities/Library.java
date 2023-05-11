@@ -79,7 +79,7 @@ public final class Library implements ILibrary {
         this.address = address;
     }
 
-    public void schedule() {
+    public void printSchedule() {
         for (Schedule day : Schedule.values()) {
             System.out.println(day);
         }
@@ -105,7 +105,7 @@ public final class Library implements ILibrary {
     }
 
     //Return Inventory
-    public MyLinkedList<LibraryItem>  returnInventory(){
+    public MyLinkedList<LibraryItem> getInventory(){
         return inventory;
     }
 

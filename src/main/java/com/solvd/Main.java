@@ -290,7 +290,7 @@ public class Main {
         System.out.println("\n\n--- 9 TEST ENUM ---\n");
         // Test Schedule
         System.out.println("\n-- 9.1 Test Schedule enum --");
-        library.schedule(); //Call a method from library to print all the Fixed schedule in the enum class
+        library.printSchedule(); //Call a method from library to print all the Fixed schedule in the enum class
         // Test LibrarySection
         System.out.println("\n-- 9.2 Test LibrarySection enum --");
         library.sections(); //Call a method from library to print all the Fixed sections in the enum class
@@ -348,7 +348,7 @@ public class Main {
         // IOldestBookFinder - Find the oldest book
         System.out.println("\n-- 11.1 IOldestBookFinder --");
         IOldestBookFinder iOldestBookFinder = () -> {
-            System.out.println(library.returnInventory().toList().stream().
+            System.out.println(library.getInventory().toList().stream().
                     filter(item -> item instanceof Book).map(item -> (Book) item)
                     .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
                     .max(Comparator.naturalOrder()).orElse("No book Found"));
@@ -358,7 +358,7 @@ public class Main {
         // IOldestBookFinder - Find the newest book
         System.out.println("\n-- 11.2 INewestBookFinder --");
         INewestBookFinder iNewestBookFinder = () -> {
-            System.out.println(library.returnInventory().toList().stream().
+            System.out.println(library.getInventory().toList().stream().
                     filter(item -> item instanceof Book).map(item -> (Book) item)
                     .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
                     .min(Comparator.naturalOrder()).orElse("No book Found"));
@@ -369,7 +369,7 @@ public class Main {
         System.out.println("\n-- 11.3 IGetBooksByGenre --");
         IGetBooksByGenre IgetBooksByGenre = (Genre genre) -> {
             System.out.println(genre + ":");
-            library.returnInventory().toList().stream()
+            library.getInventory().toList().stream()
                     .filter(item -> item instanceof Book).map(item -> (Book) item)
                     .filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString()))
                     .collect(Collectors.toList()).forEach(printTitle);

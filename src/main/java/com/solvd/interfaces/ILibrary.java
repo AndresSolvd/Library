@@ -9,7 +9,7 @@ public interface ILibrary {
 
     void setAddress(String address);
 
-    void schedule();
+    void printSchedule();
 
     void printInventory();
 

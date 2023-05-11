@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum JobPositions {
+
     LIBRARIAN("librarian"),
     MANAGER("manager"),
     ARCHIVIST("archivist"),

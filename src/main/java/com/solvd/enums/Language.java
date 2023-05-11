@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum Language {
+
     ENGLISH("English"),
     SPANISH("Spanish"),
     FRENCH("French"),

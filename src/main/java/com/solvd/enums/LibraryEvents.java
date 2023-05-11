@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum LibraryEvents {
+
     AUTHOR_TALK("Author Talk"),
     BOOK_DISCUSSION("Book Discussion"),
     CHILDREN_STORY_TIME("Children's Story Time"),

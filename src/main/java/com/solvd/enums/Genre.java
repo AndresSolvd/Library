@@ -1,6 +1,7 @@
 package com.solvd.enums;
 
 public enum Genre {
+
     FICTION("Fiction"),
     NON_FICTION("Non-fiction"),
     DYSTOPIAN_FICTION("Dystopian fiction"),
@@ -22,6 +23,11 @@ public enum Genre {
 
     public String getGenreName() {
         return genreName;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
 
