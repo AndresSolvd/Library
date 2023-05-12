@@ -353,7 +353,7 @@ public class Main {
                     .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
                     .max(Comparator.naturalOrder()).orElse("No book Found"));
         };
-        iOldestBookFinder.iOldestBookFinder();
+        iOldestBookFinder.findOldestBook();
 
         // IOldestBookFinder - Find the newest book
         System.out.println("\n-- 11.2 INewestBookFinder --");
@@ -363,7 +363,7 @@ public class Main {
                     .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
                     .min(Comparator.naturalOrder()).orElse("No book Found"));
         };
-        iNewestBookFinder.iNewestBookFinder();
+        iNewestBookFinder.findNewestBook();
 
         // IGetBooksByGenre - List all the Books from a genre
         System.out.println("\n-- 11.3 IGetBooksByGenre --");
