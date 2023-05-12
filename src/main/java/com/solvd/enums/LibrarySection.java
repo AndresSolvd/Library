@@ -11,7 +11,7 @@ public enum LibrarySection {
 
     private final String sectionName;
 
-    LibrarySection(String sectionName) {
+    private LibrarySection(String sectionName) {
         this.sectionName = sectionName;
     }
 
