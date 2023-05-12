@@ -348,6 +348,7 @@ public class Main {
 
         // IOldestBookFinder - Find the oldest book
         System.out.println("\n-- 11.1 IOldestBookFinder --");
+        System.out.println("Used 3 of 7 Stream() [.filter , .map() and .max()]");
         IOldestBookFinder iOldestBookFinder = () -> {
             System.out.println(library.getInventory().toList().stream().
                     filter(item -> item instanceof Book).map(item -> (Book) item)
@@ -358,9 +359,11 @@ public class Main {
 
         // IOldestBookFinder - Find the newest book
         System.out.println("\n-- 11.2 INewestBookFinder --");
+        System.out.println("Used 3 of 7 Stream() [.filter , .map() and .min()]");
         INewestBookFinder iNewestBookFinder = () -> {
             System.out.println(library.getInventory().toList().stream().
-                    filter(item -> item instanceof Book).map(item -> (Book) item)
+                    filter(item -> item instanceof Book)
+                    .map(item -> (Book) item)
                     .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
                     .min(Comparator.naturalOrder()).orElse("No book Found"));
         };
@@ -368,6 +371,7 @@ public class Main {
 
         // IGetBooksByGenre - List all the Books from a genre
         System.out.println("\n-- 11.3 IGetBooksByGenre --");
+        System.out.println("Used 2 of 7 Stream() [.filter , and .collect]");
         IGetBooksByGenre IgetBooksByGenre = (Genre genre) -> {
             System.out.println(genre + ":");
             library.getInventory().toList().stream()
