@@ -1,5 +1,8 @@
 package com.solvd.entities.libraryitems;
 
+import com.solvd.enums.Genre;
+import com.solvd.enums.ItemType;
+import com.solvd.enums.Language;
 import com.solvd.exceptions.YearRangeException;
 import com.solvd.interfaces.IRead;
 import org.apache.logging.log4j.LogManager;
@@ -9,19 +12,23 @@ import java.util.Objects;
 
 public class Book extends LibraryItem implements IRead {
     private static final Logger LOGGER = LogManager.getLogger(LibraryItem.class);
+    private final Language language;
+    public ItemType itemType;
     public String title;
     public String author;
     public int year;
     public String publisher;
-    public String genre;
+    public Genre genre;
 
-    public Book(short itemId, String name, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre) {
+    public Book(short itemId, String name, boolean availability, String borrower, String dueDate, ItemType itemType, String title, String author, int year, String publisher, Genre genre, Language language) {
         super(itemId, name, availability, borrower, dueDate);
+        this.itemType = itemType;
         this.title = title;
         this.author = author;
         this.year = year;
         this.publisher = publisher;
         this.genre = genre;
+        this.language = language;
     }
 
     @Override
@@ -70,7 +77,11 @@ public class Book extends LibraryItem implements IRead {
         return publisher;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
+    }
+
+    public Language getLanguage() {
+        return language;
     }
 }

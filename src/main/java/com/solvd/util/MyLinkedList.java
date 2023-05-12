@@ -1,5 +1,8 @@
 package com.solvd.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyLinkedList<T> {
 
     private Node head; // Head of the linked list
@@ -80,4 +83,16 @@ public class MyLinkedList<T> {
             this.next = null;
         }
     }
+
+    // Transform linkedList into ArrayList
+    public List<T> toList() {
+        List<T> list = new ArrayList<>();
+        Node current = head;
+        while (current != null) {
+            list.add(current.data);
+            current = current.next;
+        }
+        return list;
+    }
+
 }

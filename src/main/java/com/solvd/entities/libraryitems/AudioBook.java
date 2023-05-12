@@ -1,5 +1,8 @@
 package com.solvd.entities.libraryitems;
 
+import com.solvd.enums.Genre;
+import com.solvd.enums.ItemType;
+import com.solvd.enums.Language;
 import com.solvd.interfaces.IAudio;
 import com.solvd.interfaces.ISerialNumber;
 
@@ -8,8 +11,8 @@ import java.util.Objects;
 public class AudioBook extends Book implements ISerialNumber, IAudio {
     private int serialNumber;
 
-    public AudioBook(short itemId, String name, boolean availability, String borrower, String dueDate, String title, String author, int year, String publisher, String genre, int serialNumber) {
-        super(itemId, name, availability, borrower, dueDate, title, author, year, publisher, genre);
+    public AudioBook(short itemId, String name, boolean availability, String borrower, String dueDate, ItemType itemType, String title, String author, int year, String publisher, Genre genre, Language language, int serialNumber) {
+        super(itemId, name, availability, borrower, dueDate, itemType, title, author, year, publisher, genre, language);
         this.serialNumber = serialNumber;
     }
 

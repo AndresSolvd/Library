@@ -2,6 +2,9 @@ package com.solvd.entities;
 
 import com.solvd.entities.libraryitems.LibraryItem;
 import com.solvd.entities.people.Person;
+import com.solvd.enums.LibraryEvents;
+import com.solvd.enums.LibrarySection;
+import com.solvd.enums.Schedule;
 import com.solvd.interfaces.ILibrary;
 import com.solvd.util.MyLinkedList;
 
@@ -9,28 +12,26 @@ import java.util.*;
 
 public final class Library implements ILibrary {
 
-    static Map<Person, List<LibraryItem>> map = new HashMap<>();
+    static Map<Person, List<LibraryItem>> borrowers = new HashMap<>();
     private final MyLinkedList<LibraryItem> inventory;
     private final HashSet<Person> directory;
     private String libraryName;
     private String address;
-    private String weekDaysTimeOpen;
 
-    public Library(String libraryName, String address, String weekDaysTimeOpen) {
+    public Library(String libraryName, String address) {
         this.libraryName = libraryName;
         this.address = address;
-        this.weekDaysTimeOpen = weekDaysTimeOpen;
         this.inventory = new MyLinkedList<LibraryItem>();
         this.directory = new HashSet<Person>();
     }
 
     //Print all borrowed items
     public static void printBorrowedItems() {
-        if (map.isEmpty()) {
+        if (borrowers.isEmpty()) {
             System.out.println("There are not loaned Items");
         } else {
             System.out.println("\n*********** List of borrowers **********");
-            for (Map.Entry<Person, List<LibraryItem>> entry : map.entrySet()) {
+            for (Map.Entry<Person, List<LibraryItem>> entry : borrowers.entrySet()) {
                 System.out.println("-----------------------------------------------");
                 // get the key and value of the current entry
                 Person person = entry.getKey();
@@ -48,17 +49,17 @@ public final class Library implements ILibrary {
 
     // Add item and person to borrowed items
     public static void addPair(Person person, LibraryItem item) {
-        List<LibraryItem> borrowed = map.getOrDefault(person, new ArrayList<>()); // Create or Get list of borrow items
+        List<LibraryItem> borrowed = borrowers.getOrDefault(person, new ArrayList<>()); // Create or Get list of borrow items
         borrowed.add(item); // Add item to the list
-        map.put(person, borrowed); // Update map
+        borrowers.put(person, borrowed); // Update map
     }
 
     // Remove item and person from borrowedItems
     public static void removePair(Person person, LibraryItem libraryItem) {
-        List<LibraryItem> borrowed = map.get(person); // Get list
+        List<LibraryItem> borrowed = borrowers.get(person); // Get list
         if (borrowed != null) {
             borrowed.remove(libraryItem); // remove from list
-            map.put(person, borrowed); // Update map
+            borrowers.put(person, borrowed); // Update map
         }
     }
 
@@ -78,12 +79,22 @@ public final class Library implements ILibrary {
         this.address = address;
     }
 
-    public String getWeekDaysTimeOpen() {
-        return weekDaysTimeOpen;
+    public void printSchedule() {
+        for (Schedule day : Schedule.values()) {
+            System.out.println(day);
+        }
     }
 
-    public void setWeekDaysTimeOpen(String weekDaysTimeOpen) {
-        this.weekDaysTimeOpen = weekDaysTimeOpen;
+    public void printSections() {
+        for (LibrarySection section : LibrarySection.values()) {
+            System.out.println(section);
+        }
+    }
+
+    public void PrintEvents() {
+        for (LibraryEvents events : LibraryEvents.values()) {
+            System.out.println(events);
+        }
     }
 
     //Print Inventory
@@ -93,6 +104,11 @@ public final class Library implements ILibrary {
         System.out.println("\n--- END OF INVENTORY ---\n");
     }
 
+    //Return Inventory
+    public MyLinkedList<LibraryItem> getInventory(){
+        return inventory;
+    }
+
     //Print Directory
     public void printDirectory() {
         System.out.println("\n    --- DIRECTORY ---\n");
@@ -100,6 +116,11 @@ public final class Library implements ILibrary {
             System.out.println(person);
         }
         System.out.println("\n--- END OF DIRECTORY ---\n");
+    }
+
+    //Return Directory
+    public HashSet<Person> getDirectory() {
+        return directory;
     }
 
     //Add Item to Inventory
