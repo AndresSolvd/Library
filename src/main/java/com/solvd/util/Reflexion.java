@@ -10,7 +10,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Reflexion {
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
+
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,
+            InvocationTargetException, IllegalAccessException, NoSuchFieldException {
 
         //CLASS
         System.out.println("\n--- CLASS ---");
@@ -20,15 +22,11 @@ public class Reflexion {
 
         // Print all Methods in the Library Class
         System.out.println("\n--- All methods used in the Library CLass --- ");
-        System.out.println(Stream.of(classA.getMethods())
-                .map(Method::getName)
-                .collect(Collectors.toList()));
+        System.out.println(Stream.of(classA.getMethods()).map(Method::getName).collect(Collectors.toList()));
 
         // Print only methods that belongs to the Library Class
         System.out.println("\n--- Only all methods that belongs to the Library CLass ---");
-        System.out.println(Stream.of(classA.getDeclaredMethods())
-                .map(Method::getName)
-                .collect(Collectors.toList()));
+        System.out.println(Stream.of(classA.getDeclaredMethods()).map(Method::getName).collect(Collectors.toList()));
 
         //METHOD
         System.out.println("\n--- METHOD ---");
@@ -48,8 +46,7 @@ public class Reflexion {
         System.out.println("\n--- CONSTRUCTOR ---");
         // Get constructors
         System.out.println("\n--- Get constructor ---");
-        Stream.of(classA.getConstructors())
-                .map(Constructor -> Arrays.toString(Constructor.getParameterTypes()))
+        Stream.of(classA.getConstructors()).map(Constructor -> Arrays.toString(Constructor.getParameterTypes()))
                 .forEach(System.out::println);
 
         //FIELD
