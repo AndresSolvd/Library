@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
@@ -69,7 +70,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws BooleanException, YearRangeException, IOException {
+    public static void main(String[] args) throws BooleanException, YearRangeException, IOException, ExecutionException, InterruptedException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -342,7 +343,7 @@ public class Main {
         };
         IgetBooksByGenre.getBooksByGenre(Genre.SOUTHERN_GOTHIC);
 
-        // ASK USER FOR
+        // 12 ASK USER FOR
         System.out.println("\n\n--- 12 ASK USER AVAILABILITY OR INVENTORY ---\n");
         // Prompt user to update availability of book
         askItemAvailability(book);
@@ -355,13 +356,13 @@ public class Main {
             System.out.println("Lets try next some Multithreading");
         }
 
-        // Test MT5Seconds
+        // 13 MULTITHREADING
         System.out.println("\n\n--- 13 MULTITHREADING---\n");
 
         // By extending the Thread class
         MT5Seconds userReadsAnimalFarm = new MT5Seconds(newBook.getTitle());
 
-        // By implementing the Runnable interface
+        //  By implementing the Runnable interface
         MT10Seconds tenSeconds = new MT10Seconds(book.getTitle());
         Thread userReads1984 = new Thread(tenSeconds);
 
