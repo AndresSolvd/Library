@@ -1,4 +1,6 @@
-package com.solvd.util;
+package com.solvd.threads;
+
+import com.solvd.threads.MT5Seconds;
 
 import java.util.concurrent.*;
 

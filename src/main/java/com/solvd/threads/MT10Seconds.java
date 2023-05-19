@@ -1,4 +1,4 @@
-package com.solvd.util;
+package com.solvd.threads;
 
 public class MT10Seconds implements Runnable{
 
