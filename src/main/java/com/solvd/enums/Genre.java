@@ -17,7 +17,7 @@ public enum Genre {
 
     private final String genreName;
 
-    private Genre(String genreName) {
+    Genre(String genreName) {
         this.genreName = genreName;
     }
 

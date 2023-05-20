@@ -35,7 +35,7 @@ public abstract class LibraryItem {
     public final void setItemId(short itemId) {
         // Check valid id number
         try {
-            if (itemId < 0 | itemId > 32767) {
+            if (itemId < 0) {
                 throw new IdRangeException("itemId invalid value (values accepted: integers between 0 and 32,767)");
             } else {
                 this.itemId = itemId;

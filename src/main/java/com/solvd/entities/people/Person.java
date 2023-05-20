@@ -48,7 +48,7 @@ public abstract class Person {
     public void setPersonId(short personId) {
         // Check valid id number
         try {
-            if (personId < 0 | personId > 32767) {
+            if (personId < 0) {
                 throw new IdRangeException("personId invalid value (values accepted: integers between 0 and 32,767)");
             } else {
                 this.personId = personId;

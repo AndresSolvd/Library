@@ -12,7 +12,7 @@ public enum Schedule {
 
     private final String dayName;
 
-    private Schedule(String dayName) {
+    Schedule(String dayName) {
         this.dayName = dayName;
     }
 

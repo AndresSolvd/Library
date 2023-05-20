@@ -10,7 +10,7 @@ public enum JobPosition {
 
     private final String jobPosition;
 
-    private JobPosition(String jobPosition){
+    JobPosition(String jobPosition){
 
         this.jobPosition = jobPosition;
     }

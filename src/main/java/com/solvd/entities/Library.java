@@ -21,8 +21,8 @@ public final class Library implements ILibrary {
     public Library(String libraryName, String address) {
         this.libraryName = libraryName;
         this.address = address;
-        this.inventory = new MyLinkedList<LibraryItem>();
-        this.directory = new HashSet<Person>();
+        this.inventory = new MyLinkedList<>();
+        this.directory = new HashSet<>();
     }
 
     //Print all borrowed items

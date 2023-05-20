@@ -61,7 +61,7 @@ public class Book extends LibraryItem implements IRead {
         return year;
     }
 
-    public void setYear(int year) throws YearRangeException {
+    public void setYear(int year) {
         try {
             if (year <= 0 | year > 2023) {
                 throw new YearRangeException("Invalid input (value accepted: between 1 and 2023)");
