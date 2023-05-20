@@ -1,10 +1,20 @@
 package com.solvd.threads;
 
-import com.solvd.threads.MT5Seconds;
-
 import java.util.concurrent.*;
 
 public class ThreadsPool {
+    private static volatile ExecutorService executorService;
+
+    public static ExecutorService getExecutorService() {
+        if (executorService == null) {
+            synchronized (ThreadsPool.class) {
+                if (executorService == null) {
+                    executorService = Executors.newFixedThreadPool(5);
+                }
+            }
+        }
+        return executorService;
+    }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
@@ -70,7 +80,9 @@ public class ThreadsPool {
             }
         };
 
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ExecutorService executorService = getExecutorService();
+
+        executorService = Executors.newFixedThreadPool(5);
         executorService.submit(threatUno);
         executorService.submit(threatDos);
         Future<String> future = executorService.submit(callable);
@@ -82,8 +94,8 @@ public class ThreadsPool {
 
         System.out.println(future.get());
 
-        while (true){
-            if(future.isDone()) {
+        while (true) {
+            if (future.isDone()) {
                 break;
             }
         }
@@ -91,20 +103,6 @@ public class ThreadsPool {
         executorService.shutdown();
 
         System.out.println("\nTHIS IS THE ------" + Thread.currentThread().getName() + "------ THREAD");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 
