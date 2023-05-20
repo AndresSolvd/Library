@@ -9,7 +9,6 @@ import com.solvd.entities.people.*;
 import com.solvd.enums.*;
 import com.solvd.exceptions.BooleanException;
 import com.solvd.exceptions.IdRangeException;
-import com.solvd.exceptions.YearRangeException;
 import com.solvd.interfaces.IGetBooksByGenre;
 import com.solvd.interfaces.INewestBookFinder;
 import com.solvd.interfaces.IOldestBookFinder;
@@ -74,7 +73,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws BooleanException, YearRangeException, IOException {
+    public static void main(String[] args) throws BooleanException, IOException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -102,7 +101,8 @@ public class Main {
                 ItemType.PRINTEDBOOK, "1984", "George Orwell", 1949, "Secker & Warburg",
                 Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
         System.out.println("Item Name: " + book.getName());
-        System.out.println("AudioBook Name: " + book.getTitle());
+        System.out.println("Item type: " + book.itemType.getItemType());
+        System.out.println("Book Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
         System.out.println("Book Availability: " + book.getAvailability());
 
@@ -116,6 +116,7 @@ public class Main {
                 "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         System.out.println(audiobook.getSerialNumber());
         System.out.println("Item Name: " + audiobook.getName());
+        System.out.println("Item type: " + audiobook.itemType.getItemType());
         System.out.println("AudioBook Name: " + audiobook.getTitle());
         System.out.println("AudioBook Author: " + audiobook.getAuthor());
         System.out.println("AudioBook Availability: " + audiobook.getAvailability());
