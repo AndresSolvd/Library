@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 public class ThreadsPool {
     private static volatile ExecutorService executorService;
 
-    public static ExecutorService getExecutorService() {
+    public static void getExecutorService() {
         if (executorService == null) {
             synchronized (ThreadsPool.class) {
                 if (executorService == null) {
@@ -13,7 +13,6 @@ public class ThreadsPool {
                 }
             }
         }
-        return executorService;
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -68,19 +67,16 @@ public class ThreadsPool {
             System.out.println("Custom thread (thread) message: " + Thread.currentThread().getId());
         });
         MT5Seconds userReadsAnimalFarm = new MT5Seconds("Reading Animal Farm");
-        Callable<String> callable = new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                return "Callable executes now";
+        Callable<String> callable = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
+            return "Callable executes now";
         };
 
-        ExecutorService executorService = getExecutorService();
+        getExecutorService();
 
         executorService = Executors.newFixedThreadPool(5);
         executorService.submit(threatUno);
