@@ -22,7 +22,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
@@ -30,7 +29,12 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     static {
-        System.out.println("\n\n*******************************************************************************************************************************************************************************************\nI don't have any idea for a reason to use this feature unless I need to load a Database before loading this program. If so, I will change this when I get to that part of the course\n*******************************************************************************************************************************************************************************************\n");
+        System.out.println("\n\n*********************************************************************************" +
+                "************************************************************************************************" +
+                "**********\nI don't have any idea for a reason to use this feature unless I need to load a Database" +
+                " before loading this program. If so, I will change this when I get to that part of the course\n*" +
+                "***************************************************************************************************" +
+                "***************************************************************************************\n");
     }
 
     public static void askItemAvailability(LibraryItem item) throws BooleanException {
@@ -70,7 +74,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws BooleanException, YearRangeException, IOException, ExecutionException, InterruptedException {
+    public static void main(String[] args) throws BooleanException, YearRangeException, IOException {
         System.out.println("\n----- BEGIN OF THE SCRIPT -----\n");
 
         // 1 Create library
@@ -91,8 +95,12 @@ public class Main {
 
         // 2.1 Create book
         System.out.println("\n-- 2.1 Book --");
-        Book book = new Book((short) 1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984", "George Orwell", 1949, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
-        Book book2 = new Book((short) 1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984", "George Orwell", 1949, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Book book = new Book((short) 1, "1984", true, "na", "na",
+                ItemType.PRINTEDBOOK, "1984", "George Orwell", 1949, "Secker & Warburg",
+                Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Book book2 = new Book((short) 1, "1984", true, "na", "na",
+                ItemType.PRINTEDBOOK, "1984", "George Orwell", 1949, "Secker & Warburg",
+                Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
         System.out.println("Item Name: " + book.getName());
         System.out.println("AudioBook Name: " + book.getTitle());
         System.out.println("Book Author: " + book.getAuthor());
@@ -100,8 +108,12 @@ public class Main {
 
         // 2.2 Create audiobook
         System.out.println("\n-- 2.2 AudioBook --");
-        AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
-        AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na", "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960, "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
+        AudioBook audiobook = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
+                "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960,
+                "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
+        AudioBook audiobook2 = new AudioBook((short) 2, "To Kill a Mockingbird", true, "na",
+                "na", ItemType.AUDIOBOOK, "To Kill a Mockingbird", "Harper Lee", 1960,
+                "J. B. Lippincott & Co", Genre.SOUTHERN_GOTHIC, Language.ENGLISH, 123456789);
         System.out.println(audiobook.getSerialNumber());
         System.out.println("Item Name: " + audiobook.getName());
         System.out.println("AudioBook Name: " + audiobook.getTitle());
@@ -110,9 +122,12 @@ public class Main {
 
         // 2.3 Create CD
         System.out.println("\n-- 2.3 CD --");
-        CD cd = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)", CdType.MUSIC, true, "na", "na", 112345678);
-        CD cd2 = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)", CdType.MUSIC, true, "na", "na", 112345678);
-        CD cd3 = new CD((short) 4, "Age of the Empires", CdType.SOFTWARE, true, "na", "na", 112302878);
+        CD cd = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)", CdType.MUSIC,
+                true, "na", "na", 112345678);
+        CD cd2 = new CD((short) 3, "Canon and Gigue in D major, P.37 (Pachelbel, Johann)", CdType.MUSIC,
+                true, "na", "na", 112345678);
+        CD cd3 = new CD((short) 4, "Age of the Empires", CdType.SOFTWARE, true, "na",
+                "na", 112302878);
         System.out.println("Item Name: " + cd.getName());
         System.out.println("CD Serial Number: " + cd.getSerialNumber());
         System.out.println("CD availability: " + cd.getAvailability());
@@ -134,8 +149,10 @@ public class Main {
 
         //3.1 Create Client twice
         System.out.println("\n-- 3.1 Clients --");
-        Client client = new Client((short) 5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
-        Client client2 = new Client((short) 5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 111111);
+        Client client = new Client((short) 5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com",
+                111111);
+        Client client2 = new Client((short) 5, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com",
+                111111);
         System.out.println("Client name: " + client.getName());
         System.out.println("ID: " + client.getPersonId());
         System.out.println("Membership Number: " + client.getMemberNumber());
@@ -165,8 +182,10 @@ public class Main {
 
         //3.2 create same student twice
         System.out.println("\n-- 3.2 Student --");
-        Student student = new Student((short) 6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
-        Student student2 = new Student((short) 6, "Fernando Vargas", "123-234-5432", "fvargas@email.com", 222222, 9999);
+        Student student = new Student((short) 6, "Fernando Vargas", "123-234-5432",
+                "fvargas@email.com", 222222, 9999);
+        Student student2 = new Student((short) 6, "Fernando Vargas", "123-234-5432",
+                "fvargas@email.com", 222222, 9999);
         System.out.println("Student Name: " + student.getName());
         System.out.println("ID: " + student.getPersonId());
         System.out.println("Membership Number: " + student.getMemberNumber());
@@ -174,8 +193,10 @@ public class Main {
 
         //3.3 Create same professor twice
         System.out.println("\n-- 3.3 Professor --");
-        Professor professor = new Professor((short) 7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
-        Professor professor2 = new Professor((short) 7, "Bart Simpson", "475-849-3298", "bsimpson@email.com", 333333, 8888);
+        Professor professor = new Professor((short) 7, "Bart Simpson", "475-849-3298",
+                "bsimpson@email.com", 333333, 8888);
+        Professor professor2 = new Professor((short) 7, "Bart Simpson", "475-849-3298",
+                "bsimpson@email.com", 333333, 8888);
         System.out.println("Professor Name: " + professor.getName());
         System.out.println("ID: " + professor.getPersonId());
         System.out.println("Membership Number: " + professor.getMemberNumber());
@@ -183,8 +204,10 @@ public class Main {
 
         //3.4 Create same employee twice
         System.out.println("\n-- 3.4 Employee --");
-        Employee employee = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", JobPosition.MANAGER, 100000);
-        Employee employee2 = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", JobPosition.MANAGER, 100000);
+        Employee employee = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
+                "vegeta@email.com", JobPosition.MANAGER, 100000);
+        Employee employee2 = new Employee((short) 8, "Vegeta Sayayin", "234-553-9813",
+                "vegeta@email.com", JobPosition.MANAGER, 100000);
         System.out.println("Employee Name: " + employee.getName());
         System.out.println("ID: " + employee.getPersonId());
         System.out.println("Employee position: " + employee.getJobPosition());
@@ -238,15 +261,24 @@ public class Main {
 
         // 7 EXCEPTIONS
         System.out.println("\n\n--- 7 EXCEPTIONS ---\n");
-        Book book4 = new Book((short) -1, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984", "George Orwell", -4000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
-        Book book5 = new Book((short) 40000, "1984", true, "na", "na", ItemType.PRINTEDBOOK, "1984", "George Orwell", 6000, "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
-        Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132", "kmitnick@email.com", 100000045);
-        Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432", "fvargas@email.com", -35, -32);
-        Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298", "bsimpson@email.com", -1, -4534);
-        Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813", "vegeta@email.com", JobPosition.MANAGER, -40);
+        Book book4 = new Book((short) -1, "1984", true, "na", "na",
+                ItemType.PRINTEDBOOK, "1984", "George Orwell", -4000,
+                "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Book book5 = new Book((short) 40000, "1984", true, "na", "na",
+                ItemType.PRINTEDBOOK, "1984", "George Orwell", 6000,
+                "Secker & Warburg", Genre.DYSTOPIAN_FICTION, Language.ENGLISH);
+        Client client3 = new Client((short) -1, "Kevin Mitnick", "849-342-0132",
+                "kmitnick@email.com", 100000045);
+        Student student3 = new Student((short) 4000, "Fernando Vargas", "123-234-5432",
+                "fvargas@email.com", -35, -32);
+        Professor professor3 = new Professor((short) -1, "Bart Simpson", "475-849-3298",
+                "bsimpson@email.com", -1, -4534);
+        Employee employee3 = new Employee((short) -34, "Vegeta Sayayin", "234-553-9813",
+                "vegeta@email.com", JobPosition.MANAGER, -40);
 
         client3.setPersonId((short) -4);
         book4.setItemId((short) -98);
+        book5.setItemId((short) -2);
         professor3.setProfessorCredentialNumber(-3242);
         student3.setStudentCredentialNumber(-32432);
         client3.setMemberNumber(-35234);
@@ -286,8 +318,9 @@ public class Main {
 
         // Predicate - Gets the book's availability
         System.out.println("\n-- 10.1 Predicate --");
-        Predicate<LibraryItem> isAvailable = item -> item.getAvailability();
-        System.out.println(isAvailable.test(book) ? "The book " + book.getName() + " is available" : "The book '" + book.getName() + "' is not available");
+        Predicate<LibraryItem> isAvailable = LibraryItem::getAvailability;
+        System.out.println(isAvailable.test(book) ? "The book " + book.getName() + " is available" :
+                "The book '" + book.getName() + "' is not available");
 
         // Function - Gets the book's author
         System.out.println("\n-- 10.2 Function --");
@@ -301,7 +334,9 @@ public class Main {
 
         // Supplier - Adds a new book and prints a message with the title
         System.out.println("\n-- 10.4 Supplier --");
-        Supplier<Book> bookSupplier = () -> new Book((short) 1, "Animal Farm", true, "na", "na", ItemType.PRINTEDBOOK, "Animal Farm", "The joker", 2023, "NoOneReally", Genre.FICTION, Language.ENGLISH);
+        Supplier<Book> bookSupplier = () -> new Book((short) 1, "Animal Farm", true, "na",
+                "na", ItemType.PRINTEDBOOK, "Animal Farm", "The joker", 2023,
+                "NoOneReally", Genre.FICTION, Language.ENGLISH);
         Book newBook = bookSupplier.get();
         System.out.println("New book: " + newBook.getTitle());
 
@@ -312,7 +347,8 @@ public class Main {
         if (isOld.test(year)) {
             System.out.println(book.title + " --> This is an old book from before the 20th century.");
         } else {
-            System.out.println(book.title + " --> This book was written over a period spanning the 20th and 21st " + "centuries.");
+            System.out.println(book.title + " --> This book was written over a period spanning the 20th and 21st "
+                    + "centuries.");
         }
 
         // Lambda generics
@@ -321,17 +357,26 @@ public class Main {
         // IOldestBookFinder - Find the oldest book
         System.out.println("\n-- 11.1 IOldestBookFinder --");
         System.out.println("Used 3 of 7 Stream() [.filter , .map() and .max()]");
-        IOldestBookFinder iOldestBookFinder = () -> {
-            System.out.println(library.getInventory().toList().stream().filter(item -> item instanceof Book).map(item -> (Book) item).map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")").max(Comparator.naturalOrder()).orElse("No book Found"));
-        };
+        IOldestBookFinder iOldestBookFinder = () -> System.out.println(library.getInventory()
+                .toList()
+                .stream()
+                .filter(item -> item instanceof Book)
+                .map(item -> (Book) item)
+                .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
+                .max(Comparator.naturalOrder()).orElse("No book Found"));
         iOldestBookFinder.findOldestBook();
 
         // IOldestBookFinder - Find the newest book
         System.out.println("\n-- 11.2 INewestBookFinder --");
         System.out.println("Used 3 of 7 Stream() [.filter , .map() and .min()]");
-        INewestBookFinder iNewestBookFinder = () -> {
-            System.out.println(library.getInventory().toList().stream().filter(item -> item instanceof Book).map(item -> (Book) item).map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")").min(Comparator.naturalOrder()).orElse("No book Found"));
-        };
+        INewestBookFinder iNewestBookFinder = () -> System.out.println(library.getInventory()
+                .toList()
+                .stream()
+                .filter(item -> item instanceof Book)
+                .map(item -> (Book) item)
+                .map(e -> e.getYear() + " - " + e.getName() + " (ID: " + e.getItemId() + ")")
+                .min(Comparator.naturalOrder())
+                .orElse("No book Found"));
         iNewestBookFinder.findNewestBook();
 
         // IGetBooksByGenre - List all the Books from a genre
@@ -339,7 +384,12 @@ public class Main {
         System.out.println("Used 2 of 7 Stream() [.filter , and .collect]");
         IGetBooksByGenre IgetBooksByGenre = (Genre genre) -> {
             System.out.println(genre + ":");
-            library.getInventory().toList().stream().filter(item -> item instanceof Book).map(item -> (Book) item).filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString())).collect(Collectors.toList()).forEach(printTitle);
+            library.getInventory().toList().stream()
+                    .filter(item -> item instanceof Book)
+                    .map(item -> (Book) item)
+                    .filter(e -> e.getGenre().toString().equalsIgnoreCase(genre.toString()))
+                    .collect(Collectors.toList())
+                    .forEach(printTitle);
         };
         IgetBooksByGenre.getBooksByGenre(Genre.SOUTHERN_GOTHIC);
 
@@ -371,7 +421,8 @@ public class Main {
 
         while (true) {
             if (!userReads1984.isAlive() && !userReadsAnimalFarm.isAlive()) {
-                System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine -- O Fim " + "-- 終わり ---");
+                System.out.println("\n\n--- El Fin -- 結束 -- La Fin -- Кінець -- Das Ende -- The End  -- La Fine " +
+                        "-- O Fim " + "-- 終わり ---");
                 break;
             }
         }

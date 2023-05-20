@@ -2,7 +2,7 @@ package com.solvd.threads;
 
 public class MT10Seconds implements Runnable{
 
-    private String name;
+    private final String name;
 
     public MT10Seconds(String name) {
         this.name = name;

@@ -12,11 +12,11 @@ public class UniqueWordCounter {
         // Convert array to Stream<String>. Use distinct() to rule out repeated word, the use count() to count.
         System.out.println("Used 2 of 7 Stream() [.distinct and .count]");
         long uniqueWordCount = Arrays.stream(
-                        FileUtils.readFileToString(new File("src/main/resources/textForTest.txt"),
+                FileUtils.readFileToString(new File("src/main/resources/textForTest.txt"),
                                 "UTF-8").replaceAll("\\W", " ").toLowerCase()
-                                .split("\\s+")).distinct().count();
+                        .split("\\s+")).distinct().count();
         // Print count() output on file output
         FileUtils.writeStringToFile(new File("src/main/resources/output.txt"), "Number of unique words: "
                 + uniqueWordCount, "UTF-8");
-     }
+    }
 }

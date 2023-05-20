@@ -2,7 +2,7 @@ package com.solvd.threads;
 
 public class MT5Seconds extends Thread {
 
-    private String name;
+    private final String name;
 
     public MT5Seconds(String name) {
         this.name = name;
