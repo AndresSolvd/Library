@@ -8,7 +8,7 @@ public enum CdType {
 
     private final String itemType;
 
-    private CdType(String cdType) {
+    CdType(String cdType) {
         this.itemType = cdType;
     }
 

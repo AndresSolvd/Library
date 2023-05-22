@@ -27,7 +27,7 @@ public class Professor extends Client {
     public void setProfessorCredentialNumber(int professorCredentialNumber) {
         //validate professorCredentialNumber
         try {
-            if (professorCredentialNumber <= 0 | professorCredentialNumber > 2147483647) {
+            if (professorCredentialNumber <= 0) {
                 throw new MemberAndCredentialRangeException("professorCredentialNumber invalid " +
                         "value(values accepted: integers between 1 and 2147483647)");
             } else {

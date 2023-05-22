@@ -8,7 +8,7 @@ public enum ItemType {
 
     private final String itemType;
 
-    private ItemType(String itemType) {
+    ItemType(String itemType) {
         this.itemType = itemType;
     }
 

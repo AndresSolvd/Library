@@ -14,7 +14,7 @@ public enum LibraryEvents {
 
     private final String eventName;
 
-    private LibraryEvents(String eventName) {
+    LibraryEvents(String eventName) {
         this.eventName = eventName;
     }
 
