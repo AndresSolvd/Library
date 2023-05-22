@@ -66,7 +66,7 @@ public class ThreadsPool {
             }
             System.out.println("Custom thread (thread) message: " + Thread.currentThread().getId());
         });
-        MT5Seconds userReadsAnimalFarm = new MT5Seconds("Reading Animal Farm");
+        MyThread userReadsAnimalFarm = new MyThread("Reading Animal Farm");
         Callable<String> callable = () -> {
             try {
                 Thread.sleep(5000);

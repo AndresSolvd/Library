@@ -12,8 +12,8 @@ import com.solvd.exceptions.IdRangeException;
 import com.solvd.interfaces.IGetBooksByGenre;
 import com.solvd.interfaces.INewestBookFinder;
 import com.solvd.interfaces.IOldestBookFinder;
-import com.solvd.threads.MT10Seconds;
-import com.solvd.threads.MT5Seconds;
+import com.solvd.threads.MyRunnableThread;
+import com.solvd.threads.MyThread;
 import com.solvd.util.UniqueWordCounter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -411,10 +411,10 @@ public class Main {
         System.out.println("\n\n--- 13 MULTITHREADING---\n");
 
         // By extending the Thread class
-        MT5Seconds userReadsAnimalFarm = new MT5Seconds(newBook.getTitle());
+        MyThread userReadsAnimalFarm = new MyThread(newBook.getTitle());
 
         //  By implementing the Runnable interface
-        MT10Seconds tenSeconds = new MT10Seconds(book.getTitle());
+        MyRunnableThread tenSeconds = new MyRunnableThread(book.getTitle());
         Thread userReads1984 = new Thread(tenSeconds);
 
         userReadsAnimalFarm.start();
