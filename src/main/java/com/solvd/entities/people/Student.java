@@ -28,7 +28,7 @@ public class Student extends Client {
         //validate studentCredentialNumber
         try {
             if (studentCredentialNumber <= 0) {
-                throw new MemberAndCredentialRangeException("studentCredentialNumber invalid value(values accepted: integers between 1 and 2147483647)");
+                throw new MemberAndCredentialRangeException("studentCredentialNumber invalid value(values accepted: positive integers)");
             } else {
                 this.studentCredentialNumber = studentCredentialNumber;
             }
