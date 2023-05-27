@@ -28,12 +28,12 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     static {
-        System.out.println("\n\n*********************************************************************************" +
+        System.out.println("\n\n********************************************************************************" +
                 "************************************************************************************************" +
                 "**********\nI don't have any idea for a reason to use this feature unless I need to load a Database" +
                 " before loading this program. If so, I will change this when I get to that part of the course\n*" +
                 "***************************************************************************************************" +
-                "***************************************************************************************\n");
+                "**************************************************************************************\n");
     }
 
     public static void askItemAvailability(LibraryItem item) throws BooleanException {
